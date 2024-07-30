@@ -11,7 +11,7 @@ const SearchBar = ({ children }) => {
 };
 
 SearchBar.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default SearchBar;

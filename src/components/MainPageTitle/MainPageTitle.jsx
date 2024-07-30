@@ -11,7 +11,7 @@ const MainPageTitle = ({ children }) => {
 };
 
 MainPageTitle.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default MainPageTitle;

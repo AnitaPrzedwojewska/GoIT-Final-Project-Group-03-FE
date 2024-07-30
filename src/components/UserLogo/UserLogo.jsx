@@ -11,7 +11,7 @@ const UserLogo = ({ children }) => {
 };
 
 UserLogo.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default UserLogo;

@@ -11,7 +11,7 @@ const FollowUs = ({ children }) => {
 };
 
 FollowUs.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default FollowUs;

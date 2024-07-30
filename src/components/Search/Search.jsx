@@ -11,7 +11,7 @@ const Search = ({ children }) => {
 };
 
 Search.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default Search;

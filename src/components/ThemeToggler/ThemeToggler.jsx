@@ -11,7 +11,7 @@ const ThemeToggler = ({ children }) => {
 };
 
 ThemeToggler.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default ThemeToggler;

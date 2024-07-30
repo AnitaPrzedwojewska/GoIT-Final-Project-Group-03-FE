@@ -11,7 +11,7 @@ const PreviewCategories = ({ children }) => {
 };
 
 PreviewCategories.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default PreviewCategories;
