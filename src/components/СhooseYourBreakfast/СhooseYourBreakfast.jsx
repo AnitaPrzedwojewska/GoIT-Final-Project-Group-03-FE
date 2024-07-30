@@ -11,7 +11,7 @@ const СhooseYourBreakfast = ({ children }) => {
 };
 
 СhooseYourBreakfast.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default СhooseYourBreakfast;

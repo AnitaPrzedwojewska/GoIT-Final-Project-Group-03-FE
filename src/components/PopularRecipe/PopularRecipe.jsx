@@ -11,7 +11,7 @@ const PopularRecipe = ({ children }) => {
 };
 
 PopularRecipe.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default PopularRecipe;

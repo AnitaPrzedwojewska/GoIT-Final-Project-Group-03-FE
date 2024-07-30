@@ -11,7 +11,7 @@ const Paginator = ({ children }) => {
 };
 
 Paginator.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default Paginator;

@@ -11,7 +11,7 @@ const LogoutBtn = ({ children }) => {
 };
 
 LogoutBtn.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default LogoutBtn;

@@ -11,7 +11,7 @@ const SearchedRecipesList = ({ children }) => {
 };
 
 SearchedRecipesList.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default SearchedRecipesList;

@@ -11,7 +11,7 @@ const Logo = ({ children }) => {
 };
 
 Logo.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default Logo;
