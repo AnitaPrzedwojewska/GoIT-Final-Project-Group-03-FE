@@ -3,9 +3,11 @@ import { Route, Routes } from "react-router-dom";
 
 import WelcomePage from "./pages/WelcomePage";
 import SharedLayout from "./pages/SharedLayout";
+import MainPage from "./pages/MainPage";
 import RegisterPage from "./pages/RegisterPage";
 import SigninPage from "./pages/SigninPage";
 import CategoriesPage from "./pages/CategoriesPage";
+import RecipePage from "./pages/RecipePage";
 import AddRecipesPage from "./pages/AddRecipesPage";
 import MyRecipesPage from "./pages/MyRecipesPage";
 import FavoritePage from "./pages/FavoritePage";
@@ -23,7 +25,12 @@ const App = () => {
           <Route index element={<WelcomePage />} />
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/signin' element={<SigninPage />} />
-          <Route path='/categories/:categoryName' element={<CategoriesPage />} />
+          <Route path='/main' element={<MainPage />} />
+          <Route
+            path='/categories/:categoryName'
+            element={<CategoriesPage />}
+          />
+          <Route path='/recipe/:recipeId' element={<RecipePage />} />
           <Route path='/add' element={<AddRecipesPage />} />
           <Route path='/my' element={<MyRecipesPage />} />
           <Route path='/favorite' element={<FavoritePage />} />

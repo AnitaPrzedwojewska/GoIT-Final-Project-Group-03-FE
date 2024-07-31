@@ -1,15 +1,10 @@
-import { NavLink} from 'react-router-dom'
+import AuthNav from '../components/AuthNav/AuthNav'
 
 const WelcomePage = () => {
   return (
     <>
       <div>WelcomePage</div>
-      <NavLink to='/register'>
-        <button>Registration</button>
-      </NavLink>
-      <NavLink to="/signin">
-        <button>Sign in</button>
-      </NavLink>
+      <AuthNav></AuthNav>
     </>
   );
 };
