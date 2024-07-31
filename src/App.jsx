@@ -23,19 +23,19 @@ const App = () => {
       <Routes>
         <Route path='/' element={<SharedLayout />}>
           <Route index element={<WelcomePage />} />
-          <Route path='/register' element={<RegisterPage />} />
-          <Route path='/signin' element={<SigninPage />} />
-          <Route path='/main' element={<MainPage />} />
+          <Route path='register' element={<RegisterPage />} />
+          <Route path='signin' element={<SigninPage />} />
+          <Route path='main' element={<MainPage />} />
           <Route
-            path='/categories/:categoryName'
+            path='categories/:categoryName'
             element={<CategoriesPage />}
           />
-          <Route path='/recipe/:recipeId' element={<RecipePage />} />
-          <Route path='/add' element={<AddRecipesPage />} />
-          <Route path='/my' element={<MyRecipesPage />} />
-          <Route path='/favorite' element={<FavoritePage />} />
-          <Route path='/shopping-list' element={<ShoppingListPage />} />
-          <Route path='/search' element={<SearchPage />} />
+          <Route path='recipe/:recipeId' element={<RecipePage />} />
+          <Route path='add' element={<AddRecipesPage />} />
+          <Route path='my' element={<MyRecipesPage />} />
+          <Route path='favorite' element={<FavoritePage />} />
+          <Route path='shopping-list' element={<ShoppingListPage />} />
+          <Route path='search' element={<SearchPage />} />
         </Route>
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
