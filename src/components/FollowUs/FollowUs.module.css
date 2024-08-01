@@ -1,0 +1,21 @@
+.iconList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  gap: 14px;
+}
+
+.link {
+  color: inherit;
+}
+.link:hover,
+.link:focus {
+  color: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  .iconList {
+    gap: 18px;
+  }
+}
