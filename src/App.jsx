@@ -15,8 +15,6 @@ import ShoppingListPage from "./pages/ShoppingListPage/ShoppingListPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
-import "./App.css";
-
 const App = () => {
   return (
     <>
