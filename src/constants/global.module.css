@@ -1,0 +1,40 @@
+@import url("../index.css");
+
+.subscribe_classic_button {
+  width: 339px;
+  background-color: var(--green-color);
+  color: var(--white-text);
+}
+
+.subscribe_classic_button:hover {
+  color: var(--buttons-background);
+}
+
+.register_classic_button {
+  width: 400px;
+  height: 59px; /*desctop, tablet 56px, mobile 279px x 45px*/
+  background-color: var(--green-color);
+  color: var(--white-text);
+}
+
+.register_classic_button:hover {
+  color: var(--buttons-background);
+}
+
+.small_classic_button {
+  height: 59px; /*mobile 49px*/
+}
+
+.small_classic_button_cancel {
+  background: var(--grey-background);
+  color: var(--dark-grey-text);
+}
+.small_classic_button_cancel:hover {
+  background-color: var(--white-color);
+}
+.small_classic_button_logout {
+  background: var(--green-color);
+}
+.small_classic_button_logout:hover {
+  background-color: var(--buttons-background);
+}
