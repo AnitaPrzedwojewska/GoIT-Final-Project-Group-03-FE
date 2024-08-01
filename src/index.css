@@ -58,7 +58,7 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: color 0.3s;
-  transition: background-color 0.3s;
+  transition: background-color 0, 5s, border 0.5s, color 0, 5s;
 }
 
 button:focus,
