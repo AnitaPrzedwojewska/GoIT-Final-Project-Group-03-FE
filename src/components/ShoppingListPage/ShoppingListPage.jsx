@@ -11,7 +11,7 @@ const ShoppingListPage = ({ children }) => {
 };
 
 ShoppingListPage.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default ShoppingListPage;

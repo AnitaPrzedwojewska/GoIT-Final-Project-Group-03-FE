@@ -1,17 +1,18 @@
-import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
+import { Suspense } from "react";
 
-import Header from "../../components/Header/Header";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import Loader from "../components/Loader/Loader";
 
 const SharedLayout = () => {
   return (
     <div>
       <Header />
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-      <Toaster position='top-center' reverseOrder={false} />
+      <Footer />
     </div>
   );
 };

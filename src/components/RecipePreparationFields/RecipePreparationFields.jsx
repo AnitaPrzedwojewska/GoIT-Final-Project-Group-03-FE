@@ -11,7 +11,7 @@ const RecipePreparationFields = ({ children }) => {
 };
 
 RecipePreparationFields.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default RecipePreparationFields;

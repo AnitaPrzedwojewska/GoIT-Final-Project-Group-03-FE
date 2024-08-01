@@ -1,7 +1,7 @@
 {
   "name": "goit-final-project-group-03-fe",
   "private": false,
-  "homepage": "https://AnitaPrzedwojewska.github.io/GoIT-Final-Project-Group-03-FE/",
+  "homepage": "https://AnitaPrzedwojewska.github.io/GoIT-Final-Project-Group-03-FE",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -15,7 +15,8 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.25.1"
+    "react-router-dom": "^6.25.1",
+    "react-spinners": "^0.14.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

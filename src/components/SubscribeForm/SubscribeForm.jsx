@@ -11,7 +11,7 @@ const SubscribeForm = ({ children }) => {
 };
 
 SubscribeForm.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default SubscribeForm;

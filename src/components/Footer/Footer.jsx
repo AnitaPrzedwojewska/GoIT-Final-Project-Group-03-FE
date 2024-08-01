@@ -1,17 +1,20 @@
-// import css from "./Footer.module.css";
-import PropTypes from "prop-types";
+import css from "./Footer.module.css";
 
-const Footer = ({ children }) => {
+import Nav from '../Nav/Nav';
+import FollowUs from '../FollowUs/FollowUs'
+import SubscribeForm from '../SubscribeForm/SubscribeForm'
+
+const Footer = () => {
   return (
     <>
       <div>Footer</div>
-      <div>{children}</div>
+      <Nav></Nav>
+      <div className={css.followUs}>
+        <FollowUs />
+      </div>
+      <SubscribeForm></SubscribeForm>
     </>
   );
-};
-
-Footer.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Footer;

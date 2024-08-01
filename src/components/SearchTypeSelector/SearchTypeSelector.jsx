@@ -11,7 +11,7 @@ const SearchTypeSelector = ({ children }) => {
 };
 
 SearchTypeSelector.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default SearchTypeSelector;

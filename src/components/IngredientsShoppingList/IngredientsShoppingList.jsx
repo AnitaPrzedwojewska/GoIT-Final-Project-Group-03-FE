@@ -11,7 +11,7 @@ const IngredientsShoppingList = ({ children }) => {
 };
 
 IngredientsShoppingList.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default IngredientsShoppingList;

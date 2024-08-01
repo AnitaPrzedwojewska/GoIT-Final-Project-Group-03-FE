@@ -11,7 +11,7 @@ const AuthForm = ({ children }) => {
 };
 
 AuthForm.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default AuthForm;

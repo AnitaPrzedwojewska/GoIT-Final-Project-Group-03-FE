@@ -1,3 +1,5 @@
+import {NavLink} from 'react-router-dom'
+
 // import css from "./PopularRecipe.module.css";
 import PropTypes from "prop-types";
 
@@ -6,12 +8,13 @@ const PopularRecipe = ({ children }) => {
     <>
       <div>PopularRecipe</div>
       <div>{children}</div>
+      <NavLink to='/recipe/:recipeId'>See recipe</NavLink>
     </>
   );
 };
 
 PopularRecipe.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default PopularRecipe;

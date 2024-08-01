@@ -11,7 +11,7 @@ const MotivatingModal = ({ children }) => {
 };
 
 MotivatingModal.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default MotivatingModal;
