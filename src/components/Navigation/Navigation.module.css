@@ -1,0 +1,26 @@
+@media screen and (max-width: 1439px) {
+  .navList {
+    display: none;
+  }
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  gap: 30px;
+  font-size: 14px;
+  font-weight: medium;
+  color: #23262A;
+}
+
+.link {
+  color: inherit;
+}
+.link:hover,
+.link:focus,
+.link:active {
+  color: #8BAA36;
+}
+

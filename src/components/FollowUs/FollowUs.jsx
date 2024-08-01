@@ -1,9 +1,9 @@
 import css from "./FollowUs.module.css";
 
-import FacebookIcon from "../Icons/FacebookIcon";
-import InstagramIcon from "../Icons/InstagramIcon";
-import TwitterIcon from "../Icons/TwitterIcon";
-import YouTubeIcon from "../Icons/YouTubeIcon";
+import FacebookIcon from "../IconsSVG/FacebookIcon";
+import InstagramIcon from "../IconsSVG/InstagramIcon";
+import TwitterIcon from "../IconsSVG/TwitterIcon";
+import YouTubeIcon from "../IconsSVG/YouTubeIcon";
 
 const FollowUs = (props) => {
   return (

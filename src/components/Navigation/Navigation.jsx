@@ -1,26 +1,43 @@
-import { NavLink } from 'react-router-dom';
-// import css from "./Navigation.module.css";
-import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
+import css from "./Navigation.module.css";
 
-const Navigation = ({ children }) => {
+import SearchIcon from '../IconsSVG/SearchIcon'
+
+const Navigation = () => {
   return (
-    <>
-      <div>Navigation</div>
-      <div>
-        <NavLink to='/categories/:categoryName'>Categories</NavLink>
-        <NavLink to='/add'>Add recipes</NavLink>
-        <NavLink to='/my'>My recipes</NavLink>
-        <NavLink to='/favorite'>Favorites</NavLink>
-        <NavLink to='/shopping-list'>Shopping list</NavLink>
-        <NavLink to='/search'>Search</NavLink>
-      </div>
-      <div>{children}</div>
-    </>
+    <ul className={css.navList}>
+      <li>
+        <NavLink className={css.link} to='/categories/:categoryName'>
+          Categories
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/add'>
+          Add recipes
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/my'>
+          My recipes
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/favorite'>
+          Favorites
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/shopping-list'>
+          Shopping list
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/search'>
+          <SearchIcon />
+        </NavLink>
+      </li>
+    </ul>
   );
-};
-
-Navigation.propTypes = {
-  children: PropTypes.node,
 };
 
 export default Navigation;
