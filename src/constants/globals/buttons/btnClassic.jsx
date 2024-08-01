@@ -1,4 +1,4 @@
-import css from "./global.module.css";
+import css from "./btnClassic.module.css";
 
 // export const CLASSIC_BLACK_BUTTON = ({ label, onClick }) => (
 //   <button onClick={onClick}>{label}</button>
