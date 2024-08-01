@@ -2,7 +2,7 @@ import css from "./btnFancy.module.css";
 
 export const FANCY_BLACK_BUTTON = ({ label, onClick }) => (
   <button
-    className={`${css.fancy_button} ${css["fancy_black_button"]}`}
+    className={`${css.fancyButton} ${css["blackButton"]}`}
     onClick={onClick}
   >
     {label}
@@ -11,7 +11,7 @@ export const FANCY_BLACK_BUTTON = ({ label, onClick }) => (
 
 export const FANCY_GREEN_BUTTON = ({ label, onClick }) => (
   <button
-    className={`${css.fancy_button} ${css["fancy_green_button"]}`}
+    className={`${css.fancyButton} ${css["greenButton"]}`}
     onClick={onClick}
   >
     {label}
@@ -20,7 +20,7 @@ export const FANCY_GREEN_BUTTON = ({ label, onClick }) => (
 
 export const FANCY_SINGIN_BUTTON = ({ onClick }) => (
   <button
-    className={`${css.fancy_button} ${css["fancy_singin_button"]}`}
+    className={`${css.fancyButton} ${css["singinButton"]}`}
     onClick={onClick}
   >
     Sing in
@@ -29,7 +29,7 @@ export const FANCY_SINGIN_BUTTON = ({ onClick }) => (
 
 export const FANCY_ADD_FAVORITE_BUTTON = ({ onClick }) => (
   <button
-    className={`${css.fancy_button} ${css["fancy_favorite_button"]}`}
+    className={`${css.fancyButton} ${css["favoriteButton"]}`}
     onClick={onClick}
   >
     Add to favorite recipes

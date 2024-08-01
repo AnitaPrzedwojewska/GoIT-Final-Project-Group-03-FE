@@ -1,27 +1,27 @@
 @import url("../../../index.css");
 
-.subscribe_classic_button {
+.subscribeClassicButton {
   background-color: var(--green-color);
   color: var(--white-text);
   padding: 11px 67px;
 }
 @media (min-width: 750px) {
-  .subscribe_classic_button {
+  .subscribeClassicButton {
     padding: 16px 50px;
   }
 }
 @media (min-width: 1025px) {
-  .subscribe_classic_button {
+  .subscribeClassicButton {
     width: 339px;
     padding: 21px 138px 21px 138px;
   }
 }
 
-.subscribe_classic_button:hover {
+.subscribeClassicButton:hover {
   color: var(--buttons-background);
 }
 
-.register_classic_button {
+.registerClassicButton {
   background-color: var(--green-color);
   color: var(--white-text);
   width: 279px;
@@ -29,41 +29,41 @@
   padding: 14px 110px 14px 110px;
 }
 @media (min-width: 750px) {
-  .register_classic_button {
+  .registerClassicButton {
     width: 400px;
     height: 56px;
     padding: 21px 138px 21px 138px;
   }
 }
 @media (min-width: 1025px) {
-  .register_classic_button {
+  .registerClassicButton {
     height: 59px;
   }
 }
 
-.register_classic_button:hover {
+.registerClassicButton:hover {
   color: var(--buttons-background);
 }
 
-.small_classic_button {
+.smallClassicButton {
   height: 49px;
 }
 @media (min-width: 750px) {
-  .small_classic_button {
+  .smallClassicButton {
     height: 59px;
   }
 }
 
-.small_classic_button_cancel {
+.buttonCancel {
   background: var(--grey-background);
   color: var(--dark-grey-text);
 }
-.small_classic_button_cancel:hover {
+.buttonCancel:hover {
   background-color: var(--white-color);
 }
-.small_classic_button_logout {
+.buttonLogout {
   background: var(--green-color);
 }
-.small_classic_button_logout:hover {
+.buttonLogout:hover {
   background-color: var(--buttons-background);
 }
