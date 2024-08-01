@@ -11,7 +11,7 @@ const SearchForm = ({ children }) => {
 };
 
 SearchForm.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default SearchForm;

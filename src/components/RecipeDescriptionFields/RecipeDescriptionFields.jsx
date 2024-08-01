@@ -11,7 +11,7 @@ const RecipeDescriptionFields = ({ children }) => {
 };
 
 RecipeDescriptionFields.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default RecipeDescriptionFields;

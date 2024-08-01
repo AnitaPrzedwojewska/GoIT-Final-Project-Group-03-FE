@@ -11,7 +11,7 @@ const RecipeIngredientsList = ({ children }) => {
 };
 
 RecipeIngredientsList.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default RecipeIngredientsList;

@@ -11,7 +11,7 @@ const UserLogoModal = ({ children }) => {
 };
 
 UserLogoModal.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default UserLogoModal;

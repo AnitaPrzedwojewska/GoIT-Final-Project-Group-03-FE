@@ -11,7 +11,7 @@ const UserInfoModal = ({ children }) => {
 };
 
 UserInfoModal.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default UserInfoModal;
