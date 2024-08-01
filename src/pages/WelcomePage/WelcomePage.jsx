@@ -1,4 +1,4 @@
-import AuthNav from '../components/AuthNav/AuthNav'
+import AuthNav from "../../components/AuthNav/AuthNav";
 // import Loader from '../components/Loader/Loader'
 
 const WelcomePage = () => {

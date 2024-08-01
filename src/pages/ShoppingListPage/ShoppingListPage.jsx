@@ -1,5 +1,5 @@
-import MainPageTitle from '../components/MainPageTitle/MainPageTitle'
-import IngredientsShoppingList from '../components/IngredientsShoppingList/IngredientsShoppingList'
+import MainPageTitle from "../../components/MainPageTitle/MainPageTitle";
+import IngredientsShoppingList from "../../components/IngredientsShoppingList/IngredientsShoppingList";
 
 const ShoppingListPage = () => {
   return (
