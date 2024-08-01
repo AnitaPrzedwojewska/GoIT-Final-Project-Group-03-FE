@@ -1,6 +1,6 @@
-import MainPageTitle from '../components/MainPageTitle/MainPageTitle'
-import SearchBar from '../components/SearchBar/SearchBar'
-import SearchedRecipesList from '../components/SearchedRecipesList/SearchedRecipesList'
+import MainPageTitle from "../../components/MainPageTitle/MainPageTitle";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchedRecipesList from "../../components/SearchedRecipesList/SearchedRecipesList";
 
 const SearchPage = () => {
   return (

@@ -1,6 +1,6 @@
-import СhooseYourBreakfast from '../components/СhooseYourBreakfast/СhooseYourBreakfast'
-import Search from '../components/Search/Search'
-import PreviewCategories from '../components/PreviewCategories/PreviewCategories'
+import СhooseYourBreakfast from "../../components/СhooseYourBreakfast/СhooseYourBreakfast";
+import Search from "../../components/Search/Search";
+import PreviewCategories from "../../components/PreviewCategories/PreviewCategories";
 
 const MainPage = () => {
   return (
