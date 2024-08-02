@@ -5,7 +5,6 @@ import SearchedRecipesList from "../../components/SearchedRecipesList/SearchedRe
 const SearchPage = () => {
   return (
     <>
-      <div>SearchPage</div>
       <MainPageTitle></MainPageTitle>
       <SearchBar></SearchBar>
       <SearchedRecipesList></SearchedRecipesList>

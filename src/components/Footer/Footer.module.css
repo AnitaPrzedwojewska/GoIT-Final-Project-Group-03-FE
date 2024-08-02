@@ -1,4 +1,56 @@
+.container {
+  width: 100%;
+  padding: 12px;
+}
+
+.footer {
+  background-color: var(--black3);
+}
+
+.copyright {
+  background-color: var(--white2);
+}
+
+.copyrightBox {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  color: var(--black3);
+  font-size: 10px;
+}
+
 .followUs {
   font-size: 20px;
-  color: #8BAA36
+  color: #8baa36;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+    margin: 0 auto;
+    padding: 28px 32px 18px;
+  }
+  .copyrightBox {
+    gap: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 20px 32px 24px;
+  }
+  .copyrightBox {
+    gap: 28px;
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding: 64px 100px 50px;
+  }
+  .copyrightBox {
+    gap: 40px;
+  }
 }

@@ -1,10 +1,9 @@
-import { NavLink} from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 const SigninPage = () => {
   return (
     <>
-      <div>SigninPage</div>
-      <NavLink to="/register">Registration</NavLink>
+      <NavLink to='/register'>Registration</NavLink>
     </>
   );
 };
