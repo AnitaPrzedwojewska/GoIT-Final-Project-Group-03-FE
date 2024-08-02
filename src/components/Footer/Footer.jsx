@@ -7,12 +7,27 @@ import SubscribeForm from '../SubscribeForm/SubscribeForm'
 const Footer = () => {
   return (
     <>
-      <div>Footer</div>
-      <Nav></Nav>
-      <div className={css.followUs}>
-        <FollowUs />
+      <div className={css.footer}>
+        <div className={css.container}>
+          <div className={css.footerBox}>
+            <div>
+              <Nav />
+              <SubscribeForm />
+            </div>
+            <div className={css.followUs}>
+              <FollowUs />
+            </div>
+          </div>
+        </div>
       </div>
-      <SubscribeForm></SubscribeForm>
+      <div className={css.copyright}>
+        <div className={css.container}>
+          <div className={css.copyrightBox}>
+            <div>© 2023 All Rights Reserved.</div>
+            <div>Terms of Service</div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

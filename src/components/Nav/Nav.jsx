@@ -1,26 +1,37 @@
-import { NavLink} from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
-// import css from "./Nav.module.css";
-import PropTypes from "prop-types";
+import css from "./Nav.module.css";
 
-const Nav = ({ children }) => {
+const Nav = () => {
   return (
-    <>
-      <div>Nav</div>
-      <div>
-        <NavLink to='/add'>Add recipes</NavLink>
-        <NavLink to='/search'>Search</NavLink>
-        <NavLink to='/my'>My recipes</NavLink>
-        <NavLink to='/favorite'>Favorites</NavLink>
-        <NavLink to='/shopping-list'>Shopping list</NavLink>
-      </div>
-      <div>{children}</div>
-    </>
+    <ul className={css.navList}>
+      <li>
+        <NavLink className={css.link} to='/add'>
+          Add recipes
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/search'>
+          Search
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/my'>
+          My recipes
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/favorite'>
+          Favorites
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={css.link} to='/shopping-list'>
+          Shopping list
+        </NavLink>
+      </li>
+    </ul>
   );
-};
-
-Nav.propTypes = {
-  children: PropTypes.node,
 };
 
 export default Nav;
