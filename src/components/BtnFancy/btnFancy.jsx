@@ -1,10 +1,11 @@
 import css from "./btnFancy.module.css";
+import PropTypes from "prop-types";
 
-export const FancyButton = ({
+const FancyButton = ({
   width = "",
   height = "",
   fontSize = "",
-  lineHight = "",
+  lineHeight = "",
   onClick,
   children,
   className = "",
@@ -13,7 +14,7 @@ export const FancyButton = ({
     width,
     height,
     fontSize,
-    lineHight,
+    lineHeight,
   };
 
   return (
@@ -26,3 +27,15 @@ export const FancyButton = ({
     </button>
   );
 };
+
+FancyButton.propTypes = {
+  width: PropTypes.string,
+  height: PropTypes.string,
+  fontSize: PropTypes.string,
+  lineHeight: PropTypes.string,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+
+export default FancyButton;

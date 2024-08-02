@@ -1,10 +1,11 @@
 import css from "./btnClassic.module.css";
+import PropTypes from "prop-types";
 
-export const ClassicButton = ({
+const ClassicButton = ({
   width = "",
   height = "",
   fontSize = "",
-  lineHight = "",
+  lineHeight = "",
   onClick,
   children,
   className = "",
@@ -13,7 +14,7 @@ export const ClassicButton = ({
     width,
     height,
     fontSize,
-    lineHight,
+    lineHeight,
   };
 
   return (
@@ -26,3 +27,15 @@ export const ClassicButton = ({
     </button>
   );
 };
+
+ClassicButton.propTypes = {
+  width: PropTypes.string,
+  height: PropTypes.string,
+  fontSize: PropTypes.string,
+  lineHeight: PropTypes.string,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+
+export default ClassicButton;

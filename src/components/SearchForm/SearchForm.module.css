@@ -1,0 +1,72 @@
+.fancyInput {
+  border: 1px solid var(--white3);
+  border-radius: 24px 44px;
+  color: var(--grey4);
+  width: 295px;
+  height: 52px;
+  position: relative;
+}
+.fancyInput.input-focused {
+  border-color: var(--green1);
+}
+
+.fancyInput:focus-within {
+  border-color: var(--black2Transparent);
+}
+
+.input {
+  background-color: transparent;
+  color: var(--black2);
+  border: none;
+  outline: none;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: 32px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.greenButton {
+  background-color: var(--green1);
+  color: var(--white2);
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 113px;
+}
+.greenButton:hover {
+  background-color: var(--black3);
+}
+
+@media (min-width: 750px) {
+  .fancyInput {
+    width: 362px;
+    height: 59px;
+  }
+
+  .greenButton {
+    width: 161px;
+  }
+  .input {
+    font-size: 14px;
+    line-height: 21px;
+    margin-left: 38px;
+  }
+}
+@media (min-width: 1025px) {
+  .fancyInput {
+    width: 510px;
+    height: 70px;
+  }
+  .input {
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 48px;
+  }
+}
