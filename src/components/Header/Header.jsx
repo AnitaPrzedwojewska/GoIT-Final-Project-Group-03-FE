@@ -1,25 +1,21 @@
-// import css from "./Header.module.css";
-import PropTypes from "prop-types";
+import css from "./Header.module.css";
+
 import Logo from '../Logo/Logo'
 import Navigation from '../Navigation/Navigation'
 import UserLogo from '../UserLogo/UserLogo'
 import ThemeToggler from '../ThemeToggler/ThemeToggler'
 
-const Header = ({ children }) => {
+const Header = () => {
   return (
-    <>
-      <div>Header</div>
-      <Logo></Logo>
-      <Navigation></Navigation>
-      <UserLogo></UserLogo>
-      <ThemeToggler></ThemeToggler>
-      <div>{children}</div>
-    </>
+    <div className={css.header}>
+      <div className={css.container}>
+        <Logo></Logo>
+        <Navigation></Navigation>
+        <UserLogo></UserLogo>
+        <ThemeToggler></ThemeToggler>
+      </div>
+    </div>
   );
-};
-
-Header.propTypes = {
-  children: PropTypes.node,
 };
 
 export default Header;

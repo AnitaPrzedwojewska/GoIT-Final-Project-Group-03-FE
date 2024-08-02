@@ -1,0 +1,30 @@
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--white2);
+}
+
+.link {
+  color: inherit;
+}
+.link:hover,
+.link:focus,
+.link:active {
+  color: var(--green1);
+}
+
+@media screen and (min-width: 768px) {
+  .navList {
+    gap: 20px;
+    align-items: start;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .navList {
+    gap: 24px;
+  }
+}
