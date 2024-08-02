@@ -5,13 +5,14 @@
   font-size: 16px;
   line-height: 24px;
 }
-
+/*-------------------------------------------------------------------------*/
 .greenButton {
   background-color: var(--green-color);
 }
 .greenButton:hover {
   background-color: var(--buttons-background);
 }
+/*-------------------------------------------------------------------------*/
 
 .blackButton {
   background-color: var(--buttons-background);
@@ -19,6 +20,27 @@
 .blackButton:hover {
   background-color: var(--green-color);
 }
+/*-------------------------------------------------------------------------*/
+
+.transparentButton {
+  color: var(--buttons-background);
+  background-color: transparent;
+  border: 2px solid var(--green-color);
+}
+@media (min-width: 750px) {
+  .transparentButton {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.transparentButton:hover {
+  color: var(--white-text);
+  background-color: var(--green-color);
+  border: 2px solid transparent;
+}
+/*-------------------------------------------------------------------------*/
+
 .singinButton {
   background-color: transparent;
   border: 2px solid var(--white-text);
@@ -28,27 +50,4 @@
 .singinButton:hover {
   color: var(--green-color);
   border: 2px solid var(--green-color);
-}
-.favoriteButton {
-  color: var(--buttons-background);
-  background-color: transparent;
-  border: 2px solid var(--green-color);
-  width: 150px;
-  height: 35px;
-  font-size: 10px;
-  line-height: 15px;
-}
-@media (min-width: 750px) {
-  .favoriteButton {
-    width: 270px;
-    height: 59px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-}
-
-.favoriteButton:hover {
-  color: var(--white-text);
-  background-color: var(--green-color);
-  border: 2px solid transparent;
 }
