@@ -1,7 +1,7 @@
 import css from "./SubscribeForm.module.css";
 
 // import Button from "../BtnClassic/btnClassic";
-import LetterIcon from "../IconsSVG/LetterIcon";
+// import LetterIcon from "../IconsSVG/LetterIcon";
 
 const SubscribeForm = () => {
   return (
@@ -21,7 +21,7 @@ const SubscribeForm = () => {
             type='text'
             placeholder='Enter your email address'
           />
-          <LetterIcon />
+          {/* <LetterIcon /> */}
         </div>
         <button className={css.button}>Subscribe</button>
       </form>
