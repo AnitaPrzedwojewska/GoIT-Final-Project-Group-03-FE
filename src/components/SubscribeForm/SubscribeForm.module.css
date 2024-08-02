@@ -1,0 +1,100 @@
+.subscribeForm {
+  display: block;
+}
+
+.inviteBlock {
+  display: block;
+  color: var(--white2);
+  margin-bottom: 28px;
+}
+
+.inviteTitle {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.inviteText {
+  display: block;
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  background-color: transparent;
+  color: var(--white2);
+  border: 1px solid var(--white2);
+  border-radius: 6px;
+  outline: none;
+  font-size: 10px;
+  line-height: 1.4;
+  width: 204px;
+  height: 38px;
+  padding: 10px 14px;
+}
+
+.label {
+  position: relative;
+}
+
+.button {
+  width: 204px;
+  height: 38px;
+  color: var(--white2);
+  background-color: var(--green1);
+  border: 1px solid var(--grenn1);
+  border-radius: 6px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    flex-direction: row;
+    gap: 12px;
+  }
+  .input {
+    width: 259px;
+    height: 50px;
+    font-size: 14px;
+  }
+  .button {
+    width: 187px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .form {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .input {
+    width: 339px;
+    height: 60px;
+    font-size: 18px;
+  }
+  .button {
+    width: 339px;
+    height: 60px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .inviteBlock {
+    display: none;
+  }
+}
