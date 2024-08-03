@@ -1,6 +1,8 @@
 :root {
   --green1: #8baa36;
   --green2: #ebf3d4;
+  --green3: #3cbc81;
+  --green4: #EBF3D4;
   --white1: #ffffff;
   --white2: #fafafa;
   --white3: #f0f0f0;
@@ -12,7 +14,7 @@
   --grey3: #c4c4c4;
   --grey4: #bdbdbd;
   --red: #e74a3b;
-  --green3: #3cbc81;
+
   --orange: #f6c23e;
   --whiteTransparent: #fafafa80;
   --black2Transparent: #23262a33;
