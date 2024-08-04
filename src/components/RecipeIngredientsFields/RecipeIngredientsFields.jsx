@@ -95,6 +95,9 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
               <option value="ml">ml</option>
               <option value="piece">piece</option>
             </select>
+            <button type="button" onClick={removeIngredientField}>
+              X
+            </button>
           </div>
         ))}
       </div>
