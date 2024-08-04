@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const MainTitle = ({ children }) => {
   return (
     <>
-      <div>MainTitle</div>
+      <h1>Add Recipe</h1>
       <div>{children}</div>
     </>
   );
