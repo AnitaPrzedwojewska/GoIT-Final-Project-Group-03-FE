@@ -118,7 +118,7 @@ RecipeDescriptionFields.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    time: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    time: PropTypes.string.isRequired,
   }).isRequired,
   setFormData: PropTypes.func.isRequired,
 };
