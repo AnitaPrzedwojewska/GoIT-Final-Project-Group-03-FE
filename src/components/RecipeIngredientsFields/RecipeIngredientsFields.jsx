@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import measures from "../../constants/measures";
 
 const RecipeIngredientsFields = ({ formData, setFormData }) => {
   const [ingredientsList, setIngredientsList] = useState([]);
@@ -88,12 +89,12 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
               }
               required
             >
-              <option value="tbs">tbs</option>
-              <option value="tsp">tsp</option>
-              <option value="kg">kg</option>
-              <option value="g">g</option>
-              <option value="ml">ml</option>
-              <option value="piece">piece</option>
+              <option value="">Select cooking time</option>
+              {measures.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </select>
             <button type="button" onClick={removeIngredientField}>
               X
