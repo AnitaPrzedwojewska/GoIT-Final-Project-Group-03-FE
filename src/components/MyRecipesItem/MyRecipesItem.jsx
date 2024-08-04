@@ -1,17 +1,33 @@
 // import css from "./MyRecipesItem.module.css";
 import PropTypes from "prop-types";
 
-const MyRecipesItem = ({ children }) => {
+const MyRecipesItem = ({ recipe, onSeeRecipe, onRemoveRecipe }) => {
+  const { _id, preview, title, description, time } = recipe;
+
   return (
     <>
-      <div>MyRecipesItem</div>
-      <div>{children}</div>
+      <div>
+        <img src={preview} alt={title} />
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <p>Cooking time: {time}</p>
+        <button onClick={() => onSeeRecipe(_id)}>See Recipe</button>
+        <button onClick={() => onRemoveRecipe(_id)}>Remove Recipe</button>
+      </div>
     </>
   );
 };
 
 MyRecipesItem.propTypes = {
-  children: PropTypes.node,
+  recipe: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    preview: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+  }).isRequired,
+  onSeeRecipe: PropTypes.func.isRequired,
+  onRemoveRecipe: PropTypes.func.isRequired,
 };
 
 export default MyRecipesItem;
