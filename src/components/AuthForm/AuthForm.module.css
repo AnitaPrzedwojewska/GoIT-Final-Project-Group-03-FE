@@ -1,0 +1,61 @@
+.form {
+  background-color: var(--grey1);
+  color: var(--white2);
+  width: 335px;
+  height: 315px;
+  padding: 32px 28px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputBox {
+  display: flex;
+  position: relative;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.input {
+  background-color: transparent;
+  color: var(--white2);
+  border: 1px solid var(--white2);
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  height: 38px;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  padding-left: 42px;
+}
+.input::placeholder {
+  margin-left: 42px;
+}
+
+.icon {
+  position: absolute;
+  left: 14px;
+  top: 13px;
+  display: flex;
+  height: 18px;
+  width: 18px;
+  color: var(--white2);
+}
+
+.signupBtn {
+  width: 100%;
+  height: 45px;
+  color: var(--white2);
+  background-color: var(--green1);
+  border: 1px solid var(--green1);
+  border-radius: 6px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.4;
+}

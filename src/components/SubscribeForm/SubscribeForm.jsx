@@ -21,7 +21,7 @@ const SubscribeForm = () => {
             />
           </div>
         </div>
-        <button className={css.button}>Subscribe</button>
+        <button className={css.subscribeBtn}>Subscribe</button>
       </form>
     </div>
   );
