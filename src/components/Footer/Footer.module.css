@@ -18,7 +18,7 @@
   align-items: center;
 }
 
-.sYummyNavSub {
+.sYumNavSub {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@
   gap: 32px;
 }
 
-.sYummyNav {
+.sYumNav {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -37,14 +37,22 @@
 }
 
 .soYummyHeader {
+  display: flex;
+  align-items: center;
   margin-bottom: 24px;
 }
 
-.soYummyTitle {
+.title {
   display: flex;
+  align-items: center;
+  margin-bottom: 24px;
   gap: 8px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.benefits {
+  margin-left: 15px;
 }
 
 .copyrightBox {
@@ -79,11 +87,11 @@
   .footerBox {
     gap: 38px;
   }
-  .soYummyTitle {
+  .title {
     font-size: 28px;
     gap: 12px;
   }
-  .soYummyList {
+  .benefits {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -91,7 +99,7 @@
     margin-left: 16px;
     font-size: 14px;
   }
-  .sYummyNav {
+  .sYumNav {
     flex-direction: row;
     justify-content: space-between;
     /* gap: 173px; */
@@ -109,19 +117,19 @@
   .footerBox {
     gap: 41px;
   }
-  .sYummyNavSub {
+  .sYumNavSub {
     width: 100%;
     flex-direction: row;
     align-items: start;
     gap: 235px;
   }
-  .soYummyList {
+  .benefits {
     gap: 12px;
     margin-top: 40px;
     margin-left: 16px;
     font-size: 18px;
   }
-  /* .sYummyNav {
+  /* .sYumumNav {
     gap: 159px;
   } */
   .copyrightBox {
@@ -130,7 +138,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .soYummyList {
+  .benefits {
     display: none;
   }
 }

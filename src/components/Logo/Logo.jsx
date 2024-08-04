@@ -1,17 +1,19 @@
-// import css from "./Logo.module.css";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-const Logo = ({ children }) => {
+import css from "./Logo.module.css";
+import LogoIcon from '../IconsSVG/LogoIcon';
+
+const Logo = ({colorLogo, colorBkg}) => {
   return (
-    <>
-      <div>Logo</div>
-      <div>{children}</div>
-    </>
+    <div className={css.LogoBkg}>
+      <LogoIcon stroke={colorLogo} fill={colorBkg} />
+    </div>
   );
 };
 
 Logo.propTypes = {
-  children: PropTypes.node,
-};
+  colorLogo: PropTypes.String,
+  colorBkg: PropTypes.String
+}
 
 export default Logo;
