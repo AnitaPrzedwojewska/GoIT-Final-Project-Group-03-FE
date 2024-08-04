@@ -6,7 +6,7 @@ import PopularRecipe from "../../components/PopularRecipe/PopularRecipe";
 const AddRecipesPage = () => {
   return (
     <>
-      <MainTitle></MainTitle>
+      <MainTitle title="Add Recipe"></MainTitle>
       <AddRecipeForm></AddRecipeForm>
       <FollowUs></FollowUs>
       <PopularRecipe></PopularRecipe>
