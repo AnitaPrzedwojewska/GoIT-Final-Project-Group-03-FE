@@ -1,0 +1,22 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 340px;
+}
+.notifationTitle {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    font-feature-settings: "liga" off;
+}
+.notifationDescription {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    font-feature-settings: "liga" off;
+}
