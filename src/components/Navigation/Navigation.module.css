@@ -18,6 +18,10 @@
   color: var(--green1);
 }
 
+.link:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1439px) {
   .navList {
     display: none;
