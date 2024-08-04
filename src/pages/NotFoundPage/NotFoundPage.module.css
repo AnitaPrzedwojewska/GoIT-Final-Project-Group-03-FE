@@ -1,0 +1,31 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.notifationLogo {
+    width: 259px;
+}
+.notifationTitle {
+    font-weight: 600;
+}
+.notifationDescription {
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+    .notifationLogo {
+        width: 498px;
+    }
+    .notifationTitle {
+        font-size: 24px;
+    }
+    .notifationDescription {
+        font-weight: 400;
+        opacity: 0.5;
+    }
+}
+
+/* desktop is same tablet */
