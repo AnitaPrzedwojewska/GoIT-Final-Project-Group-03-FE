@@ -2,21 +2,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 340px;
+}
+.notifationLogo {
+    width: 259px;
 }
 .notifationTitle {
-    font-family: "Poppins";
     font-weight: 600;
-    font-size: 24px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
-    font-feature-settings: "liga" off;
 }
 .notifationDescription {
-    font-family: "Poppins";
     font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
-    font-feature-settings: "liga" off;
+    font-size: 14px;
+    opacity: 0.5;
 }
+
+@media (min-width: 768px) {
+    .notifationLogo {
+        width: 498px;
+    }
+    .notifationTitle {
+        font-size: 24px;
+    }
+    .notifationDescription {
+        font-weight: 400;
+        opacity: 0.5;
+    }
+}
+
+/* desktop is same tablet */
