@@ -1,21 +1,21 @@
-import axios from 'axios';
-import Loader from '../Loader/Loader';
+// import axios from 'axios';
+// import Loader from '../Loader/Loader';
 
 
-const moviesContainer = ; ///
+// const moviesContainer = ; ///
 
-export const categoriesList = [];
+// export const categoriesList = [];
 
-const getCategories = async url => {
-    const categoriesResponse = await axios.get(url);
-    const categoriesArray = categoriesResponse.data.categoryNames;
+// const getCategories = async url => {
+    // const categoriesResponse = await axios.get(url);
+    // const categoriesArray = categoriesResponse.data.categoryNames;
 
-    categoriesArray.map(category => {
-        categoriesList[`${category['id']}`] = category.title; // ?
-    });
+    // categoriesArray.map(category => {
+    //     categoriesList[`${category['id']}`] = category.title; // ?
+    // });
 
-    return categoriesList;
-}
+    // return categoriesList;
+// }
 
 
 //preview
@@ -23,13 +23,13 @@ const getCategories = async url => {
 
 export const defaultGenresURL = '';
 
-export const APIKey = ''; 
+export const APIKey = '';
 
-const getDataFromAPI = async (searchURL = defaultGenresURL) => {
-    categoriesContainer.innerHTML = '';
-    addLoader(); ///
-    const categories = await getCategories(  )
-    
+// const getDataFromAPI = async (searchURL = defaultGenresURL) => {
+//     categoriesContainer.innerHTML = '';
+//     addLoader(); ///
+//     const categories = await getCategories(  )
 
-    removeLoader(); ///
-}
+
+//     removeLoader(); ///
+// }
