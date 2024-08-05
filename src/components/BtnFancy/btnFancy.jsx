@@ -1,7 +1,7 @@
 import css from "./BtnFancy.module.css";
 import PropTypes from "prop-types";
 
-const FancyButton = ({
+const BtnFancy = ({
   width = "",
   height = "",
   fontSize = "",
@@ -28,7 +28,7 @@ const FancyButton = ({
   );
 };
 
-FancyButton.propTypes = {
+BtnFancy.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   fontSize: PropTypes.string,
@@ -38,4 +38,4 @@ FancyButton.propTypes = {
   className: PropTypes.string,
 };
 
-export default FancyButton;
+export default BtnFancy;

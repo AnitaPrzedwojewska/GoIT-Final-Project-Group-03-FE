@@ -1,7 +1,7 @@
 import css from "./BtnClassic.module.css";
 import PropTypes from "prop-types";
 
-const ClassicButton = ({
+const BtnClassic = ({
   width = "",
   height = "",
   fontSize = "",
@@ -28,7 +28,7 @@ const ClassicButton = ({
   );
 };
 
-ClassicButton.propTypes = {
+BtnClassic.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   fontSize: PropTypes.string,
@@ -38,4 +38,4 @@ ClassicButton.propTypes = {
   className: PropTypes.string,
 };
 
-export default ClassicButton;
+export default BtnClassic;

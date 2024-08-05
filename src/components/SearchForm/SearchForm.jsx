@@ -1,4 +1,4 @@
-import FancyButton from "../BtnFancy/btnFancy";
+import FancyButton from "../BtnFancy/BtnFancy";
 import css from "./SearchForm.module.css";
 import PropTypes from "prop-types";
 
