@@ -1,4 +1,4 @@
-import css from "./BtnFancy.module.css";
+import css from './ButonFancy.module.css'
 import PropTypes from "prop-types";
 
 const FancyButton = ({
