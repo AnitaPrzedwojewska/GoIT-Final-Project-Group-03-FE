@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import BtnFancy from "../BtnFancy/butonFancy";
+import ButonFancy from "../ButonFancy/ButonFancy";
 import css from "./SearchForm.module.css";
 
 const SearchForm = ({ onSubmit }) => {
@@ -14,7 +14,7 @@ const SearchForm = ({ onSubmit }) => {
             type='text'
             placeholder='Enter the text'
           />
-          <BtnFancy className={css.greenButton}>Submit</BtnFancy>
+          <ButonFancy className={css.greenButton}>Submit</ButonFancy>
         </div>
       </form>
     </>

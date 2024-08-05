@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import BtnFancy from "../BtnFancy/butonFancy";
+import ButonFancy from "../ButonFancy/ButonFancy";
 
 import css from "./AuthNav.module.css";
 
@@ -8,10 +8,10 @@ const AuthNavOptions = () => {
   return (
     <div className={css.authOptions}>
       <NavLink to='/register'>
-        <BtnFancy className={css.greenButton}>Registration</BtnFancy>
+        <ButonFancy className={css.greenButton}>Registration</ButonFancy>
       </NavLink>
       <NavLink to='/signin'>
-        <BtnFancy className={css.singinButton}>Sing In</BtnFancy>
+        <ButonFancy className={css.singinButton}>Sing In</ButonFancy>
       </NavLink>
     </div>
   );
