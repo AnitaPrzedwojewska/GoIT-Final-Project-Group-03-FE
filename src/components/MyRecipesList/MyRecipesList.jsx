@@ -1,9 +1,11 @@
 // import css from "./MyRecipesList.module.css";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import MainTitle from "../MainTitle/MainTitle";
 import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
+import deleteMyRecipe from "../../api/recipes/deleteMyRecipe";
+import getMyRecipes from "../../api/recipes/getMyRecipes";
 
 const MyRecipesList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -11,24 +13,32 @@ const MyRecipesList = () => {
   const [totalPages, setTotalPages] = useState(1);
   const recipesPerPage = 4;
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchRecipes = async () => {
-      const response = await axios.get(
-        `http://localhost:8000/ownRecipes?page=${currentPage}&limit=${recipesPerPage}`
-      );
-      setRecipes(response.data.recipes);
-      setTotalPages(Math.ceil(response.data.total / recipesPerPage));
+      const response = await getMyRecipes(currentPage, recipesPerPage);
+      if (response.error) {
+        console.error("Error fetching recipes:", response.error);
+      } else {
+        setRecipes(response.recipes);
+        setTotalPages(Math.ceil(response.total / recipesPerPage));
+      }
     };
     fetchRecipes();
   }, [currentPage]);
 
   const handleSeeRecipe = (id) => {
-    window.location.href = `/recipe/${id}`;
+    navigate(`/recipe/${id}`);
   };
 
   const handleRemoveRecipe = async (id) => {
-    await axios.delete(`http://localhost:8000/ownRecipes/${id}`);
-    setRecipes(recipes.filter((recipe) => recipe._id !== id));
+    const response = await deleteMyRecipe(id);
+    if (!response.error) {
+      setRecipes(recipes.filter((recipe) => recipe._id !== id));
+    } else {
+      console.error("Error deleting recipe:", response.error);
+    }
   };
 
   const handlePageChange = (page) => {
@@ -48,7 +58,7 @@ const MyRecipesList = () => {
           />
         ))}
       </div>
-      <div className="pagination">
+      <div>
         {[...Array(totalPages)].map((_, index) => (
           <button
             key={index}
