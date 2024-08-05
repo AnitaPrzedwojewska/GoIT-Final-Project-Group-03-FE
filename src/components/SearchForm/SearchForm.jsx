@@ -1,6 +1,6 @@
-import BtnFancy from "../BtnFancy/BtnFancy";
-import css from "./SearchForm.module.css";
 import PropTypes from "prop-types";
+import BtnFancy from "../BtnFancy/butonFancy";
+import css from "./SearchForm.module.css";
 
 const SearchForm = ({ onSubmit }) => {
   return (
@@ -10,9 +10,9 @@ const SearchForm = ({ onSubmit }) => {
         <div className={css.fancyInput}>
           <input
             className={css.input}
-            id="searchInput"
-            type="text"
-            placeholder="Enter the text"
+            id='searchInput'
+            type='text'
+            placeholder='Enter the text'
           />
           <BtnFancy className={css.greenButton}>Submit</BtnFancy>
         </div>

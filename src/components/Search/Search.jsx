@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import BtnFancy from "../BtnFancy/BtnFancy";
+import BtnFancy from "../BtnFancy/butonFancy";
 
 import PropTypes from "prop-types";
 import css from "./Search.module.css";
