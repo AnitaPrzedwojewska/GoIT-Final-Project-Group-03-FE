@@ -1,4 +1,4 @@
-import css from "./BtnClassic.module.css";
+import css from "./ButonClassic.module.css";
 import PropTypes from "prop-types";
 
 const ClassicButton = ({
