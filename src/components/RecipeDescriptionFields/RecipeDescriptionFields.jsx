@@ -1,10 +1,9 @@
 // import css from "./RecipeDescriptionFields.module.css";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-// import axios from "axios";
 import timeOptions from "../../constants/timeOptions";
 
-import getRecipeCategories from '../../api/recipes/getRecipeCategories.js';
+import getRecipeCategories from "../../api/recipes/getRecipeCategories.js";
 
 const RecipeDescriptionFields = ({ formData, setFormData }) => {
   const [categories, setCategories] = useState([]);
@@ -12,11 +11,8 @@ const RecipeDescriptionFields = ({ formData, setFormData }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        // const response = await axios.get(
-        //   "http://localhost:8000/recipes/category-list"
-        // );
-        const response = getRecipeCategories();
-        setCategories(response.data);
+        const response = await getRecipeCategories();
+        setCategories(response);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -74,8 +70,8 @@ const RecipeDescriptionFields = ({ formData, setFormData }) => {
         >
           <option value="">Select a category</option>
           {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
+            <option key={category.title} value={category.title}>
+              {category.title}
             </option>
           ))}
         </select>
@@ -89,8 +85,8 @@ const RecipeDescriptionFields = ({ formData, setFormData }) => {
             onChange={handleInputChange}
           >
             <option value="">Select cooking time</option>
-            {timeOptions.map((option) => (
-              <option key={option} value={option}>
+            {timeOptions.map((option, index) => (
+              <option key={index} value={option}>
                 {option}
               </option>
             ))}

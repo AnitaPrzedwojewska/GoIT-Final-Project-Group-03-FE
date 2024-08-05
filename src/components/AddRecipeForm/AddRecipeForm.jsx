@@ -1,51 +1,30 @@
 // import css from "./AddRecipeForm.module.css";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-// import axios from "axios";
 
-import addMyRecipe from '../../api/recipes/addMyRecipe';
+import addMyRecipe from "../../api/recipes/addMyRecipe";
 
 import RecipeDescriptionFields from "../RecipeDescriptionFields/RecipeDescriptionFields";
 import RecipeIngredientsFields from "../RecipeIngredientsFields/RecipeIngredientsFields";
 import RecipePreparationFields from "../RecipePreparationFields/RecipePreparationFields";
 
-const AddRecipeForm = () => {
-  const [formData, setFormData] = useState({
-    file: null,
-    title: "",
-    description: "",
-    category: "",
-    time: "",
-    ingredients: [{}],
-    instructions: "",
-  });
-
+const AddRecipeForm = ({ formData, setFormData }) => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formPayload = new formData();
-    formPayload.append("file", formData.file);
-    formPayload.append("title", formData.title);
-    formPayload.append("description", formData.description);
-    formPayload.append("category", formData.category);
-    formPayload.append("time", formData.time);
-    formPayload.append("ingredients", JSON.stringify(formData.ingredients));
-    formPayload.append("instructions", formData.instructions);
+    const form = new FormData();
+    for (const key in formData) {
+      if (key === "ingredients") {
+        form.append(key, JSON.stringify(formData[key]));
+      } else {
+        form.append(key, formData[key]);
+      }
+    }
 
     try {
-      // const response = await axios.post(
-      //   "http://localhost:8000/ownRecipes/add",
-      //   formPayload,
-      //   {
-      //     headers: {
-      //       "Content-Type": "multipart/form/data",
-      //     },
-      //   }
-      // );
-      const response = addMyRecipe(formPayload);
+      const response = addMyRecipe(form);
       console.log("Recipe added successfully:", response.data);
       navigate("/ownRecipes");
     } catch (error) {

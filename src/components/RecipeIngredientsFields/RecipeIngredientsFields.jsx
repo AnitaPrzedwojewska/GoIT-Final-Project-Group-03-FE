@@ -1,10 +1,9 @@
 // import css from "./RecipeIngredientsFields.module.css";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-// import axios from "axios";
 import measures from "../../constants/measures";
 
-import getIngredientsList from '../../api/recipes/getIngredientsList.js'
+import getIngredientsList from "../../api/recipes/getIngredientsList.js";
 
 const RecipeIngredientsFields = ({ formData, setFormData }) => {
   const [ingredientsList, setIngredientsList] = useState([]);
@@ -13,11 +12,8 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
   useEffect(() => {
     const fetchIngredients = async () => {
       try {
-        // const response = await axios.get(
-        //   "http://localhost:8000/ingredients/list"
-        // );
-        const response = getIngredientsList();
-        setIngredientsList(response.data);
+        const response = await getIngredientsList();
+        setIngredientsList(response);
       } catch (error) {
         console.error("Error fetching ingredients", error);
       }
