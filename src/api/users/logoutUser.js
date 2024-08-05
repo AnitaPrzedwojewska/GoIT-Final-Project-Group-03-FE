@@ -1,12 +1,12 @@
 import axios from "axios";
 
 // import apiUrl from "../../services/api.js";
-const apiUrl = "https://localhost:8000";
+import { apiUrl } from "../../constants/apiUrl.js";
+import { endpoints } from "../../constants/apiEndpoints.js";
 
 const logoutUser = async (userId) => {
-  const endpointUrl = "/logout";
 
-  const url = new URL(`${apiUrl}${endpointUrl}`);
+  const url = new URL(`${apiUrl}${endpoints.USER_LOGOUT}`);
   const options = {
     headers: { "Content-Type": "application/json" },
   };

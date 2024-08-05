@@ -4,18 +4,15 @@ import axios from "axios";
 import { apiUrl } from "../../constants/apiUrl.js";
 import { endpoints } from "../../constants/apiEndpoints.js";
 
-const loginUser = async (userData) => {
+const updateUser = async (userData) => {
 
-  const url = new URL(`${apiUrl}${endpoints.USER_LOGIN}`);
+  const url = new URL(`${apiUrl}${endpoints.USER_UPDATE}`);
   const options = {
     headers: { "Content-Type": "application/json" },
   };
 
   try {
-    console.log("apiUrl: ", String(url));
-    console.log("userData: ", userData);
-    const response = await axios.post(url, userData, options);
-    console.log("response: ", response);
+    const response = await axios.patch(url, userData, options);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -23,4 +20,4 @@ const loginUser = async (userData) => {
   }
 };
 
-export default loginUser;
+export default updateUser;
