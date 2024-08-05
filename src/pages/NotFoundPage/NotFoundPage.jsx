@@ -1,5 +1,5 @@
 import css from "./NotFoundPage.module.css";
-import pnfLogo from "../../../public/images/404.png";
+import pnfLogo from "/images/404.png";
 
 const NotFoundPage = () => {
     return (
