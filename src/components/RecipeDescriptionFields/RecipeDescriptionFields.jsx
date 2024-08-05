@@ -1,8 +1,10 @@
 // import css from "./RecipeDescriptionFields.module.css";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import timeOptions from "../../constants/timeOptions";
+
+import getRecipeCategories from '../../api/recipes/getRecipeCategories.js';
 
 const RecipeDescriptionFields = ({ formData, setFormData }) => {
   const [categories, setCategories] = useState([]);
@@ -10,9 +12,10 @@ const RecipeDescriptionFields = ({ formData, setFormData }) => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8000/recipes/category-list"
-        );
+        // const response = await axios.get(
+        //   "http://localhost:8000/recipes/category-list"
+        // );
+        const response = getRecipeCategories();
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
