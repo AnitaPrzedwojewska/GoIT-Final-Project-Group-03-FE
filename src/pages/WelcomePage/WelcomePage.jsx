@@ -1,4 +1,4 @@
-import css from './WelcomePage.module.css';
+import css from "./WelcomePage.module.css";
 
 import AuthNav from "../../components/AuthNav/AuthNav";
 

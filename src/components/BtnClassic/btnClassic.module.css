@@ -5,8 +5,8 @@
 /*-----------------------------------------------------------------------------------------------*/
 
 .subscribeClassicButton {
-  background-color: var(--green-color);
-  color: var(--white-text);
+  background-color: var(--green1);
+  color: var(--white2);
   padding: 11px 67px;
 }
 @media (min-width: 750px) {
@@ -22,12 +22,12 @@
 }
 
 .subscribeClassicButton:hover {
-  color: var(--buttons-background);
+  color: var(--black3);
 }
 /*----------------------------------------------------------------------*/
 .registerClassicButton {
-  background-color: var(--green-color);
-  color: var(--white-text);
+  background-color: var(--green1);
+  color: var(--white2);
   width: 279px;
   height: 45px;
   padding: 14px 110px;
@@ -46,7 +46,7 @@
 }
 
 .registerClassicButton:hover {
-  color: var(--buttons-background);
+  color: var(--black3);
 }
 /*-----------------------------------------------------------------------------------------------*/
 .smallClassicButton {
@@ -60,17 +60,17 @@
 /*-----------------------------------------------------------------------------------------------*/
 
 .buttonCancel {
-  background: var(--grey-background);
-  color: var(--dark-grey-text);
+  background: var(--grey2);
+  color: var(--black2);
 }
 .buttonCancel:hover {
-  background-color: var(--white-color);
+  background-color: var(--white1);
 }
 /*-----------------------------------------------------------------------------------------------*/
 
 .buttonLogout {
-  background: var(--green-color);
+  background: var(--green1);
 }
 .buttonLogout:hover {
-  background-color: var(--buttons-background);
+  background-color: var(--black3);
 }

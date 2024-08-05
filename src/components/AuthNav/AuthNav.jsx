@@ -4,10 +4,11 @@ import LogoIcon from "../IconsSVG/LogoIcon";
 import AuthNavWelcome from "./AuthNavWelcome";
 import AuthOptions from "./AuthNavOptions";
 
+
 const AuthNav = () => {
   return (
     <div className={css.authNav}>
-      <LogoIcon />
+      <LogoIcon className={css.logoIcon} />
       <AuthNavWelcome />
       <AuthOptions />
     </div>

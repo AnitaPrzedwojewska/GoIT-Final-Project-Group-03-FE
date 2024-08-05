@@ -2,20 +2,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
-  padding: 50px;
 }
 
 .welcome {
-  color: var(--white2)
+  color: var(--white2);
+  width: 305px;
+}
+@media (min-width: 750px) {
+  .welcome {
+    width: 500px;
+  }
+}
+@media (min-width: 1025px) {
+  .welcome {
+    width: 540px;
+  }
+}
+.logoIcon {
+  width: 68px;
+  height: 68px;
+}
+@media (max-width: 750px) {
+  .logoIcon {
+    width: 54px;
+    height: 54px;
+  }
 }
 
 .title {
   font-size: 24px;
+  text-align: center;
 }
 
 .text {
   font-size: 16px;
+  text-align: center;
 }
 
 .authOptions {
@@ -25,5 +48,25 @@
 
 .registerBtn {
   background-color: var(--green2);
-  
+}
+
+.singinButton {
+  background-color: transparent;
+  border: 2px solid var(--white2);
+  width: 141px;
+  height: 67px;
+}
+.singinButton:hover {
+  color: var(--green1);
+  border: 2px solid var(--green1);
+}
+
+.greenButton {
+  background-color: var(--green1);
+  border: none;
+  width: 184px;
+  height: 67px;
+}
+.greenButton:hover {
+  background-color: var(--black3);
 }
