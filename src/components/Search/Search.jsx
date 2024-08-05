@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import BtnFancy from "../BtnFancy/BtnFancy";
+import ButonFancy from "../ButonFancy/ButonFancy";
 
 import PropTypes from "prop-types";
 import css from "./Search.module.css";
@@ -18,7 +18,7 @@ const Search = ({ children, onSubmit }) => {
             type='text'
             placeholder='Enter the text'
           />
-          <BtnFancy className={css.blackButton}>Submit</BtnFancy>
+          <ButonFancy className={css.blackButton}>Submit</ButonFancy>
         </div>
       </form>
       <NavLink to='/search'>Search</NavLink>
