@@ -1,6 +1,7 @@
-// import { useState } from 'react'
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import SharedLayout from "./pages/SharedLayout/SharedLayout";
 import MainPage from "./pages/MainPage/MainPage";
@@ -19,20 +20,98 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<WelcomePage />} />
-          <Route path="register" element={<RegisterPage />} />
-          <Route path="signin" element={<SigninPage />} />
-          <Route path="main" element={<MainPage />} />
-          <Route path="categories/:categoryName" element={<CategoriesPage />} />
-          <Route path="recipe/:recipeId" element={<RecipePage />} />
-          <Route path="add" element={<AddRecipesPage />} />
-          <Route path="my" element={<MyRecipesPage />} />
-          <Route path="favorite" element={<FavoritePage />} />
-          <Route path="shopping-list" element={<ShoppingListPage />} />
-          <Route path="search" element={<SearchPage />} />
+        <Route path='/' element={<SharedLayout />}>
+          <Route index element={<Navigate to='/main' />} />
+
+          <Route
+            path='main'
+            element={
+              <PrivateRoute component={<MainPage />} redirectTo={"/welcome"} />
+            }
+          />
+          <Route
+            path='categories/:categoryName'
+            element={
+              <PrivateRoute
+                component={<CategoriesPage />}
+                redirectTo={"/welcome"}
+              />
+            }
+          />
+          <Route
+            path='recipes'
+            element={
+              <PrivateRoute
+                component={<RecipePage />}
+                redirectTo={"/welcome"}
+              />
+            }
+          />
+          <Route
+            path='add'
+            element={
+              <PrivateRoute
+                component={<AddRecipesPage />}
+                redirectTo={"/welcome"}
+              />
+            }
+          />
+          <Route
+            path='my'
+            element={
+              <PrivateRoute
+                component={<MyRecipesPage />}
+                redirectTo={"/welcome"}
+              />
+            }
+          />
+          <Route
+            path='favorite'
+            element={
+              <PrivateRoute
+                component={<FavoritePage />}
+                redirectTo={"/welcome"}
+              />
+            }
+          />
+          <Route
+            path='shopping-list'
+            element={
+              <PrivateRoute
+                component={<ShoppingListPage />}
+                redirectTo={"/welcome"}
+              />
+            }
+          />
+          <Route
+            path='search'
+            element={
+              <PrivateRoute
+                component={<SearchPage />}
+                redirectTo={"/welcome"}
+              />
+            }
+          />
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
+        <Route
+          path='/welcome'
+          element={
+            <RestrictedRoute component={<WelcomePage />} redirectTo={"/"} />
+          }
+        />
+        <Route
+          path='/register'
+          element={
+            <RestrictedRoute component={<RegisterPage />} redirectTo={"/"} />
+          }
+        />
+        <Route
+          path='/signin'
+          element={
+            <RestrictedRoute component={<SigninPage />} redirectTo={"/"} />
+          }
+        />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </>
   );
