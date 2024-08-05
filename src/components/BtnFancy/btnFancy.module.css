@@ -1,31 +1,31 @@
 .fancyButton {
   border-radius: 24px 44px;
   padding: 6px 14px;
-  color: var(--white-text);
+  color: var(--white2);
   font-size: 16px;
   line-height: 24px;
 }
 /*-------------------------------------------------------------------------*/
 .greenButton {
-  background-color: var(--green-color);
+  background-color: var(--green1);
 }
 .greenButton:hover {
-  background-color: var(--buttons-background);
+  background-color: var(--black3);
 }
 /*-------------------------------------------------------------------------*/
 
 .blackButton {
-  background-color: var(--buttons-background);
+  background-color: var(--black3);
 }
 .blackButton:hover {
-  background-color: var(--green-color);
+  background-color: var(--green1);
 }
 /*-------------------------------------------------------------------------*/
 
 .transparentButton {
-  color: var(--buttons-background);
+  color: var(--black2);
   background-color: transparent;
-  border: 2px solid var(--green-color);
+  border: 2px solid var(--green1);
 }
 @media (min-width: 750px) {
   .transparentButton {
@@ -35,19 +35,19 @@
 }
 
 .transparentButton:hover {
-  color: var(--white-text);
-  background-color: var(--green-color);
+  color: var(--white2);
+  background-color: var(--green1);
   border: 2px solid transparent;
 }
 /*-------------------------------------------------------------------------*/
 
 .singinButton {
   background-color: transparent;
-  border: 2px solid var(--white-text);
+  border: 2px solid var(--white2);
   width: 141px;
   height: 67px;
 }
 .singinButton:hover {
-  color: var(--green-color);
-  border: 2px solid var(--green-color);
+  color: var(--green1);
+  border: 2px solid var(--green1);
 }

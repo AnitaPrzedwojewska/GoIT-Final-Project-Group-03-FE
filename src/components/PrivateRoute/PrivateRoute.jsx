@@ -2,7 +2,7 @@
 import { Navigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 // const PrivateRoute = () => {
 const PrivateRoute = ({ component: Component, redirectTo = "/" }) => {
