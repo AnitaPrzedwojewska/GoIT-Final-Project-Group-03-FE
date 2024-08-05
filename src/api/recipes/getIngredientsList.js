@@ -4,12 +4,11 @@ import axios from "axios";
 import { apiUrl } from "../../constants/apiUrl.js";
 import { endpoints } from "../../constants/apiEndpoints.js";
 
-const deleteMyRecipe = async (recipeId) => {
-
-  const url = new URL(`${apiUrl}${endpoints.MY_RECIPES_DELETE}/${recipeId}`);
+const getIngredientsList = async () => {
+  const url = new URL(`${apiUrl}${endpoints.INGREDIENTS_LIST}`);
 
   try {
-    const response = await axios.delete(url, recipeId);
+    const response = await axios.get(url);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -17,4 +16,4 @@ const deleteMyRecipe = async (recipeId) => {
   }
 };
 
-export default deleteMyRecipe;
+export default getIngredientsList;
