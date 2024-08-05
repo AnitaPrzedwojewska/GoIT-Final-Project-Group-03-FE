@@ -1,17 +1,38 @@
-// import css from "./UserLogo.module.css";
+import css from "./UserLogo.module.css";
 import PropTypes from "prop-types";
+import NameIcon from "../IconsSVG/NameIcon"; // Upewnij się, że ścieżka jest poprawna
 
-const UserLogo = ({ children }) => {
+const UserLogo = ({ user }) => {
   return (
     <>
-      <div>UserLogo</div>
-      <div>{children}</div>
+      <div
+        className={css.userImage}
+        style={{
+          backgroundImage: user.image ? `url(${user.image})` : "none",
+        }}
+      >
+        {!user.image && (
+          <NameIcon width={"20px"} height={"20px"} className={css.svgIcon} />
+        )}
+      </div>
+      <div className={css.userName}>{user.name}</div>{" "}
+      {/* Przywrócony user.name */}
     </>
   );
 };
 
 UserLogo.propTypes = {
-  children: PropTypes.node,
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string,
+  }).isRequired,
+};
+
+UserLogo.defaultProps = {
+  user: {
+    name: "Alicja",
+    image: "",
+  },
 };
 
 export default UserLogo;
