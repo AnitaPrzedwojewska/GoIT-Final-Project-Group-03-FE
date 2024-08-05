@@ -1,11 +1,12 @@
 import axios from "axios";
 
-import apiUrl from "../../services/api.js";
+// import apiUrl from "../../services/api.js";
+import { apiUrl } from "../../constants/apiUrl.js";
+import { endpoints } from "../../constants/apiEndpoints.js";
 
-export const deleteMyRecipe = async (page = 1, limit = 4) => {
-  const endpointUrl = "/ownRecipes";
+const getMyRecipes = async (page = 1, limit = 4) => {
 
-  const url = new URL(`${apiUrl}${endpointUrl}?page=${page}&limit=${limit}`);
+  const url = new URL(`${apiUrl}${endpoints.MY_RECIPES_GET}?page=${page}&limit=${limit}`);
   try {
     const response = await axios.get(url);
     return response.data;
@@ -14,3 +15,5 @@ export const deleteMyRecipe = async (page = 1, limit = 4) => {
     return error.message;
   }
 };
+
+export default getMyRecipes;

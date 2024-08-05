@@ -1,11 +1,12 @@
 import axios from "axios";
 
-import apiUrl from "../../services/api.js";
+// import apiUrl from "../../services/api.js";
+import { apiUrl } from "../../constants/apiUrl.js";
+import { endpoints } from "../../constants/apiEndpoints.js";
 
-export const addMyRecipe = async (recipeData) => {
-  const endpointUrl = "/ownRecipes/add";
+const addMyRecipe = async (recipeData) => {
 
-  const url = new URL(`${apiUrl}${endpointUrl}`);
+  const url = new URL(`${apiUrl}${endpoints.MY_RECIPES_ADD}`);
   const options = {
     headers: { "Content-Type": "multipart/form-data" },
   };
@@ -18,3 +19,5 @@ export const addMyRecipe = async (recipeData) => {
     return error.message;
   }
 };
+
+export default addMyRecipe;
