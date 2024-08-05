@@ -2,7 +2,9 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+
+import addMyRecipe from '../../api/recipes/addMyRecipe';
 
 import RecipeDescriptionFields from "../RecipeDescriptionFields/RecipeDescriptionFields";
 import RecipeIngredientsFields from "../RecipeIngredientsFields/RecipeIngredientsFields";
@@ -34,15 +36,16 @@ const AddRecipeForm = () => {
     formPayload.append("instructions", formData.instructions);
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/ownRecipes/add",
-        formPayload,
-        {
-          headers: {
-            "Content-Type": "multipart/form/data",
-          },
-        }
-      );
+      // const response = await axios.post(
+      //   "http://localhost:8000/ownRecipes/add",
+      //   formPayload,
+      //   {
+      //     headers: {
+      //       "Content-Type": "multipart/form/data",
+      //     },
+      //   }
+      // );
+      const response = addMyRecipe(formPayload);
       console.log("Recipe added successfully:", response.data);
       navigate("/ownRecipes");
     } catch (error) {
