@@ -1,4 +1,4 @@
-import MainTitle from "../../components/MainPageTitle/MainTitle";
+import MainTitle from "../../components/MainTitle/MainTitle";
 import MyRecipesList from "../../components/MyRecipesList/MyRecipesList";
 import Paginator from "../../components/Paginator/Paginator";
 
