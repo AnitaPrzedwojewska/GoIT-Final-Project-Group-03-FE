@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-import { apiUrl } from "../../services/api";
+import { apiUrl, showApiUrl } from "../../services/api.js";
 
-axios.defaults.baseURL = apiUrl;
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -17,7 +17,8 @@ export const register = createAsyncThunk(
   "auth/register",
   async (credentials, thunkAPI) => {
     try {
-      // endpoint do ewentualnej zmiany, jak będzie BE
+      showApiUrl();
+      console.log('apiUrl: ', apiUrl);
       const response = await axios.post("/register", credentials);
       setAuthHeader(response.data.token);
       return response.data;
@@ -27,9 +28,8 @@ export const register = createAsyncThunk(
   }
 );
 
-export const logIn = createAsyncThunk("auth/login", async (credentials, thunkAPI) => {
+export const login = createAsyncThunk("auth/login", async (credentials, thunkAPI) => {
   try {
-    // endpoint do ewentualnej zmiany, jak będzie BE
     const response = await axios.post("/login", credentials);
     setAuthHeader(response.data.token);
     return response.data;
@@ -38,7 +38,7 @@ export const logIn = createAsyncThunk("auth/login", async (credentials, thunkAPI
   }
 });
 
-export const logOut = createAsyncThunk(
+export const logout = createAsyncThunk(
   "auth/logout",
   async (_, thunkAPI) => {
     try {
@@ -51,7 +51,7 @@ export const logOut = createAsyncThunk(
   }
 );
 
-export const refreshUser = createAsyncThunk(
+export const refresh = createAsyncThunk(
   "auth/refresh",
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
