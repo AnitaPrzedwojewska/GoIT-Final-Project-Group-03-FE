@@ -1,4 +1,4 @@
-import FancyButton from "../BtnFancy/btnFancy";
+import BtnFancy from "../BtnFancy/BtnFancy";
 import css from "./SearchForm.module.css";
 import PropTypes from "prop-types";
 
@@ -14,7 +14,7 @@ const SearchForm = ({ onSubmit }) => {
             type="text"
             placeholder="Enter the text"
           />
-          <FancyButton className={css.greenButton}>Submit</FancyButton>
+          <BtnFancy className={css.greenButton}>Submit</BtnFancy>
         </div>
       </form>
     </>
