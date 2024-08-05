@@ -1,17 +1,28 @@
-// import css from "./ThemeToggler.module.css";
-import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
+import css from "./ThemeToggler.module.css";
 
-const ThemeToggler = ({ children }) => {
+const ThemeToggler = () => {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("dark-theme", isDarkTheme);
+  }, [isDarkTheme]);
+
+  const handleToggle = () => {
+    setIsDarkTheme((prev) => !prev);
+  };
+
   return (
     <>
-      <div>ThemeToggler</div>
-      <div>{children}</div>
+      <input
+        className={css.slider}
+        type="checkbox"
+        id="switch"
+        onChange={handleToggle}
+      />
+      <label className={css.sliderLabel} htmlFor="switch"></label>
     </>
   );
-};
-
-ThemeToggler.propTypes = {
-  children: PropTypes.node,
 };
 
 export default ThemeToggler;

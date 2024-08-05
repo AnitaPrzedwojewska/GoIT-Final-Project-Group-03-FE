@@ -26,5 +26,12 @@
   .container {
     width: 1440px;
     padding: 64px 100px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .rightHeader {
+    display: flex;
+    align-items: center;
   }
 }
