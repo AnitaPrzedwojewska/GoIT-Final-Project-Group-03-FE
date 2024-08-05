@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-import FancyButton from "../BtnFancy/BtnFancy";
+import BtnFancy from "../BtnFancy/BtnFancy";
 
-import css from "./Search.module.css";
 import PropTypes from "prop-types";
+import css from "./Search.module.css";
 
 const Search = ({ children, onSubmit }) => {
   return (
@@ -14,14 +14,14 @@ const Search = ({ children, onSubmit }) => {
         <div className={css.fancyInput}>
           <input
             className={css.input}
-            id="mainInput"
-            type="text"
-            placeholder="Enter the text"
+            id='mainInput'
+            type='text'
+            placeholder='Enter the text'
           />
-          <FancyButton className={css.blackButton}>Submit</FancyButton>
+          <BtnFancy className={css.blackButton}>Submit</BtnFancy>
         </div>
       </form>
-      <NavLink to="/search">Search</NavLink>
+      <NavLink to='/search'>Search</NavLink>
     </>
   );
 };
