@@ -1,26 +1,42 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
-import WelcomePage from "./pages/WelcomePage/WelcomePage";
-import SharedLayout from "./pages/SharedLayout/SharedLayout";
-import MainPage from "./pages/MainPage/MainPage";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import SigninPage from "./pages/SigninPage/SigninPage";
-import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
-import RecipePage from "./pages/RecipePage/RecipePage";
+// import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+// import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
-import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
+import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import FavoritePage from "./pages/FavoritePage/FavoritePage";
-import ShoppingListPage from "./pages/ShoppingListPage/ShoppingListPage";
-import SearchPage from "./pages/SearchPage/SearchPage";
+import MainPage from "./pages/MainPage/MainPage";
+import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import RecipePage from "./pages/RecipePage/RecipePage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import SharedLayout from "./pages/SharedLayout/SharedLayout";
+import ShoppingListPage from "./pages/ShoppingListPage/ShoppingListPage";
+import SigninPage from "./pages/SigninPage/SigninPage";
+import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 const App = () => {
   return (
     <>
       <Routes>
         <Route path='/' element={<SharedLayout />}>
+          <Route index element={<Navigate to='/welcome' />} />
+
+          <Route path='main' element={<MainPage />} />
+          <Route path='categories/:categoryName' element={<CategoriesPage />} />
+          <Route path='recipes' element={<RecipePage />} />
+          <Route path='add' element={<AddRecipesPage />} />
+          <Route path='my' element={<MyRecipesPage />} />
+          <Route path='favorite' element={<FavoritePage />} />
+          <Route path='shopping-list' element={<ShoppingListPage />} />
+          <Route path='search' element={<SearchPage />} />
+          <Route path='/welcome' element={<WelcomePage />} />
+          <Route path='/register' element={<RegisterPage />} />
+          <Route path='/signin' element={<SigninPage />} />
+        </Route>
+        <Route path='*' element={<NotFoundPage />} />
+        {/* <Route path='/' element={<SharedLayout />}>
           <Route index element={<Navigate to='/main' />} />
 
           <Route
@@ -111,7 +127,7 @@ const App = () => {
             <RestrictedRoute component={<SigninPage />} redirectTo={"/"} />
           }
         />
-        <Route path='*' element={<NotFoundPage />} />
+        <Route path='*' element={<NotFoundPage />} /> */}
       </Routes>
     </>
   );
