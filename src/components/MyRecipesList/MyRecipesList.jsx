@@ -17,18 +17,6 @@ const MyRecipesList = () => {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      // const response = await getMyRecipes(currentPage, recipesPerPage);
-      // if (response.error) {
-      //   console.error("Error fetching recipes:", response.error);
-      // } else {
-      //   if (response.data && response.data.results) {
-      //     setRecipes(response.data.results);
-      //     setTotalPages(Math.ceil(response.data.total / recipesPerPage));
-      //   } else {
-      //     setRecipes([]);
-      //     setTotalPages(1);
-      //   }
-      // }
       const response = await getMyRecipes(currentPage, recipesPerPage);
       if (response.error) {
         console.error("Error fetching recipes:", response.error);
