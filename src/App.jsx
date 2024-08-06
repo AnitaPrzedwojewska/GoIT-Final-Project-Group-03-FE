@@ -1,4 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+
+import setAxiosDefault from "./config.js/axios";
 
 // import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 // import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
@@ -17,6 +20,11 @@ import SigninPage from "./pages/SigninPage/SigninPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 const App = () => {
+
+  useEffect(() => {
+    setAxiosDefault();
+  }, []);
+
   return (
     <>
       <Routes>
