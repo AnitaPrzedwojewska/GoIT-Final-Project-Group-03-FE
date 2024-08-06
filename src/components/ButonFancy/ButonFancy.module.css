@@ -27,7 +27,7 @@
   background-color: transparent;
   border: 2px solid var(--green1);
 }
-@media (min-width: 750px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .transparentButton {
     font-size: 16px;
     line-height: 24px;

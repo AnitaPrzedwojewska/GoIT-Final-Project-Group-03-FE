@@ -45,7 +45,7 @@
   background-color: var(--green1);
 }
 
-@media (min-width: 750px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .fancyInput {
     width: 362px;
     height: 59px;
@@ -58,12 +58,17 @@
     line-height: 24px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1440px) and (max-width: 2000px) {
   .fancyInput {
     width: 510px;
     height: 70px;
   }
+  .blackButton {
+    width: 161px;
+  }
   .input {
     margin-left: 48px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
