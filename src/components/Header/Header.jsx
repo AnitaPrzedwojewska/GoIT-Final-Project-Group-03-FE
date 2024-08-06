@@ -8,16 +8,23 @@ import ThemeToggler from "../ThemeToggler/ThemeToggler";
 import HamburgerNavigation from "../Navigation/HamburgerNavigation";
 
 const Header = () => {
+  const handleCheckboxChange = (event) => {
+    const sidebar = document.getElementById("navList");
+    sidebar.style.display = event.target.checked ? "block" : "none";
+  };
   return (
     <div className={css.header}>
+      <label className={hamburger.hamburgerMenu}>
+        <input type="checkbox" onChange={handleCheckboxChange} />
+      </label>
+      <aside className={hamburger.sidebar} id="navList">
+        <div className={css.hamburgerLogo}>
+          <Logo />
+        </div>
+        <HamburgerNavigation></HamburgerNavigation>
+      </aside>
       <div className={css.container}>
         <Logo></Logo>
-        <label className={hamburger.hamburgerMenu}>
-          <input type="checkbox" />
-        </label>
-        <aside className={hamburger.sidebar} id="navList">
-          <HamburgerNavigation></HamburgerNavigation>
-        </aside>
         <Navigation></Navigation>
         <div className={css.rightHeader}>
           <UserLogo></UserLogo>
