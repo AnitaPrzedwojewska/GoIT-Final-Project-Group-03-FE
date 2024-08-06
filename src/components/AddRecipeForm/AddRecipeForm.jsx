@@ -26,7 +26,7 @@ const AddRecipeForm = ({ formData, setFormData }) => {
     try {
       const response = addMyRecipe(form);
       console.log("Recipe added successfully:", response.data);
-      navigate("/ownRecipes");
+      navigate("/my");
     } catch (error) {
       console.error("Error adding recipe:", error);
     }

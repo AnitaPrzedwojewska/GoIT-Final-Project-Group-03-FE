@@ -21,8 +21,13 @@ const MyRecipesList = () => {
       if (response.error) {
         console.error("Error fetching recipes:", response.error);
       } else {
-        setRecipes(response.recipes);
-        setTotalPages(Math.ceil(response.total / recipesPerPage));
+        if (response.data && response.data.results) {
+          setRecipes(response.data.results);
+          setTotalPages(Math.ceil(response.data.total / recipesPerPage));
+        } else {
+          setRecipes([]);
+          setTotalPages(1);
+        }
       }
     };
     fetchRecipes();
@@ -49,14 +54,18 @@ const MyRecipesList = () => {
     <>
       <MainTitle title="My Recipes"></MainTitle>
       <div>
-        {recipes.map((recipe) => (
-          <MyRecipesItem
-            key={recipe._id}
-            recipe={recipe}
-            onSeeRecipe={handleSeeRecipe}
-            onRemoveRecipe={handleRemoveRecipe}
-          />
-        ))}
+        {recipes.length > 0 ? (
+          recipes.map((recipe) => (
+            <MyRecipesItem
+              key={recipe._id}
+              recipe={recipe}
+              onSeeRecipe={handleSeeRecipe}
+              onRemoveRecipe={handleRemoveRecipe}
+            />
+          ))
+        ) : (
+          <p>No recipes added yet</p>
+        )}
       </div>
       <div>
         {[...Array(totalPages)].map((_, index) => (
