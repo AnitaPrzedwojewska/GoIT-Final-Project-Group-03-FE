@@ -1,11 +1,9 @@
 import axios from "axios";
 
-// import apiUrl from "../../services/api.js";
-import { apiUrl } from "../../constants/apiUrl.js";
-import { endpoints } from "../../constants/apiEndpoints.js";
+import endpoints from "../../constants/apiEndpoints.js";
 
 const deleteMyRecipe = async (recipeId) => {
-  const url = new URL(`${apiUrl}${endpoints.MY_RECIPES_DELETE}/${recipeId}`);
+  const url = `${endpoints.MY_RECIPES_DELETE}/${recipeId}`;
 
   try {
     const response = await axios.delete(url);

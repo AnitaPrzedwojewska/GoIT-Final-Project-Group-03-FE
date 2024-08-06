@@ -1,18 +1,13 @@
 import axios from "axios";
 
-// import apiUrl from "../../services/api.js";
-import { apiUrl } from "../../constants/apiUrl.js";
-import { endpoints } from "../../constants/apiEndpoints.js";
+import endpoints from "../../constants/apiEndpoints.js";
 
 const getUser = async (userId) => {
 
-  const url = new URL(`${apiUrl}${endpoints.USER_CURRENT}`);
-  const options = {
-    headers: { "Content-Type": "application/json" },
-  };
+  const url = endpoints.USER_CURRENT;
 
   try {
-    const response = await axios.post(url, userId, options);
+    const response = await axios.post(url, userId);
     return response.data;
   } catch (error) {
     console.log(error);

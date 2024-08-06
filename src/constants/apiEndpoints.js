@@ -1,4 +1,4 @@
-export const endpoints = {
+const endpoints = {
   USER_REGISTER: "/users/register",
   USER_LOGIN: "/users/login",
   USER_LOGOUT: "/users/logout",
@@ -18,3 +18,5 @@ export const endpoints = {
   INGREDIENTS_LIST: "/ingredients/list",
   RECIPES_BY_INGREDIENTS_ID: "/ingredients/:ingredient",
 };
+
+export default endpoints;
