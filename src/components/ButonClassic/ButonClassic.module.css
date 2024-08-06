@@ -48,29 +48,3 @@
 .registerClassicButton:hover {
   color: var(--black3);
 }
-/*-----------------------------------------------------------------------------------------------*/
-.smallClassicButton {
-  height: 49px;
-}
-@media (min-width: 750px) {
-  .smallClassicButton {
-    height: 59px;
-  }
-}
-/*-----------------------------------------------------------------------------------------------*/
-
-.buttonCancel {
-  background: var(--grey2);
-  color: var(--black2);
-}
-.buttonCancel:hover {
-  background-color: var(--white1);
-}
-/*-----------------------------------------------------------------------------------------------*/
-
-.buttonLogout {
-  background: var(--green1);
-}
-.buttonLogout:hover {
-  background-color: var(--black3);
-}
