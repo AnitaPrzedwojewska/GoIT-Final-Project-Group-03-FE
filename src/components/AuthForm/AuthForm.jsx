@@ -1,17 +1,19 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { register, login } from "../../redux/auth/auth.operations";
 
 import css from "./AuthForm.module.css";
 
+import routes from '../../constants/routes';
 import NameIcon from "../IconsSVG/NameIcon";
 import EmailIcon from "../IconsSVG/EmailIcon";
 import PasswordIcon from "../IconsSVG/PasswordIcon";
 
 const AuthForm = () => {
   const location = useLocation();
-  const registration = location.pathname === '/register';
+  const registration = location.pathname === `/${routes.REGISTER}`;
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -28,19 +30,17 @@ const AuthForm = () => {
           password: form.elements.password.value,
         })
       );
-      // jeśli nie wszystko z poprawnością danych było ok, to obsługa błędu
-    }
-    else {
-      // kod do sprawdzania poprawności wprowadzonych danych
-      // a jeśli wszystko w porządku to do dzieła
+      navigate(`/${routes.LOGIN}`);
+    } else {
       dispatch(
         login({
           email: form.elements.email.value,
           password: form.elements.password.value,
         })
       );
-      // jeśli nie wszystko z poprawnością danych było ok, to obsługa błędu
+      navigate(`/${routes.MAIN}`);
     }
+    // jeśli nie wszystko z poprawnością danych było ok, to obsługa błędu
     form.reset();
   };
 

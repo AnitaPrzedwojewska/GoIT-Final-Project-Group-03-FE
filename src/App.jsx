@@ -1,7 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
-// import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-// import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
+import setAxiosDefault from "./config.js/axios";
+
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import FavoritePage from "./pages/FavoritePage/FavoritePage";
@@ -17,10 +20,15 @@ import SigninPage from "./pages/SigninPage/SigninPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 const App = () => {
+
+  useEffect(() => {
+    setAxiosDefault();
+  }, []);
+
   return (
     <>
       <Routes>
-        <Route path='/' element={<SharedLayout />}>
+        {/* <Route path='/' element={<SharedLayout />}>
           <Route index element={<Navigate to='/welcome' />} />
 
           <Route path='main' element={<MainPage />} />
@@ -35,8 +43,8 @@ const App = () => {
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/signin' element={<SigninPage />} />
         </Route>
-        <Route path='*' element={<NotFoundPage />} />
-        {/* <Route path='/' element={<SharedLayout />}>
+        <Route path='*' element={<NotFoundPage />} /> */}
+        <Route path='/' element={<SharedLayout />}>
           <Route index element={<Navigate to='/main' />} />
 
           <Route
@@ -127,7 +135,7 @@ const App = () => {
             <RestrictedRoute component={<SigninPage />} redirectTo={"/"} />
           }
         />
-        <Route path='*' element={<NotFoundPage />} /> */}
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </>
   );

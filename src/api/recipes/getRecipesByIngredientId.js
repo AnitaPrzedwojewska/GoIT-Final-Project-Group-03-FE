@@ -1,17 +1,12 @@
 import axios from "axios";
 
-// import apiUrl from "../../services/api.js";
-import { apiUrl } from "../../constants/apiUrl.js";
-import { endpoints } from "../../constants/apiEndpoints.js";
+import endpoints from "../../constants/apiEndpoints.js";
 
 const getRecipesByIngredientId = async (ingredientId) => {
-  const url = new URL(`${apiUrl}${endpoints.RECIPE_BY_ID}`);
-  const options = {
-    headers: { "Content-Type": "application/json" },
-  };
+  const url = endpoints.RECIPES_BY_INGREDIENTS_ID;
 
   try {
-    const response = await axios.get(url, ingredientId, options);
+    const response = await axios.get(url, ingredientId);
     return response.data;
   } catch (error) {
     console.log(error);

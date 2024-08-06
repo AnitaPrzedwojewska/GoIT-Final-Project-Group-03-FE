@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import useAuth from "../../hooks/useAuth";
 
 import css from "./UserLogo.module.css";
 import PropTypes from "prop-types";
@@ -7,12 +8,8 @@ import PropTypes from "prop-types";
 import NameIcon from "../IconsSVG/NameIcon";
 import UserLogoModal from "../UserLogoModal/UserLogoModal";
 
-const UserLogo = ({
-  user = {
-    name: "Owner",
-    image: "",
-  },
-}) => {
+const UserLogo = () => {
+  const { user } = useAuth();
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -30,8 +27,7 @@ const UserLogo = ({
         className={css.userImage}
         style={{
           backgroundImage: user.image ? `url(${user.image})` : "none",
-        }}
-      >
+        }}>
         {!user.image && (
           <NameIcon width={"20px"} height={"20px"} className={css.svgIcon} />
         )}
@@ -50,5 +46,3 @@ UserLogo.propTypes = {
 };
 
 export default UserLogo;
-
-// https://www.drukarniaonline.pl/file/1022/Layout/32b.jpg

@@ -1,18 +1,13 @@
 import axios from "axios";
 
-// import apiUrl from "../../services/api.js";
-import { apiUrl } from "../../constants/apiUrl.js";
-import { endpoints } from "../../constants/apiEndpoints.js";
+import endpoints from "../../constants/apiEndpoints.js";
 
 const updateUser = async (userData) => {
 
-  const url = new URL(`${apiUrl}${endpoints.USER_UPDATE}`);
-  const options = {
-    headers: { "Content-Type": "application/json" },
-  };
+  const url = endpoints.USER_UPDATE;
 
   try {
-    const response = await axios.patch(url, userData, options);
+    const response = await axios.patch(url, userData);
     return response.data;
   } catch (error) {
     console.log(error);

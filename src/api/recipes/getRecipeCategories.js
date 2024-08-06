@@ -1,11 +1,9 @@
 import axios from "axios";
 
-// import apiUrl from "../../services/api.js";
-import { apiUrl } from "../../constants/apiUrl.js";
-import { endpoints } from "../../constants/apiEndpoints.js";
+import endpoints from "../../constants/apiEndpoints.js";
 
 const getRecipeCategories = async () => {
-  const url = new URL(`${apiUrl}${endpoints.RECIPE_CATEGORIES}`);
+  const url = endpoints.RECIPE_CATEGORIES;
 
   try {
     const response = await axios.get(url);

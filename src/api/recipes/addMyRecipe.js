@@ -1,12 +1,10 @@
 import axios from "axios";
 
-// import apiUrl from "../../services/api.js";
-import { apiUrl } from "../../constants/apiUrl.js";
-import { endpoints } from "../../constants/apiEndpoints.js";
+import endpoints from "../../constants/apiEndpoints.js";
 
 const addMyRecipe = async (recipeData) => {
 
-  const url = new URL(`${apiUrl}${endpoints.MY_RECIPES_ADD}`);
+  const url = endpoints.MY_RECIPES_ADD;
   const options = {
     headers: { "Content-Type": "multipart/form-data" },
   };
