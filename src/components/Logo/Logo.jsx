@@ -1,11 +1,12 @@
+import { NavLink } from "react-router-dom";
 import css from "./Logo.module.css";
 import LogoIcon from "../IconsSVG/LogoIcon";
 
 const Logo = () => {
   return (
-    <div className={css.LogoBkg}>
+    <NavLink to="/" className={css.LogoBkg}>
       <LogoIcon className={css.logoIcon} />
-    </div>
+    </NavLink>
   );
 };
 
