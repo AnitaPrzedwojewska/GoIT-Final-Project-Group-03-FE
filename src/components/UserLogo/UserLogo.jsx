@@ -1,11 +1,32 @@
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
+
 import css from "./UserLogo.module.css";
 import PropTypes from "prop-types";
-import NameIcon from "../IconsSVG/NameIcon"; // Upewnij się, że ścieżka jest poprawna
 
-const UserLogo = ({ user }) => {
+import NameIcon from "../IconsSVG/NameIcon";
+import UserLogoModal from "../UserLogoModal/UserLogoModal";
+
+const UserLogo = ({
+  user = {
+    name: "Owner",
+    image: "",
+  },
+}) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <>
-      <div
+      <NavLink
+        onClick={openModal}
         className={css.userImage}
         style={{
           backgroundImage: user.image ? `url(${user.image})` : "none",
@@ -14,9 +35,9 @@ const UserLogo = ({ user }) => {
         {!user.image && (
           <NameIcon width={"20px"} height={"20px"} className={css.svgIcon} />
         )}
-      </div>
-      <div className={css.userName}>{user.name}</div>{" "}
-      {/* Przywrócony user.name */}
+      </NavLink>
+      <div className={css.userName}>{user.name}</div>
+      {isModalOpen && <UserLogoModal onClose={closeModal} user={user} />}
     </>
   );
 };
@@ -25,14 +46,9 @@ UserLogo.propTypes = {
   user: PropTypes.shape({
     name: PropTypes.string.isRequired,
     image: PropTypes.string,
-  }).isRequired,
-};
-
-UserLogo.defaultProps = {
-  user: {
-    name: "Alicja",
-    image: "",
-  },
+  }),
 };
 
 export default UserLogo;
+
+// https://www.drukarniaonline.pl/file/1022/Layout/32b.jpg
