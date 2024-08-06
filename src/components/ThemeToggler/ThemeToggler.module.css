@@ -39,3 +39,21 @@
 .sliderLabel:active:after {
   width: 20px;
 }
+
+@media screen and (min-width: 320px) {
+  .sliderLabel {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sliderLabel {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .sliderLabel {
+    display: block;
+  }
+}

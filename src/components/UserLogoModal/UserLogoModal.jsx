@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import css from "./UserLogoModal.module.css";
 import PropTypes from "prop-types";
+
 import EditIcon from "../IconsSVG/EditIcon";
 import RightArrowIcon from "../IconsSVG/RightArrowIcon";
+
 import ButonFancy from "../ButonFancy/ButonFancy";
 import UserInfoModal from "../UserInfoModal/UserInfoModal";
 import LogoutModal from "../LogoutModal/LogoutModal";

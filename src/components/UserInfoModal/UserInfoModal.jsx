@@ -61,11 +61,7 @@ const UserInfoModal = ({ onClose, user }) => {
 
           <label className={css.label}>
             <div className={css.icon}>
-              <NameIcon
-                width={"16px"}
-                height={"18px"}
-                className={css.inputIcon}
-              />
+              <NameIcon className={css.inputIcon} />
             </div>
             <input
               className={css.input}

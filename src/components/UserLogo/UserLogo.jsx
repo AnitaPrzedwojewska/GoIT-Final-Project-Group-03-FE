@@ -21,20 +21,21 @@ const UserLogo = () => {
   };
 
   return (
-    <>
+    <div className={css.container}>
       <NavLink
         onClick={openModal}
         className={css.userImage}
         style={{
           backgroundImage: user.image ? `url(${user.image})` : "none",
-        }}>
+        }}
+      >
         {!user.image && (
           <NameIcon width={"20px"} height={"20px"} className={css.svgIcon} />
         )}
       </NavLink>
       <div className={css.userName}>{user.name}</div>
       {isModalOpen && <UserLogoModal onClose={closeModal} user={user} />}
-    </>
+    </div>
   );
 };
 
