@@ -67,17 +67,19 @@ const MyRecipesList = () => {
           <p>No recipes added yet</p>
         )}
       </div>
-      <div>
-        {[...Array(totalPages)].map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handlePageChange(index + 1)}
-            disabled={currentPage === index + 1}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
+      {recipes.length > 0 && (
+        <div>
+          {[...Array(totalPages)].map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              disabled={currentPage === index + 1}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </>
   );
 };
