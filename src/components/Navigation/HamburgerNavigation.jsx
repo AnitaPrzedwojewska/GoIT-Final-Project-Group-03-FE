@@ -1,41 +1,42 @@
 import { NavLink } from "react-router-dom";
-import hamburger from "./HamburgerNavigation.module.css"
+import hamburger from "./HamburgerNavigation.module.css";
 
-import SearchIcon from '../IconsSVG/SearchIcon'
+import SearchIcon from "../IconsSVG/SearchIcon";
 
 const HamburgerNavigation = () => {
   return (
     <ul className={hamburger.navList}>
       <li>
-        <NavLink className={hamburger.link} to='/categories/:categoryName'>
+        <NavLink className={hamburger.link} to="/categories/:categoryName">
           Categories
         </NavLink>
       </li>
       <li>
-        <NavLink className={hamburger.link} to='/add'>
+        <NavLink className={hamburger.link} to="/add">
           Add recipes
         </NavLink>
       </li>
       <li>
-        <NavLink className={hamburger.link} to='/my'>
+        <NavLink className={hamburger.link} to="/my">
           My recipes
         </NavLink>
       </li>
       <li>
-        <NavLink className={hamburger.link} to='/favorite'>
+        <NavLink className={hamburger.link} to="/favorite">
           Favorites
         </NavLink>
       </li>
       <li>
-        <NavLink className={hamburger.link} to='/shopping-list'>
+        <NavLink className={hamburger.link} to="/shopping-list">
           Shopping list
         </NavLink>
       </li>
       <li>
-        <NavLink className={hamburger.link} to='/search'>
+        <NavLink className={hamburger.link} to="/search">
           <SearchIcon />
         </NavLink>
       </li>
+      <li></li>
     </ul>
   );
 };
