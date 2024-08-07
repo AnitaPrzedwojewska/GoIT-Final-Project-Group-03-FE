@@ -8,6 +8,7 @@ const getUser = async (userId) => {
 
   try {
     const response = await axios.post(url, userId);
+    console.log('getUser - response.data: ', response.data);
     return response.data;
   } catch (error) {
     console.log(error);
