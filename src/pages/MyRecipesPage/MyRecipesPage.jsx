@@ -5,7 +5,7 @@ import Paginator from "../../components/Paginator/Paginator";
 const MyRecipesPage = () => {
   return (
     <>
-      <MainTitle />
+      <MainTitle>My recipes</MainTitle>
       <MyRecipesList />
       <Paginator />
     </>

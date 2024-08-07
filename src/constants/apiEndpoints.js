@@ -17,6 +17,9 @@ const endpoints = {
 
   INGREDIENTS_LIST: "/ingredients/list",
   RECIPES_BY_INGREDIENTS_ID: "/ingredients/:ingredient",
+
+  OTHER_SUBSCRIBE: "/subscribe",
+  OTHER_FAVORITE: "/favorite",
 };
 
 export default endpoints;
