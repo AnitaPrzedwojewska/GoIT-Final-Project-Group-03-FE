@@ -17,7 +17,7 @@ const UserLogo = () => {
   };
 
   return (
-    <>
+    <div className={css.container}>
       <NavLink
         onClick={openModalUser}
         className={css.userImage}

@@ -2,19 +2,19 @@ import axios from "axios";
 
 import endpoints from "../../constants/apiEndpoints.js";
 
-const addMyRecipe = async (recipeData) => {
-
-  const url = endpoints.MY_RECIPES_ADD;
-  const options = {
-    headers: { "Content-Type": "multipart/form-data" },
-  };
+const addMyRecipe = async (formData) => {
+  const url = `${endpoints.ADD_MY_RECIPE}`;
 
   try {
-    const response = await axios.post(url, recipeData, options);
-    return response.data;
+    const response = await axios.post(url, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return response;
   } catch (error) {
-    console.log(error);
-    return error.message;
+    console.error("Error in addMyRecipe API call:", error);
+    throw error;
   }
 };
 

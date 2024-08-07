@@ -21,8 +21,9 @@ const MyRecipesList = () => {
       if (response.error) {
         console.error("Error fetching recipes:", response.error);
       } else {
-        setRecipes(response.recipes);
-        setTotalPages(Math.ceil(response.total / recipesPerPage));
+        const { results, total } = response.data;
+        setRecipes(results || []);
+        setTotalPages(total ? Math.ceil(total / recipesPerPage) : 1);
       }
     };
     fetchRecipes();
@@ -49,26 +50,32 @@ const MyRecipesList = () => {
     <>
       <MainTitle title="My Recipes"></MainTitle>
       <div>
-        {recipes.map((recipe) => (
-          <MyRecipesItem
-            key={recipe._id}
-            recipe={recipe}
-            onSeeRecipe={handleSeeRecipe}
-            onRemoveRecipe={handleRemoveRecipe}
-          />
-        ))}
+        {recipes.length > 0 ? (
+          recipes.map((recipe) => (
+            <MyRecipesItem
+              key={recipe._id}
+              recipe={recipe}
+              onSeeRecipe={handleSeeRecipe}
+              onRemoveRecipe={handleRemoveRecipe}
+            />
+          ))
+        ) : (
+          <p>No recipes added yet</p>
+        )}
       </div>
-      <div>
-        {[...Array(totalPages)].map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handlePageChange(index + 1)}
-            disabled={currentPage === index + 1}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
+      {totalPages > 1 && (
+        <div>
+          {[...Array(totalPages).keys()].map((index) => (
+            <button
+              key={index}
+              onClick={() => handlePageChange(index + 1)}
+              disabled={currentPage === index + 1}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </>
   );
 };

@@ -22,7 +22,7 @@ const Nav = () => {
       </li>
       <li>
         <NavLink className={css.link} to='/favorite'>
-          Favorites
+          Favourites
         </NavLink>
       </li>
       <li>
