@@ -11,7 +11,7 @@ const AuthNavOptions = () => {
         <ButonFancy className={css.greenButton}>Registration</ButonFancy>
       </NavLink>
       <NavLink to='/signin'>
-        <ButonFancy className={css.singinButton}>Sing In</ButonFancy>
+        <ButonFancy className={css.singinButton}>Sign In</ButonFancy>
       </NavLink>
     </div>
   );
