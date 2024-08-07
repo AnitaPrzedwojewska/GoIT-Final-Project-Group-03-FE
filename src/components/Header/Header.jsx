@@ -1,5 +1,4 @@
 import css from "./Header.module.css";
-import hamburger from "./HamburgerMenu.module.css";
 
 import Logo from "../Logo/Logo";
 import Navigation from "../Navigation/Navigation";
@@ -8,29 +7,36 @@ import ThemeToggler from "../ThemeToggler/ThemeToggler";
 import HamburgerNavigation from "../Navigation/HamburgerNavigation";
 
 const Header = () => {
-  const handleCheckboxChange = (event) => {
-    const sidebar = document.getElementById("navList");
-    sidebar.style.display = event.target.checked ? "block" : "none";
-  };
   return (
-    <div className={css.header}>
-      <label className={hamburger.hamburgerMenu}>
-        <input type="checkbox" onChange={handleCheckboxChange} />
-      </label>
-      <aside className={hamburger.sidebar} id="navList">
-        <div className={css.hamburgerLogo}>
-          <Logo />
+    <div>
+      <nav className={css.nav} role="navigation">
+        <div className={css.menuToggle}>
+          <div className={css.container}>
+            <Logo></Logo>
+            <Navigation></Navigation>
+            <div className={css.rightHeader}>
+              <UserLogo></UserLogo>
+              <ThemeToggler></ThemeToggler>
+            </div>
+          </div>
+          <input className={css.input} type="checkbox" />
+          <div className={css.hamburger}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul className={css.menu}>
+            <li>
+              <div className={css.hamburgerLogo}>
+                <Logo />
+              </div>
+            </li>
+            <li>
+              <HamburgerNavigation></HamburgerNavigation>
+            </li>
+          </ul>
         </div>
-        <HamburgerNavigation></HamburgerNavigation>
-      </aside>
-      <div className={css.container}>
-        <Logo></Logo>
-        <Navigation></Navigation>
-        <div className={css.rightHeader}>
-          <UserLogo></UserLogo>
-          <ThemeToggler></ThemeToggler>
-        </div>
-      </div>
+      </nav>
     </div>
   );
 };
