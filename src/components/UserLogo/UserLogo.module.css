@@ -1,6 +1,11 @@
+/* mobile first */
+.container {
+  display: flex;
+  align-items: center;
+}
 .userImage {
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background-color: var(--grey2);
   background-size: cover;
@@ -18,7 +23,63 @@
 
 .userName {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   margin-left: 14px;
-  margin-right: 50px;
+}
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .userImage {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--grey2);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .svgIcon {
+    position: absolute;
+    color: var(--grey3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .userName {
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 14px;
+    margin-right: 25px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .userImage {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--grey2);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .svgIcon {
+    position: absolute;
+    color: var(--grey3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .userName {
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 14px;
+    margin-right: 50px;
+  }
 }

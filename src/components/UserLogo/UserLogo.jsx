@@ -21,7 +21,7 @@ const UserLogo = () => {
   };
 
   return (
-    <>
+    <div className={css.container}>
       <NavLink
         onClick={openModal}
         className={css.userImage}
@@ -35,7 +35,7 @@ const UserLogo = () => {
       </NavLink>
       <div className={css.userName}>{user.name}</div>
       {isModalOpen && <UserLogoModal onClose={closeModal} user={user} />}
-    </>
+    </div>
   );
 };
 
