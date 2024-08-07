@@ -23,7 +23,7 @@ const HamburgerNavigation = () => {
       </li>
       <li>
         <NavLink className={hamburger.link} to="/favorite">
-          Favorites
+          Favourites
         </NavLink>
       </li>
       <li>
