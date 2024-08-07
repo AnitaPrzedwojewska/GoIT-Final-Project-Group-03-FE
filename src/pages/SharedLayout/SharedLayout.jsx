@@ -11,7 +11,6 @@ import Loader from "../../components/Loader/Loader";
 const SharedLayout = () => {
   return (
     <div>
-      <Overlays />
       <Header />
       <div className={css.mainSection}>
         <div className={css.container}>
@@ -21,6 +20,7 @@ const SharedLayout = () => {
         </div>
       </div>
       <Footer />
+      <Overlays />
     </div>
   );
 };
