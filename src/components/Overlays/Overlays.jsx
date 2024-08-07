@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom'
 import { useSelector } from 'react-redux';
 
-import { getModalStatuses } from '../../redux/app/app.selectors';
+import { getModalUser, getModalUserInfo, getModalUserLogout } from '../../redux/app/app.selectors';
 
 import ModalUser from '../ModalUser/ModalUser';
 import ModalUserInfo from '../ModalUserInfo/ModalUserInfo';
@@ -11,12 +11,14 @@ const Overlays = () => {
 
   const mountElement = document.getElementById("overlays");
 
-  const modalStatuses = useSelector(getModalStatuses);
+  const modalUser = useSelector(getModalUser);
+  const modalUserInfo = useSelector(getModalUserInfo);
+  const modalUserLogout = useSelector(getModalUserLogout);
   return createPortal(
     <>
-      {modalStatuses.modalUser && <ModalUser />}
-      {modalStatuses.modalUserInfo && <ModalUserInfo />}
-      {modalStatuses.modalUserLogout && <ModalUserLogout />}
+      {modalUser && <ModalUser />}
+      {modalUserInfo && <ModalUserInfo />}
+      {modalUserLogout && <ModalUserLogout />}
     </>,
     mountElement
   );
