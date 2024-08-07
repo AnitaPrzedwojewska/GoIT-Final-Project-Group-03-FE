@@ -5,13 +5,14 @@ const routes = {
   REGISTER: "register",
   LOGIN: "signin",
 
-  MAIN: 'main',
+  MAIN: "main",
   CATEGORIES: "categories/:categoryName",
+  CATEGORIES_NAME: "categories",
   RECIPES: "recipes",
   ADD: "add",
   MY: "my",
   FAVORITE: "favorite",
   SHOPPING_LIST: "shopping-list",
-  SEARCH: "search"
-}
+  SEARCH: "search",
+};
 export default routes;
