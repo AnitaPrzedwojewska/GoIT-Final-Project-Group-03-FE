@@ -4,7 +4,8 @@ import axios from "axios";
 import registerUser from "../../api/users/registerUser.js";
 import loginUser from "../../api/users/loginUser.js";
 import logoutUser from "../../api/users/logoutUser.js";
-// import { get } from "../user/user.operations.js";
+import { get } from "../user/user.operations.js";
+import { clear } from '../user/user.slices.js'
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -31,10 +32,8 @@ export const login = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const response = await loginUser(credentials);
-      console.log("login response: ", response);
-      console.log("login response token: ", response.token);
       setAuthHeader(response.token);
-      // thunkAPI.dispatch(get());
+      thunkAPI.dispatch(get());
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -46,6 +45,7 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
     await logoutUser();
     clearAuthHeader();
+    thunkAPI.dispatch(clear());
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }

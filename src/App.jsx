@@ -1,5 +1,5 @@
-import { Navigate, Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import setAxiosDefault from "./config.js/axios";
 
@@ -20,7 +20,6 @@ import SigninPage from "./pages/SigninPage/SigninPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 const App = () => {
-
   useEffect(() => {
     setAxiosDefault();
   }, []);
@@ -44,17 +43,17 @@ const App = () => {
           <Route path='/signin' element={<SigninPage />} />
         </Route>
         <Route path='*' element={<NotFoundPage />} /> */}
-        <Route path='/' element={<SharedLayout />}>
-          <Route index element={<Navigate to='/main' />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Navigate to="/main" />} />
 
           <Route
-            path='main'
+            path="main"
             element={
               <PrivateRoute component={<MainPage />} redirectTo={"/welcome"} />
             }
           />
           <Route
-            path='categories/:categoryName'
+            path="categories/:categoryName"
             element={
               <PrivateRoute
                 component={<CategoriesPage />}
@@ -63,7 +62,7 @@ const App = () => {
             }
           />
           <Route
-            path='recipes'
+            path="recipes"
             element={
               <PrivateRoute
                 component={<RecipePage />}
@@ -72,7 +71,7 @@ const App = () => {
             }
           />
           <Route
-            path='add'
+            path="add"
             element={
               <PrivateRoute
                 component={<AddRecipesPage />}
@@ -81,7 +80,7 @@ const App = () => {
             }
           />
           <Route
-            path='my'
+            path="my"
             element={
               <PrivateRoute
                 component={<MyRecipesPage />}
@@ -90,7 +89,7 @@ const App = () => {
             }
           />
           <Route
-            path='favorite'
+            path="favorite"
             element={
               <PrivateRoute
                 component={<FavoritePage />}
@@ -99,7 +98,7 @@ const App = () => {
             }
           />
           <Route
-            path='shopping-list'
+            path="shopping-list"
             element={
               <PrivateRoute
                 component={<ShoppingListPage />}
@@ -108,7 +107,7 @@ const App = () => {
             }
           />
           <Route
-            path='search'
+            path="search"
             element={
               <PrivateRoute
                 component={<SearchPage />}
@@ -118,24 +117,24 @@ const App = () => {
           />
         </Route>
         <Route
-          path='/welcome'
+          path="/welcome"
           element={
             <RestrictedRoute component={<WelcomePage />} redirectTo={"/"} />
           }
         />
         <Route
-          path='/register'
+          path="/register"
           element={
             <RestrictedRoute component={<RegisterPage />} redirectTo={"/"} />
           }
         />
         <Route
-          path='/signin'
+          path="/signin"
           element={
             <RestrictedRoute component={<SigninPage />} redirectTo={"/"} />
           }
         />
-        <Route path='*' element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
