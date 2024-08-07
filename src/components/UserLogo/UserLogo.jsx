@@ -1,48 +1,36 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+
 import useAuth from "../../hooks/useAuth";
+import { setModalUser } from "../../redux/app/app.slices";
 
 import css from "./UserLogo.module.css";
-import PropTypes from "prop-types";
 
 import NameIcon from "../IconsSVG/NameIcon";
-import UserLogoModal from "../UserLogoModal/UserLogoModal";
 
 const UserLogo = () => {
-  const { user } = useAuth();
-  const [isModalOpen, setModalOpen] = useState(false);
+  const user = useAuth();
+  const dispatch = useDispatch();
 
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
+  const openModalUser = () => {
+    dispatch(setModalUser(true));
   };
 
   return (
     <>
       <NavLink
-        onClick={openModal}
+        onClick={openModalUser}
         className={css.userImage}
         style={{
-          backgroundImage: user.image ? `url(${user.image})` : "none",
+          backgroundImage: user.avatar ? `url(${user.avatar})` : "none",
         }}>
-        {!user.image && (
+        {!user.avatar && (
           <NameIcon width={"20px"} height={"20px"} className={css.svgIcon} />
         )}
       </NavLink>
       <div className={css.userName}>{user.name}</div>
-      {isModalOpen && <UserLogoModal onClose={closeModal} user={user} />}
     </>
   );
-};
-
-UserLogo.propTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string,
-  }),
 };
 
 export default UserLogo;

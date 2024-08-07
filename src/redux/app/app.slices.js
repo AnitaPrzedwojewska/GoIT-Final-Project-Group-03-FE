@@ -7,25 +7,25 @@ const appSlice = createSlice({
   initialState: initialState,
   reducers: {
     setDarkMode(state, action) {
-      state.adding = action.payload;
+      state.darkMode = action.payload;
     },
     setSlideMenu(state, action) {
-      state.searching = action.payload;
+      state.slideMenu = action.payload;
     },
     setModalUser(state, action) {
-      state.editing = action.payload;
+      state.modalUser = action.payload;
     },
     setModalUserInfo(state, action) {
-      state.editing = action.payload;
+      state.modalUserInfo = action.payload;
     },
     setModalUserLogout(state, action) {
-      state.editing = action.payload;
+      state.modalUserLogout = action.payload;
     },
     setModalUserAvatar(state, action) {
-      state.editing = action.payload;
+      state.modalUserAvatar = action.payload;
     },
     setIsError(state, action) {
-      state.editing = action.payload;
+      state.isError = action.payload;
     },
   },
 });

@@ -1,16 +1,16 @@
 // import css from "./MainTitle.module.css";
 import PropTypes from "prop-types";
 
-const MainTitle = ({ title }) => {
+const MainTitle = ({ children }) => {
   return (
     <>
-      <h1>{title}</h1>
+      <h1>{children}</h1>
     </>
   );
 };
 
 MainTitle.propTypes = {
-  title: PropTypes.string.isRequired,
+  children: PropTypes.node,
 };
 
 export default MainTitle;

@@ -27,6 +27,7 @@ const App = () => {
 
   return (
     <>
+      <div id="overlays"></div>
       <Routes>
         {/* <Route path='/' element={<SharedLayout />}>
           <Route index element={<Navigate to='/welcome' />} />

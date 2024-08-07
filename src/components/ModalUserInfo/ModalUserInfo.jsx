@@ -1,18 +1,17 @@
-import { useState} from "react";
-import { useDispatch} from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import css from "./ModalUserInfo.module.css";
-import PropTypes from "prop-types";
 
-import useAuth from "../../hooks/useAuth";
+import updateUser from "../../api/users/updateUser";
+import useUser from "../../hooks/useUser";
+import { setModalUserInfo } from "../../redux/app/app.slices";
 
 import ButonClassic from "../ButonClassic/ButonClassic";
 import NameIcon from "../IconsSVG/NameIcon";
-import updateUser from "../../api/users/updateUser";
-import { setModalUserInfo } from "../../redux/app/app.slices";
 
-const UserInfoModal = () => {
-  const user = useAuth();
+const ModalUserInfo = () => {
+  const user = useUser();
   const dispatch = useDispatch();
 
   const [name, setName] = useState(user.name);
@@ -20,7 +19,7 @@ const UserInfoModal = () => {
 
   const handleCloseModalUserInfo = () => {
     dispatch(setModalUserInfo(false));
-  }
+  };
 
   const handleAvatarChange = (event) => {
     const file = event.target.files[0];
@@ -99,12 +98,4 @@ const UserInfoModal = () => {
   );
 };
 
-UserInfoModal.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
-export default UserInfoModal;
+export default ModalUserInfo;
