@@ -29,7 +29,7 @@ const UserLogo = () => {
         )}
       </NavLink>
       <div className={css.userName}>{user.name}</div>
-    </>
+    </div>
   );
 };
 
