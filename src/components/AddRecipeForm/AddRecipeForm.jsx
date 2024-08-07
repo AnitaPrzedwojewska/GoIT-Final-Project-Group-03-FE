@@ -24,9 +24,13 @@ const AddRecipeForm = ({ formData, setFormData }) => {
     }
 
     try {
-      const response = addMyRecipe(form);
-      console.log("Recipe added successfully:", response.data);
-      navigate("/ownRecipes");
+      const response = await addMyRecipe(form);
+      if (response && response.data) {
+        console.log("Recipe added successfully:", response.data);
+        navigate("/my");
+      } else {
+        console.error("Error adding recipe:", response);
+      }
     } catch (error) {
       console.error("Error adding recipe:", error);
     }

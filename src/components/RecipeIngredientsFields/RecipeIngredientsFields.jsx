@@ -88,7 +88,7 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
               }
               required
             >
-              <option value="">Select cooking time</option>
+              <option value="">Select measure</option>
               {measures.map((option) => (
                 <option key={option} value={option}>
                   {option}

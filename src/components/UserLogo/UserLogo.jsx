@@ -27,7 +27,8 @@ const UserLogo = () => {
         className={css.userImage}
         style={{
           backgroundImage: user.image ? `url(${user.image})` : "none",
-        }}>
+        }}
+      >
         {!user.image && (
           <NameIcon width={"20px"} height={"20px"} className={css.svgIcon} />
         )}
