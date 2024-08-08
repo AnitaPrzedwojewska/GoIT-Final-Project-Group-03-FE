@@ -51,7 +51,7 @@ const App = () => {
         <Route element={<RestrictedRoute redirectTo={"/"} />}>
           <Route path={`/${routes.WELCOME}`} element={<WelcomePage />} />
           <Route path={`/${routes.REGISTER}`} element={<RegisterPage />} />
-          <Route path={`/${routes.SIGN_IN}`} element={<SigninPage />} />
+          <Route path={`/${routes.LOGIN}`} element={<SigninPage />} />
         </Route>
 
         <Route path='*' element={<NotFoundPage />} />
