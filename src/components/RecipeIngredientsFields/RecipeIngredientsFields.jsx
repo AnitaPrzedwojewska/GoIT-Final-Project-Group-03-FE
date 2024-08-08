@@ -23,17 +23,34 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
   }, []);
 
   const handleIngredientChange = (index, field, value) => {
-    const updatedIngredients = formData.ingredients.slice();
-    updatedIngredients[index] = {
-      ...updatedIngredients[index],
-      [field]: value,
-    };
+    const updatedIngredients = [...formData.ingredients];
+    if (field === "ingredientId") {
+      const selectedIngredient = ingredientsList.find(
+        (ingredient) => ingredient._id === value
+      );
+      updatedIngredients[index] = {
+        ...updatedIngredients[index],
+        ingredientId: selectedIngredient._id,
+        name: selectedIngredient.ttl,
+      };
+    } else {
+      updatedIngredients[index] = {
+        ...updatedIngredients[index],
+        [field]: value,
+      };
+    }
     setFormData({ ...formData, ingredients: updatedIngredients });
   };
 
   const addIngredientField = () => {
     setIngredientsCount(ingredientsCount + 1);
-    setFormData({ ...formData, ingredients: [...formData.ingredients, {}] });
+    setFormData({
+      ...formData,
+      ingredients: [
+        ...formData.ingredients,
+        { ingredientId: "", name: "", quantity: "", measure: "" },
+      ],
+    });
   };
 
   const removeIngredientField = () => {
@@ -58,16 +75,16 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
         {Array.from({ length: ingredientsCount }).map((_, index) => (
           <div key={index}>
             <select
-              value={formData.ingredients[index]?.name || ""}
+              value={formData.ingredients[index]?.ingredientId || ""}
               onChange={(e) =>
-                handleIngredientChange(index, "name", e.target.value)
+                handleIngredientChange(index, "ingredientId", e.target.value)
               }
               required
             >
               <option value="">Select an ingredient</option>
               {ingredientsList.map((ingredient) => (
-                <option key={ingredient} value={ingredient}>
-                  {ingredient}
+                <option key={ingredient._id} value={ingredient._id}>
+                  {ingredient.ttl}
                 </option>
               ))}
             </select>
@@ -109,6 +126,7 @@ RecipeIngredientsFields.propTypes = {
   formData: PropTypes.shape({
     ingredients: PropTypes.arrayOf(
       PropTypes.shape({
+        ingredientId: PropTypes.string,
         name: PropTypes.string,
         quantity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         measure: PropTypes.string,

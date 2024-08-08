@@ -24,7 +24,7 @@ MyRecipesItem.propTypes = {
     preview: PropTypes.string,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    time: PropTypes.number.isRequired,
+    time: PropTypes.string.isRequired,
   }).isRequired,
   onSeeRecipe: PropTypes.func.isRequired,
   onRemoveRecipe: PropTypes.func.isRequired,

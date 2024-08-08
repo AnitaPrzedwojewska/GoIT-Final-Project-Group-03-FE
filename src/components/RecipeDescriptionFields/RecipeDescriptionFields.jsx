@@ -35,9 +35,9 @@ const RecipeDescriptionFields = ({ formData, setFormData }) => {
         <div>
           <input
             type="file"
-            name="file"
+            name="thumb"
             onChange={(e) =>
-              setFormData({ ...formData, file: e.target.files[0] })
+              setFormData({ ...formData, thumb: e.target.files[0] })
             }
             required
           />
