@@ -13,15 +13,16 @@
   list-style: none;
   font-size: 14px;
   padding: 10px;
-  overflow-x: hidden;
-  /* scrollbar-color: transparent transparent; */
+  overflow-x: auto;
+  scrollbar-color: transparent transparent;
 }
 
 .menuItem {
   color: var(--gray2);
+  cursor: pointer;
 }
 
-.active {
+.menuLink:active {
   color: var(--green1);
 }
 
