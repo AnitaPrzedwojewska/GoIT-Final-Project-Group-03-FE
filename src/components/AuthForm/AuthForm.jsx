@@ -31,7 +31,7 @@ const AuthForm = () => {
           password: form.elements.password.value,
         })
       );
-      navigate(`/${routes.SIGN_IN}`);
+      navigate(`/${routes.LOGIN}`);
     } else {
       dispatch(
         login({

@@ -1,7 +1,7 @@
 const routes = {
   WELCOME: "welcome",
   REGISTER: "register",
-  SIGN_IN: "signin",
+  LOGIN: "signin",
 
   MAIN: "main",
   CATEGORIES: "categories",
