@@ -2,16 +2,31 @@
   background-color: var(--grey1);
   color: var(--white2);
   width: 335px;
-  height: 315px;
+  height: ;
   padding: 32px 28px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
+}
+
+.registration {
+  height: 350px;
+}
+
+.login {
+  height: 315px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
 }
 
 .inputBox {
   display: flex;
+  justify-content: center;
   position: relative;
   font-size: 10px;
   line-height: 1.4;
@@ -23,12 +38,11 @@
   border: 1px solid var(--white2);
   border-radius: 6px;
   outline: none;
-  width: 100%;
-  height: 38px;
+  width: 279px;
+  height: 45px;
   display: flex;
   align-items: left;
-  justify-content: center;
-  padding-left: 42px;
+  padding-left: 40px;
 }
 .input::placeholder {
   margin-left: 42px;
@@ -36,26 +50,122 @@
 
 .icon {
   position: absolute;
-  left: 14px;
-  top: 13px;
+  left: 15px;
+  top: 15px;
   display: flex;
-  height: 18px;
-  width: 18px;
+  height: 15px;
+  width: 15px;
   color: var(--white2);
 }
-
-.signupBtn {
+.buttonBox {
+  margin-top: 28px;
   width: 100%;
-  height: 45px;
-  color: var(--white2);
-  background-color: var(--green1);
-  border: 1px solid var(--green1);
-  border-radius: 6px;
-  outline: none;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: normal;
-  line-height: 1.4;
+}
+.registerClassicButton {
+  background-color: var(--green1);
+  color: var(--white2);
+  width: 279px;
+  height: 45px;
+  padding: 14px 110px;
+  outline: none;
+}
+
+.registerClassicButton:hover {
+  color: var(--black3);
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .form {
+    background-color: var(--grey1);
+    color: var(--white2);
+    width: 500px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .registration {
+    height: 481px;
+  }
+
+  .login {
+    height: 419px;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 600;
+    letter-spacing: -2%;
+    margin: 20px 25px 20px;
+  }
+  .inputBox {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .input {
+    width: 400px;
+    height: 59px;
+    padding-left: 42px;
+  }
+  .icon {
+    left: 40px;
+    top: 20px;
+    height: 18px;
+    width: 18px;
+  }
+  .registerClassicButton {
+    width: 400px;
+    height: 56px;
+    padding: 21px 138px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .form {
+    background-color: var(--grey1);
+    color: var(--white2);
+    width: 500px;
+  }
+  .registration {
+    height: 484px;
+  }
+
+  .login {
+    height: 419px;
+  }
+  .inputBox {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .input {
+    width: 400px;
+    height: 59px;
+    padding-left: 42px;
+  }
+  .icon {
+    left: 40px;
+    top: 20px;
+    height: 18px;
+    width: 18px;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 600;
+    letter-spacing: -2%;
+    margin: 20px 25px 20px;
+  }
+  .registerClassicButton {
+    width: 400px;
+    height: 59px;
+    padding: 21px 138px;
+  }
 }

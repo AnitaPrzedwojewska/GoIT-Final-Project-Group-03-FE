@@ -8,7 +8,9 @@ const SigninPage = () => {
   return (
     <div className={css.signinPage}>
       <AuthForm />
-      <NavLink to='/register'>Registration</NavLink>
+      <NavLink className={css.link} to="/register">
+        Registration
+      </NavLink>
     </div>
   );
 };
