@@ -7,7 +7,7 @@ const logoutUser = async (userId) => {
   const url = endpoints.USER_LOGOUT;
 
   try {
-    const response = await axios.post(url, userId);
+    const response = await axios.get(url, userId);
     return response.data;
   } catch (error) {
     console.log(error);
