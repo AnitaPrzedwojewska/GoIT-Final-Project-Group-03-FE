@@ -7,7 +7,7 @@ const getUser = async (userId) => {
   const url = endpoints.USER_CURRENT;
 
   try {
-    const response = await axios.post(url, userId);
+    const response = await axios.get(url, userId);
     console.log('getUser - response.data: ', response.data);
     return response.data;
   } catch (error) {

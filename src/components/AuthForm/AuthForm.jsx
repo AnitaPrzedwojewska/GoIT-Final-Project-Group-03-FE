@@ -5,10 +5,11 @@ import { register, login } from "../../redux/auth/auth.operations";
 
 import css from "./AuthForm.module.css";
 
-import routes from '../../constants/routes';
+import routes from "../../constants/routes";
 import NameIcon from "../IconsSVG/NameIcon";
 import EmailIcon from "../IconsSVG/EmailIcon";
 import PasswordIcon from "../IconsSVG/PasswordIcon";
+import ButonClassic from "../ButonClassic/ButonClassic";
 
 const AuthForm = () => {
   const location = useLocation();
@@ -30,7 +31,7 @@ const AuthForm = () => {
           password: form.elements.password.value,
         })
       );
-      navigate(`/${routes.LOGIN}`);
+      navigate(`/${routes.SIGN_IN}`);
     } else {
       dispatch(
         login({
@@ -46,28 +47,38 @@ const AuthForm = () => {
 
   return (
     <div>
-      <form className={css.form} onSubmit={handleSubmit} >
+      <form
+        className={`${css.form} ${registration ? css.registration : css.login}`}
+        onSubmit={handleSubmit}
+      >
+        <div className={css.title}>
+          {registration ? "Registration" : "Sign In"}
+        </div>
         {registration && (
           <div className={css.inputBox}>
             <div className={css.icon}>
               <NameIcon />
             </div>
-            <input className={css.input} id='name' placeholder='Name' />
+            <input className={css.input} id="name" placeholder="Name" />
           </div>
         )}
         <div className={css.inputBox}>
           <div className={css.icon}>
             <EmailIcon />
           </div>
-          <input className={css.input} id='email' placeholder='Email' />
+          <input className={css.input} id="email" placeholder="Email" />
         </div>
         <div className={css.inputBox}>
           <div className={css.icon}>
             <PasswordIcon />
           </div>
-          <input className={css.input} id='password' placeholder='Password' />
+          <input className={css.input} id="password" placeholder="Password" />
         </div>
-        <button className={css.signupBtn}>Sign up</button>
+        <div className={css.buttonBox}>
+          <ButonClassic className={css.registerClassicButton}>
+            {registration ? "Sign Up" : "Sign In"}
+          </ButonClassic>
+        </div>
       </form>
     </div>
   );

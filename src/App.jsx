@@ -5,11 +5,11 @@ import setAxiosDefault from "./config.js/axios";
 
 import routes from "./constants/routes.js";
 
+import CategoryRecipes from "./components/CategoryRecipes/CategoryRecipes";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
-import CategoryRecipes from "./components/CategoryRecipes/CategoryRecipes";
 import FavoritePage from "./pages/FavoritePage/FavoritePage";
 import MainPage from "./pages/MainPage/MainPage";
 import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
@@ -45,7 +45,7 @@ const App = () => {
             <Route path={routes.SEARCH} element={<SearchPage />} />
           </Route>
         </Route>
-        <Route path="*" element={<NotFoundPage />} /> */}
+        <Route path="*" element={<NotFoundPage />} />
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Navigate to="/main" />} />
 
