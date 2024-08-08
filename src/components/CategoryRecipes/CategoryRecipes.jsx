@@ -1,14 +1,13 @@
-import { useParams } from "react-router-dom";
 import RecipesList from "../RecipesList/RecipesList";
 
+import css from "./CategoryRecipes.module.css";
+
 const CategoryRecipes = () => {
-  const {categoryName} = useParams()
 
   return (
-    <>
-      <p>{categoryName}</p>
+    <div className={css.box}>
       <RecipesList />
-    </>
+    </div>
   )
 }
 
