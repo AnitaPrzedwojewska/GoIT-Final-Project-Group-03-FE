@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  width: 100%;
+  padding: 0 19px 22px;
+  border-bottom: 1px solid var(--grey2);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 28px;
+  list-style: none;
+  font-size: 14px;
+  padding: 10px;
+  overflow-x: auto;
+  scrollbar-color: transparent transparent;
+}
+
+.menuItem {
+  color: var(--gray2);
+  cursor: pointer;
+}
+
+.menuLink:active {
+  color: var(--green1);
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    padding-bottom: 18px;
+  }
+  .menu {
+    gap: 55px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .menu {
+    gap: 55px;
+  }
+}

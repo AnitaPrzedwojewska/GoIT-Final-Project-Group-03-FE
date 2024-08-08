@@ -3,10 +3,13 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import setAxiosDefault from "./config.js/axios";
 
+import routes from "./constants/routes.js";
+
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
+import CategoryRecipes from "./components/CategoryRecipes/CategoryRecipes";
 import FavoritePage from "./pages/FavoritePage/FavoritePage";
 import MainPage from "./pages/MainPage/MainPage";
 import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
@@ -27,22 +30,22 @@ const App = () => {
   return (
     <>
       <Routes>
-        {/* <Route path='/' element={<SharedLayout />}>
-          <Route index element={<Navigate to='/welcome' />} />
-
-          <Route path='main' element={<MainPage />} />
-          <Route path='categories/:categoryName' element={<CategoriesPage />} />
-          <Route path='recipes' element={<RecipePage />} />
-          <Route path='add' element={<AddRecipesPage />} />
-          <Route path='my' element={<MyRecipesPage />} />
-          <Route path='favorite' element={<FavoritePage />} />
-          <Route path='shopping-list' element={<ShoppingListPage />} />
-          <Route path='search' element={<SearchPage />} />
-          <Route path='/welcome' element={<WelcomePage />} />
-          <Route path='/register' element={<RegisterPage />} />
-          <Route path='/signin' element={<SigninPage />} />
+        <Route element={<PrivateRoute redirectTo={`/${routes.WELCOME}`} />}>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<Navigate to={`/${routes.MAIN}`} />} />
+            <Route path={routes.MAIN} element={<MainPage />} />
+            <Route path={routes.CATEGORIES} element={<CategoriesPage />}>
+              <Route path=":categoryName" element={<CategoryRecipes />} />
+            </Route>
+            <Route path={routes.RECIPES} element={<RecipePage />} />
+            <Route path={routes.ADD} element={<AddRecipesPage />} />
+            <Route path={routes.MY} element={<MyRecipesPage />} />
+            <Route path={routes.FAVORITE} element={<FavoritePage />} />
+            <Route path={routes.SHOPPING_LIST} element={<ShoppingListPage />} />
+            <Route path={routes.SEARCH} element={<SearchPage />} />
+          </Route>
         </Route>
-        <Route path='*' element={<NotFoundPage />} /> */}
+        <Route path="*" element={<NotFoundPage />} /> */}
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Navigate to="/main" />} />
 
