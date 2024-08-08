@@ -100,7 +100,9 @@
   .container {
     width: 320px;
     margin: 0 auto;
-    padding: 21px 16px;
+    padding-left: 21px;
+    padding-right: 80px;
+
     display: flex;
     justify-content: space-between;
   }
@@ -117,6 +119,8 @@
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
+    padding-left: 32px;
+    padding-right: 100px;
     display: flex;
     justify-content: space-between;
   }
@@ -134,9 +138,14 @@
 @media screen and (min-width: 1440px) {
   .container {
     width: 1440px;
+    padding-left: 100px;
+    padding-right: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  .menu {
+    display: none;
   }
   .rightHeader {
     display: flex;

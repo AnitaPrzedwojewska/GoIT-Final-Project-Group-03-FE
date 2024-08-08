@@ -1,0 +1,100 @@
+.desktop,
+.tablet {
+  display: none;
+}
+.mobile {
+  display: block;
+}
+.mobileBgImage {
+  position: absolute;
+  top: 200px;
+  right: 0;
+}
+.mobilePlateImage {
+  position: absolute;
+  right: auto;
+  top: 380px;
+}
+
+.mobileSpinatImage {
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+.mobileLeafImage {
+  position: absolute;
+  left: 0;
+  top: 40px;
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .desktop,
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: block;
+  }
+  .tabletBgImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .tabletPlateImage {
+    position: absolute;
+    right: 0px;
+    top: 160px;
+  }
+  .tabletArrow {
+    position: absolute;
+    top: 440px;
+    right: 40px;
+  }
+
+  .tabletSpinatImage {
+    position: absolute;
+    right: -10px;
+    top: 0px;
+  }
+  .tabletLeafImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .desktop {
+    display: block;
+  }
+  .tablet,
+  .mobile {
+    display: none;
+  }
+  .bgImage {
+    position: absolute;
+    right: -10px;
+    top: 0px;
+  }
+  .plateImage {
+    position: absolute;
+    right: 180px;
+    top: 110px;
+  }
+  .arrowImage {
+    position: absolute;
+    right: 160px;
+    top: 540px;
+  }
+  .spinatImage {
+    position: absolute;
+    right: -10px;
+
+    top: 0px;
+  }
+  .leafImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
