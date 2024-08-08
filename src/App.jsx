@@ -15,7 +15,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RecipePage from "./pages/RecipePage/RecipePage";
-import Recipe from './components/Recipe/Recipe.jsx';
+// import Recipe from './components/Recipe/Recipe.jsx';
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import SharedLayout from "./pages/SharedLayout/SharedLayout";
@@ -32,31 +32,61 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route element={<PrivateRoute redirectTo={`/${routes.WELCOME}`} />}>
-          <Route path='/' element={<SharedLayout />}>
-            <Route index element={<Navigate to={`/${routes.MAIN}`} />} />
-            <Route path={routes.MAIN} element={<MainPage />} />
-            <Route path={routes.CATEGORIES} element={<CategoriesPage />}>
-              <Route path=':categoryName' element={<CategoryRecipes />} />
+        <Route
+          element={<PrivateRoute redirectTo={`/${routes.WELCOME}`} />}>
+          <Route
+            path='/'
+            element={<SharedLayout />}>
+            <Route
+              index
+              element={<Navigate to={`/${routes.MAIN}`} />} />
+            <Route
+              path={routes.MAIN}
+              element={<MainPage />} />
+            <Route
+              path={routes.CATEGORIES}
+              element={<CategoriesPage />}>
+              <Route
+                path=':categoryName'
+                element={<CategoryRecipes />} />
             </Route>
-            <Route path={routes.RECIPES} element={<RecipePage />}>
-              <Route path=':recipeId' element={<Recipe />} />
-            </Route>
-            <Route path={routes.ADD} element={<AddRecipesPage />} />
-            <Route path={routes.MY} element={<MyRecipesPage />} />
-            <Route path={routes.FAVORITE} element={<FavoritePage />} />
-            <Route path={routes.SHOPPING_LIST} element={<ShoppingListPage />} />
-            <Route path={routes.SEARCH} element={<SearchPage />} />
+            <Route
+              path={`${routes.RECIPES}/:recipeId`}
+              element={<RecipePage />} />
+            <Route
+              path={routes.ADD}
+              element={<AddRecipesPage />} />
+            <Route
+              path={routes.MY}
+              element={<MyRecipesPage />} />
+            <Route
+              path={routes.FAVORITE}
+              element={<FavoritePage />} />
+            <Route
+              path={routes.SHOPPING_LIST}
+              element={<ShoppingListPage />} />
+            <Route
+              path={routes.SEARCH}
+              element={<SearchPage />} />
           </Route>
         </Route>
 
-        <Route element={<RestrictedRoute redirectTo={"/"} />}>
-          <Route path={`/${routes.WELCOME}`} element={<WelcomePage />} />
-          <Route path={`/${routes.REGISTER}`} element={<RegisterPage />} />
-          <Route path={`/${routes.LOGIN}`} element={<SigninPage />} />
+        <Route
+          element={<RestrictedRoute redirectTo={"/"} />}>
+          <Route
+            path={`/${routes.WELCOME}`}
+            element={<WelcomePage />} />
+          <Route
+            path={`/${routes.REGISTER}`}
+            element={<RegisterPage />} />
+          <Route
+            path={`/${routes.LOGIN}`}
+            element={<SigninPage />} />
         </Route>
 
-        <Route path='*' element={<NotFoundPage />} />
+        <Route
+          path='*'
+          element={<NotFoundPage />} />
       </Routes>
     </>
   );
