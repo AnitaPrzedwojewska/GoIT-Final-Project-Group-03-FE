@@ -1,4 +1,4 @@
-// import PreviewCategories from "../../components/PreviewCategories/PreviewCategories";
+import PreviewCategories from "../../components/PreviewCategories/PreviewCategories";
 import Search from "../../components/Search/Search";
 import СhooseYourBreakfast from "../../components/СhooseYourBreakfast/СhooseYourBreakfast";
 
@@ -7,7 +7,7 @@ const MainPage = () => {
     <>
       <СhooseYourBreakfast></СhooseYourBreakfast>
       <Search></Search>
-      {/* <PreviewCategories></PreviewCategories> */}
+      <PreviewCategories></PreviewCategories>
     </>
   );
 };
