@@ -45,79 +45,11 @@ const App = () => {
             <Route path={routes.SEARCH} element={<SearchPage />} />
           </Route>
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Navigate to="/main" />} />
 
-          <Route
-            path="main"
-            element={
-              <PrivateRoute component={<MainPage />} redirectTo={"/welcome"} />
-            }
-          />
-          <Route
-            path="categories/:categoryName"
-            element={
-              <PrivateRoute
-                component={<CategoriesPage />}
-                redirectTo={"/welcome"}
-              />
-            }
-          />
-          <Route
-            path="recipes"
-            element={
-              <PrivateRoute
-                component={<RecipePage />}
-                redirectTo={"/welcome"}
-              />
-            }
-          />
-          <Route
-            path="add"
-            element={
-              <PrivateRoute
-                component={<AddRecipesPage />}
-                redirectTo={"/welcome"}
-              />
-            }
-          />
-          <Route
-            path="my"
-            element={
-              <PrivateRoute
-                component={<MyRecipesPage />}
-                redirectTo={"/welcome"}
-              />
-            }
-          />
-          <Route
-            path="favorite"
-            element={
-              <PrivateRoute
-                component={<FavoritePage />}
-                redirectTo={"/welcome"}
-              />
-            }
-          />
-          <Route
-            path="shopping-list"
-            element={
-              <PrivateRoute
-                component={<ShoppingListPage />}
-                redirectTo={"/welcome"}
-              />
-            }
-          />
-          <Route
-            path="search"
-            element={
-              <PrivateRoute
-                component={<SearchPage />}
-                redirectTo={"/welcome"}
-              />
-            }
-          />
+        <Route element={<RestrictedRoute redirectTo={"/"} />}>
+          <Route path={`/${routes.WELCOME}`} element={<WelcomePage />} />
+          <Route path={`/${routes.REGISTER}`} element={<RegisterPage />} />
+          <Route path={`/${routes.LOGIN}`} element={<SigninPage />} />
         </Route>
         <Route
           path="/welcome"
