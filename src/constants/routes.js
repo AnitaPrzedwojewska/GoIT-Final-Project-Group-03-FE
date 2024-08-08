@@ -1,13 +1,10 @@
 const routes = {
-  START: "",
-
   WELCOME: "welcome",
   REGISTER: "register",
-  LOGIN: "signin",
+  SIGN_IN: "signin",
 
   MAIN: "main",
-  CATEGORIES: "categories/:categoryName",
-  CATEGORIES_NAME: "categories",
+  CATEGORIES: "categories",
   RECIPES: "recipes",
   ADD: "add",
   MY: "my",

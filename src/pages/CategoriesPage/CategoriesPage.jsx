@@ -1,13 +1,16 @@
 import MainTitle from '../../components/MainTitle/MainTitle.jsx';
 import CategoriesNav from '../../components/CategoriesNav/CategoriesNav.jsx';
-import RecipesList from '../../components/RecipesList/RecipesList.jsx';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
 const CategoriesPage = () => {
   return (
     <>
       <MainTitle>Categories</MainTitle>
       <CategoriesNav />
-      <RecipesList />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
