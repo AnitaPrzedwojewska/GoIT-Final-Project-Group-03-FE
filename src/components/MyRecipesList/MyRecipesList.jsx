@@ -38,7 +38,7 @@ const MyRecipesList = () => {
   }, [currentPage]);
 
   const handleSeeRecipe = (id) => {
-    navigate(`/recipe/${id}`);
+    navigate(`/recipes/${id}`);
   };
 
   const handleRemoveRecipe = async (id) => {
