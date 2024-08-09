@@ -168,6 +168,7 @@ const AuthForm = () => {
               }
             />
           </div>
+
           <input
             className={`${css.input} ${
               !passwordValid && isTouched.password
@@ -190,6 +191,7 @@ const AuthForm = () => {
             ) : (
               <CrossPasswordIcon className={css.invalidIcon} />
             ))}
+
         </div>
         {registration && isTouched.password && (
           <span
