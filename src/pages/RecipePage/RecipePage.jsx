@@ -23,7 +23,6 @@ const RecipePage = () => {
     const fetchRecipe = async () => {
       try {
         const response = await getRecipeById(recipeId);
-        console.log("fetchRecipe - response: ", response);
         dispatch(setRecipe(response));
       } catch (error) {
         console.error("Error fetching recipe:", error);
