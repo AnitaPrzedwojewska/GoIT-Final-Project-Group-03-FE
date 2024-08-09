@@ -50,6 +50,7 @@ const AuthForm = () => {
           password: form.elements.password.value,
         }),
       );
+      
       navigate(`/${routes.MAIN}`);
     }
     form.reset();

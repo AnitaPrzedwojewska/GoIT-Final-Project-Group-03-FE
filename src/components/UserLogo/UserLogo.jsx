@@ -1,16 +1,21 @@
+// npm packages
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import useAuth from "../../hooks/useAuth";
+// functions
+import useUser from "../../hooks/useUser";
 import { setModalUser } from "../../redux/app/app.slices";
 
-import css from "./UserLogo.module.css";
-
+// components
 import NameIcon from "../IconsSVG/NameIcon";
 
+// styles
+import css from "./UserLogo.module.css";
+
 const UserLogo = () => {
-  const user = useAuth();
+
   const dispatch = useDispatch();
+  const user = useUser();
 
   const openModalUser = () => {
     dispatch(setModalUser(true));

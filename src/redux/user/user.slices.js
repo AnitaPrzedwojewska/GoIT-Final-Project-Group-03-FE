@@ -13,22 +13,24 @@ const userSlice = createSlice({
       state.email = initialState.email;
       state.avatar = initialState.avatar;
       state.subscribe = initialState.subscribe;
-      state.favorites = initialState.favorites;
+      // state.favorites = initialState.favorites;
     }
   },
   extraReducers: (builder) => {
     builder
       .addCase(get.fulfilled, (state, action) => {
+        console.log('get - action.payload: ', action.payload);
+        state.name = action.payload.name;
         state.email = action.payload.email;
-        state.avatar = action.payload.avatar;
+        state.avatar = action.payload.avatarURL;
         state.subscribe = action.payload.subscribe;
-        state.favorites = action.payload.favorites;
+        // state.favorites = action.payload.favorites;
       })
       .addCase(update.fulfilled, (state, action) => {
         state.email = action.payload.email;
         state.avatar = action.payload.avatar;
         state.subscribe = action.payload.subscribe;
-        state.favorites = action.payload.favorites;
+        // state.favorites = action.payload.favorites;
       });
   },
 });
