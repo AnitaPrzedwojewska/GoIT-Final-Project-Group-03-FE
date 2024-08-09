@@ -72,7 +72,7 @@ const AuthForm = () => {
           <div className={css.icon}>
             <PasswordIcon />
           </div>
-          <input className={css.input} id="password" placeholder="Password" />
+          <input className={css.input} id="password" type="password" placeholder="Password" />
         </div>
         <div className={css.buttonBox}>
           <ButonClassic className={css.registerClassicButton}>
