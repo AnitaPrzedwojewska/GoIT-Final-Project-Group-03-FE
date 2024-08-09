@@ -1,7 +1,6 @@
 .nav {
   display: flex;
   width: 100%;
-  padding: 0 19px 22px;
   border-bottom: 1px solid var(--grey2);
 }
 
@@ -12,7 +11,7 @@
   gap: 28px;
   list-style: none;
   font-size: 14px;
-  padding: 10px;
+  padding: 10px 10px 19px;
   overflow-x: auto;
   scrollbar-color: transparent transparent;
 }
@@ -22,14 +21,31 @@
   cursor: pointer;
 }
 
-.menuLink:active {
+.menuLink {
+  position: relative;
+}
+
+.menuLink.active {
   color: var(--green1);
 }
 
+.menuLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -19px;
+  height: 2px;
+  background-color: transparent;
+  transition: backroud-color 0.3s;
+}
+
+.menuLink.active::after {
+  background-color: var(--green1);
+  z-index: 100;
+}
+
 @media screen and (min-width: 768px) {
-  .nav {
-    padding-bottom: 18px;
-  }
   .menu {
     gap: 55px;
     font-size: 18px;
