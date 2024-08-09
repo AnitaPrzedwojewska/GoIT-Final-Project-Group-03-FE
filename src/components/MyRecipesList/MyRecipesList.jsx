@@ -17,13 +17,21 @@ const MyRecipesList = () => {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      const response = await getMyRecipes(currentPage, recipesPerPage);
-      if (response.error) {
-        console.error("Error fetching recipes:", response.error);
-      } else {
-        const { results, total } = response.data;
-        setRecipes(results || []);
-        setTotalPages(total ? Math.ceil(total / recipesPerPage) : 1);
+      try {
+        const response = await getMyRecipes(currentPage, recipesPerPage);
+
+        if (response && response.data) {
+          const { results, total } = response.data;
+          setRecipes(results || []);
+          setTotalPages(total ? Math.ceil(total / recipesPerPage) : 1);
+        } else {
+          setRecipes([]);
+          setTotalPages(1);
+        }
+      } catch (error) {
+        console.error("Error fetching recipes:", error);
+        setRecipes([]);
+        setTotalPages(1);
       }
     };
     fetchRecipes();
