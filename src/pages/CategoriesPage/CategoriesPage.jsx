@@ -21,13 +21,14 @@ const CategoriesPage = () => {
     const fetchCategories = async () => {
       try {
         const response = await getRecipeCategories();
-        dispatch(setCategories(response));
         console.log("fetchCategories - response: ", response);
+        dispatch(setCategories(response));
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
     };
     fetchCategories();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
