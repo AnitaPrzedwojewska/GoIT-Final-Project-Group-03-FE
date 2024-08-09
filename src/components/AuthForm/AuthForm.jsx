@@ -39,6 +39,7 @@ const AuthForm = () => {
           password: form.elements.password.value,
         })
       );
+      
       navigate(`/${routes.MAIN}`);
     }
     // jeśli nie wszystko z poprawnością danych było ok, to obsługa błędu

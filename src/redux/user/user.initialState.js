@@ -3,5 +3,5 @@ export const initialState = {
   email: '',
   avatar: '',
   subscribe: false,
-  favorites: [],
+  // favorites: [],
 };

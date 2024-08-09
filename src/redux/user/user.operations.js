@@ -1,5 +1,7 @@
+// npm packages
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
+// functions
 import getUser from "../../api/users/getUser.js";
 import updateUser from "../../api/users/updateUser.js";
 
