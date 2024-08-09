@@ -1,18 +1,18 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 
-import { register, login } from "../../redux/auth/auth.operations";
+import { login, register } from "../../redux/auth/auth.operations";
 
 import css from "./AuthForm.module.css";
 
 import routes from "../../constants/routes";
-import NameIcon from "../IconsSVG/NameIcon";
-import EmailIcon from "../IconsSVG/EmailIcon";
-import PasswordIcon from "../IconsSVG/PasswordIcon";
 import ButonClassic from "../ButonClassic/ButonClassic";
 import CheckPasswordIcon from "../IconsSVG/CheckPasswordIcon";
 import CrossPasswordIcon from "../IconsSVG/CrossPasswordIcon";
+import EmailIcon from "../IconsSVG/EmailIcon";
+import NameIcon from "../IconsSVG/NameIcon";
+import PasswordIcon from "../IconsSVG/PasswordIcon";
 
 const AuthForm = () => {
   const [nameValid, setNameValid] = useState(false);
@@ -40,7 +40,7 @@ const AuthForm = () => {
           name: form.elements.name.value,
           email: form.elements.email.value,
           password: form.elements.password.value,
-        })
+        }),
       );
       navigate(`/${routes.LOGIN}`);
     } else {
@@ -48,7 +48,7 @@ const AuthForm = () => {
         login({
           email: form.elements.email.value,
           password: form.elements.password.value,
-        })
+        }),
       );
       navigate(`/${routes.MAIN}`);
     }
@@ -179,7 +179,7 @@ const AuthForm = () => {
             }`}
             type="password"
             id="password"
-            pattern="^(?=.*\d)[A-Za-z\d]{8,}$"
+            pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
             title="Password must be at least 8 characters long, only numbers and letters."
             required
             placeholder="Password"
@@ -191,7 +191,6 @@ const AuthForm = () => {
             ) : (
               <CrossPasswordIcon className={css.invalidIcon} />
             ))}
-
         </div>
         {registration && isTouched.password && (
           <span
