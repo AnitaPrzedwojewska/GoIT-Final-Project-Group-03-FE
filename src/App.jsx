@@ -7,8 +7,8 @@ import { Navigate, Route, Routes } from "react-router-dom";
 // config
 import setAxiosDefault from "./config.js/axios";
 
-import routes from "./constants/routes.js";
 // contants
+import routes from "./constants/routes.js";
 
 //pages
 import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
@@ -38,43 +38,18 @@ const App = () => {
   return (
     <>
       <Routes>
+        <Route element={<RestrictedRoute redirectTo={"/"} />}>
+          <Route path={`/${routes.WELCOME}`} element={<WelcomePage />} />
+          <Route path={`/${routes.REGISTER}`} element={<RegisterPage />} />
+          <Route path={`/${routes.LOGIN}`} element={<SigninPage />} />
+        </Route>
+
         <Route element={<PrivateRoute redirectTo={`/${routes.WELCOME}`} />}>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Navigate to={`/${routes.MAIN}`} />} />
             <Route path={routes.MAIN} element={<MainPage />} />
             <Route path={routes.CATEGORIES} element={<CategoriesPage />}>
               <Route path=":categoryName" element={<CategoryRecipes />} />
-
-        <Route
-          element={<RestrictedRoute redirectTo={"/"} />}>
-          <Route
-            path={`/${routes.WELCOME}`}
-            element={<WelcomePage />} />
-          <Route
-            path={`/${routes.REGISTER}`}
-            element={<RegisterPage />} />
-          <Route
-            path={`/${routes.LOGIN}`}
-            element={<SigninPage />} />
-        </Route>
-
-        <Route
-          element={<PrivateRoute redirectTo={`/${routes.WELCOME}`} />}>
-          <Route
-            path='/'
-            element={<SharedLayout />}>
-            <Route
-              index
-              element={<Navigate to={`/${routes.MAIN}`} />} />
-            <Route
-              path={routes.MAIN}
-              element={<MainPage />} />
-            <Route
-              path={routes.CATEGORIES}
-              element={<CategoriesPage />}>
-              <Route
-                path=':categoryName'
-                element={<CategoryRecipes />} />
             </Route>
             <Route
               path={`${routes.RECIPES}/:recipeId`}
@@ -86,12 +61,6 @@ const App = () => {
             <Route path={routes.SHOPPING_LIST} element={<ShoppingListPage />} />
             <Route path={routes.SEARCH} element={<SearchPage />} />
           </Route>
-        </Route>
-
-        <Route element={<RestrictedRoute redirectTo={"/"} />}>
-          <Route path={`/${routes.WELCOME}`} element={<WelcomePage />} />
-          <Route path={`/${routes.REGISTER}`} element={<RegisterPage />} />
-          <Route path={`/${routes.LOGIN}`} element={<SigninPage />} />
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />
