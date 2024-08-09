@@ -31,7 +31,8 @@ const RecipePage = () => {
     };
     console.log('Uruchomiony useEffect.')
     fetchRecipe();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
 
   return (
     <>
