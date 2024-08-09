@@ -1,40 +1,31 @@
-import { useEffect, useState, useRef } from 'react';
+// node modules
+import { useState, useRef } from 'react';
+
+// npm packages
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getCategory } from '../../redux/recipes/recipes.selectors.js';
-import { setCategory } from '../../redux/recipes/recipes.slices.js';
-import getRecipeCategories from '../../api/recipes/getRecipeCategories.js';
-
+// constants
 import routes from '../../constants/routes.js';
 
+// functions
+import { getCategory } from '../../redux/recipes/recipes.selectors.js';
+import { getCategories } from "../../redux/recipes/recipes.selectors.js";
+import { setCategory } from '../../redux/recipes/recipes.slices.js';
+
+// styles
 import css from './CategoriesNav.module.css';
-import { useDispatch, useSelector } from 'react-redux';
 
 const CategoriesNav = () => {
 
   const dispatch = useDispatch();
   const category = useSelector(getCategory);
-
-  const [categories, setCategories] = useState([]);
-  console.log('Categories: ', categories);
+  const categories = useSelector(getCategories);
 
   const itemsRef = useRef(null);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await getRecipeCategories();
-        setCategories(response);
-      } catch (error) {
-        console.error("Error fetching categories:", error);
-      }
-    };
-
-    fetchCategories();
-  }, []);
 
   const handleMouseDown = (e) => {
     setIsMouseDown(true);
@@ -71,13 +62,10 @@ const CategoriesNav = () => {
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}>
           {categories.map((cat) => (
-            <li
-              key={cat.title}
-              className={`${css.menuItem} ${
-                category === cat.title && css.active
-              }`}>
+            <li key={cat.title} className={css.menuItem}>
               <NavLink
-                className={css.menuLink}
+                // className={css.menuLink `${cat.title} == ${category} && css.active}`}
+                className={({ isActive } ) => `${css.menuLink} ${isActive && cat.title === category ? css.active : ''}`}
                 to={`/${routes.CATEGORIES}/${cat.title}`}
                 onMouseUp={() => dispatch(setCategory(cat.title))}>
                 {cat.title}

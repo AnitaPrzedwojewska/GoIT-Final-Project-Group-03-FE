@@ -1,27 +1,34 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+// node modules
 import { useEffect } from "react";
 
+// npm packages
+import { Navigate, Route, Routes } from "react-router-dom";
+
+// config
 import setAxiosDefault from "./config.js/axios";
 
+// contants
 import routes from './constants/routes.js';
 
+//pages
+import WelcomePage from "./pages/WelcomePage/WelcomePage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import SigninPage from "./pages/SigninPage/SigninPage";
+import SharedLayout from "./pages/SharedLayout/SharedLayout";
+import MainPage from "./pages/MainPage/MainPage";
+import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
+import RecipePage from "./pages/RecipePage/RecipePage";
+import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
+import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
+import FavoritePage from "./pages/FavoritePage/FavoritePage";
+import ShoppingListPage from "./pages/ShoppingListPage/ShoppingListPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+
+// components
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
-import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
-import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import CategoryRecipes from './components/CategoryRecipes/CategoryRecipes';
-import FavoritePage from "./pages/FavoritePage/FavoritePage";
-import MainPage from "./pages/MainPage/MainPage";
-import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import RecipePage from "./pages/RecipePage/RecipePage";
-// import Recipe from './components/Recipe/Recipe.jsx';
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import SearchPage from "./pages/SearchPage/SearchPage";
-import SharedLayout from "./pages/SharedLayout/SharedLayout";
-import ShoppingListPage from "./pages/ShoppingListPage/ShoppingListPage";
-import SigninPage from "./pages/SigninPage/SigninPage";
-import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 const App = () => {
 
@@ -32,6 +39,20 @@ const App = () => {
   return (
     <>
       <Routes>
+
+        <Route
+          element={<RestrictedRoute redirectTo={"/"} />}>
+          <Route
+            path={`/${routes.WELCOME}`}
+            element={<WelcomePage />} />
+          <Route
+            path={`/${routes.REGISTER}`}
+            element={<RegisterPage />} />
+          <Route
+            path={`/${routes.LOGIN}`}
+            element={<SigninPage />} />
+        </Route>
+
         <Route
           element={<PrivateRoute redirectTo={`/${routes.WELCOME}`} />}>
           <Route
@@ -69,19 +90,6 @@ const App = () => {
               path={routes.SEARCH}
               element={<SearchPage />} />
           </Route>
-        </Route>
-
-        <Route
-          element={<RestrictedRoute redirectTo={"/"} />}>
-          <Route
-            path={`/${routes.WELCOME}`}
-            element={<WelcomePage />} />
-          <Route
-            path={`/${routes.REGISTER}`}
-            element={<RegisterPage />} />
-          <Route
-            path={`/${routes.LOGIN}`}
-            element={<SigninPage />} />
         </Route>
 
         <Route
