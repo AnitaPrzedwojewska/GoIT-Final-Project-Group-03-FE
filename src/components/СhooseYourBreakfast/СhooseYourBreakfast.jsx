@@ -1,19 +1,26 @@
-import {NavLink} from 'react-router-dom'
-// import css from "./СhooseYourBreakfast.module.css";
-import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
+import css from "./СhooseYourBreakfast.module.css";
+import RightArrowIcon from "../../components/IconsSVG/RightArrowIcon";
 
-const СhooseYourBreakfast = ({ children }) => {
+const СhooseYourBreakfast = () => {
   return (
     <>
-      <div>СhooseYourBreakfast</div>
-      <div>{children}</div>
-      <NavLink to='/categories/:categoryName'>See recipes</NavLink>
+      <div className={css.container}>
+        <div className={css.content}>
+          <span className={css.greenText}>Delicious and healthy</span> way to
+          enjoy a variety of fresh ingredients in one satisfying meal
+        </div>
+        <NavLink className={css.link} to="/categories/Breakfast">
+          See recipes
+          <RightArrowIcon
+            strokeColor="black"
+            width="18px"
+            height="14px"
+          ></RightArrowIcon>
+        </NavLink>
+      </div>
     </>
   );
-};
-
-СhooseYourBreakfast.propTypes = {
-  children: PropTypes.node,
 };
 
 export default СhooseYourBreakfast;
