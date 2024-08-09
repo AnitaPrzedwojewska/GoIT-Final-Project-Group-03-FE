@@ -7,32 +7,32 @@ const recipesSlice = createSlice({
   initialState,
   reducers: {
     setCategory(state, action) {
-      state.category = action.payload.category;
+      state.category = action.payload;
+    },
+    setCategories(state, action) {
+      state.categories = action.payload;
     },
     // setRecipes(state, action) {
     //   state.recipes = action.payload.recipes;
     // },
-    // setCategories(state, action) {
-    //   state.categories = action.payload.categories;
-    // },
     clearCategory(state) {
-      state.categories = initialState.category;
+      state.category = initialState.category;
+    },
+    clearCategories(state) {
+      state.categories = initialState.categories;
     },
     // clearRecipes(state) {
     //   state.recipes = initialState.recipes;
-    // },
-    // clearCategories(state) {
-    //   state.categories = initialState.categories;
     // },
   },
 });
 
 export const {
   setCategory,
+  setCategories,
   // setRecipes,
-  // setCategories,
   clearCategory,
+  clearCategories,
   // clearRecipes,
-  // clearCategories,
 } = recipesSlice.actions;
 export const recipesReducer = recipesSlice.reducer;

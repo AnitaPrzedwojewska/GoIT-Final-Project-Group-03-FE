@@ -1,13 +1,16 @@
+// node modules
 import { useEffect } from "react";
+
+// npm packages
 import { Navigate, Route, Routes } from "react-router-dom";
 
+// config
 import setAxiosDefault from "./config.js/axios";
 
 import routes from "./constants/routes.js";
+// contants
 
-import CategoryRecipes from "./components/CategoryRecipes/CategoryRecipes";
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
+//pages
 import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import FavoritePage from "./pages/FavoritePage/FavoritePage";
@@ -21,6 +24,11 @@ import SharedLayout from "./pages/SharedLayout/SharedLayout";
 import ShoppingListPage from "./pages/ShoppingListPage/ShoppingListPage";
 import SigninPage from "./pages/SigninPage/SigninPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
+
+// components
+import CategoryRecipes from "./components/CategoryRecipes/CategoryRecipes";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 
 const App = () => {
   useEffect(() => {
@@ -36,8 +44,42 @@ const App = () => {
             <Route path={routes.MAIN} element={<MainPage />} />
             <Route path={routes.CATEGORIES} element={<CategoriesPage />}>
               <Route path=":categoryName" element={<CategoryRecipes />} />
+
+        <Route
+          element={<RestrictedRoute redirectTo={"/"} />}>
+          <Route
+            path={`/${routes.WELCOME}`}
+            element={<WelcomePage />} />
+          <Route
+            path={`/${routes.REGISTER}`}
+            element={<RegisterPage />} />
+          <Route
+            path={`/${routes.LOGIN}`}
+            element={<SigninPage />} />
+        </Route>
+
+        <Route
+          element={<PrivateRoute redirectTo={`/${routes.WELCOME}`} />}>
+          <Route
+            path='/'
+            element={<SharedLayout />}>
+            <Route
+              index
+              element={<Navigate to={`/${routes.MAIN}`} />} />
+            <Route
+              path={routes.MAIN}
+              element={<MainPage />} />
+            <Route
+              path={routes.CATEGORIES}
+              element={<CategoriesPage />}>
+              <Route
+                path=':categoryName'
+                element={<CategoryRecipes />} />
             </Route>
-            <Route path={routes.RECIPES} element={<RecipePage />} />
+            <Route
+              path={`${routes.RECIPES}/:recipeId`}
+              element={<RecipePage />}
+            />
             <Route path={routes.ADD} element={<AddRecipesPage />} />
             <Route path={routes.MY} element={<MyRecipesPage />} />
             <Route path={routes.FAVORITE} element={<FavoritePage />} />
@@ -51,24 +93,7 @@ const App = () => {
           <Route path={`/${routes.REGISTER}`} element={<RegisterPage />} />
           <Route path={`/${routes.LOGIN}`} element={<SigninPage />} />
         </Route>
-        <Route
-          path="/welcome"
-          element={
-            <RestrictedRoute component={<WelcomePage />} redirectTo={"/"} />
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute component={<RegisterPage />} redirectTo={"/"} />
-          }
-        />
-        <Route
-          path="/signin"
-          element={
-            <RestrictedRoute component={<SigninPage />} redirectTo={"/"} />
-          }
-        />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

@@ -10,7 +10,7 @@ import Loader from "../../components/Loader/Loader";
 
 const SharedLayout = () => {
   return (
-    <div>
+    <div className={css.page}>
       <Header />
       <div className={css.mainSection}>
         <div className={css.container}>

@@ -51,7 +51,7 @@ AddRecipeForm.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     category: PropTypes.string,
-    time: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    time: PropTypes.string,
     ingredients: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string,
