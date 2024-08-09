@@ -1,17 +1,29 @@
-// import css from "./RecipeIngredientsList.module.css";
-import PropTypes from "prop-types";
+// npm packages
+import { useSelector } from "react-redux";
 
-const RecipeIngredientsList = ({ children }) => {
+// functions
+import { getRecipeIngredients } from "../../redux/recipes/recipes.selectors";
+
+// styles
+// import css from "./RecipeIngredientsList.module.css";
+
+const RecipeIngredientsList = () => {
+
+  const ingredients = useSelector(getRecipeIngredients);
+  console.log("IngredientsList - data:");
+  console.log(ingredients);
+
   return (
     <>
       <div>RecipeIngredientsList</div>
-      <div>{children}</div>
+      { !ingredients ? (<p>Sorry, something wrong, </p>) :
+        (<ul>
+        {ingredients.length>0 && (ingredients.map((ingr) => (
+          <li key={ingr._id}>{ingr._id} - {ingr.measure}</li>
+        )))}
+      </ul>) }
     </>
   );
-};
-
-RecipeIngredientsList.propTypes = {
-  children: PropTypes.node,
 };
 
 export default RecipeIngredientsList;
