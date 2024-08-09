@@ -19,7 +19,6 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(get.fulfilled, (state, action) => {
-        console.log('get - action.payload: ', action.payload);
         state.name = action.payload.name;
         state.email = action.payload.email;
         state.avatar = action.payload.avatarURL;

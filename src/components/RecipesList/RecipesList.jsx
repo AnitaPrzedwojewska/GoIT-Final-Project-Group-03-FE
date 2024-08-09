@@ -1,28 +1,31 @@
+// node modules
 import { useEffect, useState } from "react";
-// import { useSelector } from 'react-redux';
 
-// import { getCategory } from '../../redux/recipes/recipes.selectors.js';
-import getRecipesByCategory from "../../api/recipes/getRecipesByCategory.js";
-
-import RecipeTile from '../RecipeTile/RecipeTile.jsx';
-
-import css from "./RecipesList.module.css";
+// npm packages
 import { useParams } from "react-router-dom";
 // import PropTypes from "prop-types";
 
+// functions
+import getRecipesByCategory from "../../api/recipes/getRecipesByCategory.js";
+
+// components
+import RecipeTile from '../RecipeTile/RecipeTile.jsx';
+
+// styles
+import css from "./RecipesList.module.css";
+
 const RecipesList = () => {
+// const RecipesList = ({category, limit, page}) => {
 
   const { categoryName } = useParams();
   const [recipes, setRecipes] = useState([]);
-
-
 
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
         const response = await getRecipesByCategory(categoryName);
+        // const response = await getRecipesByCategory(categoryName, page, limit);
         setRecipes(response);
-        console.log('fetchRecipes - response: ', response);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -32,8 +35,8 @@ const RecipesList = () => {
 
   return (
     <div className={css.box}>
-      {recipes.length === 0 ? (
-        <p>Sorry, something wrong. No results!</p>
+      {(!recipes || recipes.length === 0) ? (
+        <p>Sorry, something is wrong. No results.</p>
       ) : (
         recipes.length > 0 && (
           <ul className={css.list}>
@@ -57,7 +60,9 @@ const RecipesList = () => {
 };
 
 // RecipesList.propTypes = {
-//   items: PropTypes.number,
+//   category: PropTypes.string
+//   limit: PropTypes.number,
+//   page: PropTypes.number,
 // };
 
 export default RecipesList;
