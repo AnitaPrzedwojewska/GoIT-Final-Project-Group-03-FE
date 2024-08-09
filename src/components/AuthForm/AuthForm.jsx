@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 import { register, login } from "../../redux/auth/auth.operations";
 
@@ -10,8 +11,20 @@ import NameIcon from "../IconsSVG/NameIcon";
 import EmailIcon from "../IconsSVG/EmailIcon";
 import PasswordIcon from "../IconsSVG/PasswordIcon";
 import ButonClassic from "../ButonClassic/ButonClassic";
+import CheckPasswordIcon from "../IconsSVG/CheckPasswordIcon";
+import CrossPasswordIcon from "../IconsSVG/CrossPasswordIcon";
 
 const AuthForm = () => {
+  const [nameValid, setNameValid] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(false);
+
+  const [isTouched, setIsTouched] = useState({
+    name: false,
+    email: false,
+    password: false,
+  });
+
   const location = useLocation();
   const registration = location.pathname === `/${routes.REGISTER}`;
   const navigate = useNavigate();
@@ -22,8 +35,6 @@ const AuthForm = () => {
     event.preventDefault();
     const form = event.currentTarget;
     if (registration) {
-      // kod do sprawdzania poprawności wprowadzonych danych
-      // a jeśli wszystko w porządku to do dzieła
       dispatch(
         register({
           name: form.elements.name.value,
@@ -41,8 +52,25 @@ const AuthForm = () => {
       );
       navigate(`/${routes.MAIN}`);
     }
-    // jeśli nie wszystko z poprawnością danych było ok, to obsługa błędu
     form.reset();
+  };
+
+  const validateName = (e) => {
+    setIsTouched((prev) => ({ ...prev, name: true }));
+    const isValid = e.target.validity.valid;
+    setNameValid(isValid);
+  };
+
+  const validateEmail = (e) => {
+    setIsTouched((prev) => ({ ...prev, email: true }));
+    const isValid = e.target.validity.valid;
+    setEmailValid(isValid);
+  };
+
+  const validatePassword = (e) => {
+    setIsTouched((prev) => ({ ...prev, password: true }));
+    const isValid = e.target.validity.valid;
+    setPasswordValid(isValid);
   };
 
   return (
@@ -57,23 +85,123 @@ const AuthForm = () => {
         {registration && (
           <div className={css.inputBox}>
             <div className={css.icon}>
-              <NameIcon />
+              <NameIcon
+                strokeColor={
+                  nameValid
+                    ? "var(--green3)"
+                    : isTouched.name
+                    ? "var(--red"
+                    : "var(--white1)"
+                }
+              />
             </div>
-            <input className={css.input} id="name" placeholder="Name" />
+            <input
+              className={`${css.input} ${
+                !nameValid && isTouched.name
+                  ? css.invalid
+                  : nameValid
+                  ? css.valid
+                  : ""
+              }`}
+              type="text"
+              name="name"
+              id="name"
+              pattern="^[A-Z][a-zA-Z]{2,}$"
+              title="Name may contain only letter."
+              required
+              placeholder="Name"
+              onInput={validateName}
+            />
+            {isTouched.name &&
+              (nameValid ? (
+                <CheckPasswordIcon className={css.validIcon} />
+              ) : (
+                <CrossPasswordIcon className={css.invalidIcon} />
+              ))}
           </div>
         )}
         <div className={css.inputBox}>
           <div className={css.icon}>
-            <EmailIcon />
+            <EmailIcon
+              strokeColor={
+                emailValid
+                  ? "var(--green3)"
+                  : isTouched.email
+                  ? "var(--red"
+                  : "var(--white1)"
+              }
+            />
           </div>
-          <input className={css.input} id="email" placeholder="Email" />
+          <input
+            className={`${css.input} ${
+              !emailValid && isTouched.email
+                ? css.invalid
+                : emailValid
+                ? css.valid
+                : ""
+            }`}
+            type="email"
+            name="email"
+            id="email"
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+            title="Please enter a valid email address"
+            required
+            placeholder="Email"
+            onInput={validateEmail}
+          />
+          {isTouched.email &&
+            (emailValid ? (
+              <CheckPasswordIcon className={css.validIcon} />
+            ) : (
+              <CrossPasswordIcon className={css.invalidIcon} />
+            ))}
         </div>
         <div className={css.inputBox}>
           <div className={css.icon}>
-            <PasswordIcon />
+            <PasswordIcon
+              strokeColor={
+                passwordValid
+                  ? "var(--green3)"
+                  : isTouched.password
+                  ? "var(--red"
+                  : "var(--white1)"
+              }
+            />
           </div>
-          <input className={css.input} id="password" type="password" placeholder="Password" />
+
+          <input
+            className={`${css.input} ${
+              !passwordValid && isTouched.password
+                ? css.invalid
+                : passwordValid
+                ? css.valid
+                : ""
+            }`}
+            type="password"
+            id="password"
+            pattern="^(?=.*\d)[A-Za-z\d]{8,}$"
+            title="Password must be at least 8 characters long, only numbers and letters."
+            required
+            placeholder="Password"
+            onInput={validatePassword}
+          />
+          {isTouched.password &&
+            (passwordValid ? (
+              <CheckPasswordIcon className={css.validIcon} />
+            ) : (
+              <CrossPasswordIcon className={css.invalidIcon} />
+            ))}
+
         </div>
+        {registration && isTouched.password && (
+          <span
+            className={`${css.validationMessage} ${
+              passwordValid ? css.validText : css.invalidText
+            }`}
+          >
+            {passwordValid ? "Password is secure." : "Enter a valid password."}
+          </span>
+        )}
         <div className={css.buttonBox}>
           <ButonClassic className={css.registerClassicButton}>
             {registration ? "Sign Up" : "Sign In"}
