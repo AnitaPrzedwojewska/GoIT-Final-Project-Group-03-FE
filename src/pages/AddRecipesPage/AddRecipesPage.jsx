@@ -18,7 +18,7 @@ const AddRecipesPage = () => {
 
   return (
     <>
-      <MainTitle title="Add Recipe"></MainTitle>
+      <MainTitle>Add recipe</MainTitle>
       <AddRecipeForm
         formData={formData}
         setFormData={setFormData}

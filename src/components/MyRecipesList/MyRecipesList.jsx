@@ -56,7 +56,7 @@ const MyRecipesList = () => {
 
   return (
     <>
-      <MainTitle title="My Recipes"></MainTitle>
+      <MainTitle></MainTitle>
       <div>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (

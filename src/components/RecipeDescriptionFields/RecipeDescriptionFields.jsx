@@ -1,4 +1,5 @@
-// import css from "./RecipeDescriptionFields.module.css";
+import css from "./RecipeDescriptionFields.module.css";
+import PhotoIcon from "../IconsSVG/PhotoIcon.jsx";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import timeOptions from "../../constants/timeOptions";
@@ -32,66 +33,72 @@ const RecipeDescriptionFields = ({ formData, setFormData }) => {
   return (
     <>
       <div>
-        <div>
+        <label className={css.thumb}>
           <input
             type="file"
             name="thumb"
             onChange={(e) =>
               setFormData({ ...formData, thumb: e.target.files[0] })
             }
+          />
+          <PhotoIcon className={css.icon}></PhotoIcon>
+        </label>
+      </div>
+      <div className={css.container}>
+        <div className={css.box}>
+          <input
+            className={css.title}
+            placeholder="enter item title"
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleInputChange}
             required
           />
         </div>
-        <label>Enter item title</label>
-        <input
-          type="text"
-          name="title"
-          value={formData.title}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Enter about recipe</label>
-        <textarea
-          name="description"
-          value={formData.description}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Category</label>
-        <select
-          name="category"
-          value={formData.category}
-          onChange={handleInputChange}
-          required
-        >
-          <option value="">Select a category</option>
-          {categories.map((category) => (
-            <option key={category.title} value={category.title}>
-              {category.title}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label>
-          Cooking Time
+        <div className={css.box}>
+          <input
+            className={css.title}
+            placeholder="Enter about recipe"
+            name="description"
+            value={formData.description}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className={css.boxSelect}>
+          <label className={css.label}>Category</label>
           <select
+            className={css.select}
+            name="category"
+            value={formData.category}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="">Select</option>
+            {categories.map((category) => (
+              <option key={category.title} value={category.title}>
+                {category.title}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={css.boxSelect}>
+          <label className={css.label}>Cooking Time</label>
+          <select
+            className={css.select}
             name="time"
             value={formData.time}
             onChange={handleInputChange}
           >
-            <option value="">Select cooking time</option>
+            <option value="">Select</option>
             {timeOptions.map((option, index) => (
               <option key={index} value={option}>
                 {option}
               </option>
             ))}
           </select>
-        </label>
+        </div>
       </div>
     </>
   );

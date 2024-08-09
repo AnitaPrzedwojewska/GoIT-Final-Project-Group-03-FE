@@ -1,4 +1,6 @@
-// import css from "./RecipeIngredientsFields.module.css";
+import css from "./RecipeIngredientsFields.module.css";
+import MinusIcon from "../IconsSVG/MinusIcon.jsx";
+import PlusIcon from "../IconsSVG/PlusIcon.jsx";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import measures from "../../constants/measures";
@@ -64,14 +66,26 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
   return (
     <>
       <div>
-        <h2>Ingredients</h2>
-        <button type="button" onClick={addIngredientField}>
-          +
-        </button>
-        <p>{ingredientsCount}</p>
-        <button type="button" onClick={removeIngredientField}>
-          -
-        </button>
+        <div className={css.boxOne}>
+          <h2>Ingredients</h2>
+          <div className={css.counterBox}>
+            <button
+              className={css.counterButton}
+              type="button"
+              onClick={removeIngredientField}
+            >
+              <MinusIcon></MinusIcon>
+            </button>
+            <p className={css.counter}>{ingredientsCount}</p>
+            <button
+              className={css.counterButton}
+              type="button"
+              onClick={addIngredientField}
+            >
+              <PlusIcon></PlusIcon>
+            </button>
+          </div>
+        </div>
         {Array.from({ length: ingredientsCount }).map((_, index) => (
           <div key={index}>
             <select
