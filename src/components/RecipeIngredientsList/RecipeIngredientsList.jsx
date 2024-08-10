@@ -4,8 +4,10 @@ import { useSelector } from "react-redux";
 // functions
 import { getRecipeIngredients } from "../../redux/recipes/recipes.selectors";
 
-// styles
-// import css from "./RecipeIngredientsList.module.css";
+import css from "./RecipeIngredientsList.module.css";
+
+// components
+// import RecipeTile from '../RecipeTile/RecipeTile.jsx';
 
 const RecipeIngredientsList = () => {
 
@@ -17,9 +19,26 @@ const RecipeIngredientsList = () => {
     <>
       <div>RecipeIngredientsList</div>
       { !ingredients ? (<p>Sorry, something wrong, </p>) :
-        (<ul>
+        (<ul className={css.ingredientContainer}>
         {ingredients.length>0 && (ingredients.map((ingr) => (
-          <li key={ingr._id}>{ingr._id} - {ingr.measure}</li>
+          <li className={css.ingredient} key={ingr._id}>
+            <div className={css.ingredientContentName}>
+              <div className={css.ingredientImg}>
+                IMG
+              </div>
+              <div className={css.name}>
+                {ingr.name}
+              </div>
+            </div>
+            <div className={css.ingredientContentMeasure}>
+              <div className={css.measure}>
+                {ingr.measure}
+              </div>
+              <div>
+                <input type="checkbox" className={css.checkbox}></input>
+              </div> 
+            </div>
+          </li>
         )))}
       </ul>) }
     </>
