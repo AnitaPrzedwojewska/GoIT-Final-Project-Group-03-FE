@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import css from "./AddRecipesPage.module.css";
 import AddRecipeForm from "../../components/AddRecipeForm/AddRecipeForm";
 import FollowUs from "../../components/FollowUs/FollowUs";
 import MainTitle from "../../components/MainTitle/MainTitle";
@@ -18,13 +19,18 @@ const AddRecipesPage = () => {
 
   return (
     <>
-      <MainTitle title="Add Recipe"></MainTitle>
-      <AddRecipeForm
-        formData={formData}
-        setFormData={setFormData}
-      ></AddRecipeForm>
-      <FollowUs></FollowUs>
-      <PopularRecipe></PopularRecipe>
+      <MainTitle>Add recipe</MainTitle>
+      <div className={css.container}>
+        <AddRecipeForm
+          formData={formData}
+          setFormData={setFormData}
+        ></AddRecipeForm>
+        <div className={css.side}>
+          <h3 className={css.header}>Follow Us</h3>
+          <FollowUs className={css.followus}></FollowUs>
+          <PopularRecipe></PopularRecipe>
+        </div>
+      </div>
     </>
   );
 };

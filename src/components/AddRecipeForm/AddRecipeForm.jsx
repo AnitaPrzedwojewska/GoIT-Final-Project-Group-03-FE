@@ -1,6 +1,7 @@
-// import css from "./AddRecipeForm.module.css";
+import css from "./AddRecipeForm.module.css";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import Notiflix from "notiflix";
 
 import addMyRecipe from "../../api/recipes/addMyRecipe";
 
@@ -26,10 +27,10 @@ const AddRecipeForm = ({ formData, setFormData }) => {
     try {
       const response = await addMyRecipe(form);
       if (response && response.data) {
-        console.log("Recipe added successfully:", response.data);
+        Notiflix.Notify.success("Recipe added succsessfully");
         navigate("/my");
       } else {
-        console.error("Error adding recipe:", response);
+        Notiflix.Notify.failure("Error adding recipe. Try again");
       }
     } catch (error) {
       console.error("Error adding recipe:", error);
@@ -37,11 +38,13 @@ const AddRecipeForm = ({ formData, setFormData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={css.container} onSubmit={handleSubmit}>
       <RecipeDescriptionFields formData={formData} setFormData={setFormData} />
       <RecipeIngredientsFields formData={formData} setFormData={setFormData} />
       <RecipePreparationFields formData={formData} setFormData={setFormData} />
-      <button type="submit">Add</button>
+      <button className={css.addButton} type="submit">
+        Add
+      </button>
     </form>
   );
 };

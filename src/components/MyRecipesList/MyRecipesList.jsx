@@ -1,9 +1,10 @@
-// import css from "./MyRecipesList.module.css";
+import css from "./MyRecipesList.module.css";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import deleteMyRecipe from "../../api/recipes/deleteMyRecipe";
 import getMyRecipes from "../../api/recipes/getMyRecipes";
+import Notiflix from "notiflix";
 import MainTitle from "../MainTitle/MainTitle";
 import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
 
@@ -17,30 +18,37 @@ const MyRecipesList = () => {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      const response = await getMyRecipes(currentPage, recipesPerPage);
-      if (response.error) {
-        console.error("Error fetching recipes:", response.error);
-      } else if (!response.data) {
+      try {
+        const response = await getMyRecipes(currentPage, recipesPerPage);
+
+        if (response && response.data) {
+          const { results, total } = response.data;
+          setRecipes(results || []);
+          setTotalPages(total ? Math.ceil(total / recipesPerPage) : 1);
+        } else {
+          setRecipes([]);
+          setTotalPages(1);
+        }
+      } catch (error) {
+        console.error("Error fetching recipes:", error);
         setRecipes([]);
-      } else {
-        const { results, total } = response.data;
-        setRecipes(results || []);
-        setTotalPages(total ? Math.ceil(total / recipesPerPage) : 1);
+        setTotalPages(1);
       }
     };
     fetchRecipes();
   }, [currentPage]);
 
   const handleSeeRecipe = (id) => {
-    navigate(`/recipe/${id}`);
+    navigate(`/recipes/${id}`);
   };
 
   const handleRemoveRecipe = async (id) => {
     const response = await deleteMyRecipe(id);
     if (!response.error) {
       setRecipes(recipes.filter((recipe) => recipe._id !== id));
+      Notiflix.Notify.success("Recipe deleted successfully!");
     } else {
-      console.error("Error deleting recipe:", response.error);
+      Notiflix.Notify.failure("Error deleting recipe. Try again!");
     }
   };
 
@@ -50,8 +58,8 @@ const MyRecipesList = () => {
 
   return (
     <>
-      <MainTitle title="My Recipes"></MainTitle>
-      <div>
+      <MainTitle></MainTitle>
+      <div className={css.container}>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
             <MyRecipesItem
@@ -62,7 +70,7 @@ const MyRecipesList = () => {
             />
           ))
         ) : (
-          <p>No recipes added yet</p>
+          <p className={css.paragraph}>No recipes added yet</p>
         )}
       </div>
       {totalPages > 1 && (

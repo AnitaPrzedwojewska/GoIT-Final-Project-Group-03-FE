@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: start;
+}
+
+.txtarea {
+  width: 350px;
+  height: 154px;
+  margin-bottom: 18px;
+  border: none;
+  padding-top: 10px;
+  padding-left: 16px;
+  outline: none;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgb(0, 0, 0, 0.5);
+  background-color: #f5f5f5;
+  resize: none;
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    gap: 32px;
+  }
+
+  .txtarea {
+    width: 550px;
+    height: 224px;
+    margin-bottom: 32px;
+    padding-top: 16px;
+    padding-left: 23px;
+    font-size: 18px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1440px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .txtarea {
+    width: 600px;
+    height: 224px;
+    margin-bottom: 32px;
+    padding-top: 16px;
+    padding-left: 23px;
+    font-size: 18px;
+  }
+}

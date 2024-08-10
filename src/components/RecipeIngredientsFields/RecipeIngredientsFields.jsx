@@ -1,4 +1,7 @@
-// import css from "./RecipeIngredientsFields.module.css";
+import css from "./RecipeIngredientsFields.module.css";
+import MinusIcon from "../IconsSVG/MinusIcon.jsx";
+import PlusIcon from "../IconsSVG/PlusIcon.jsx";
+import CloseIcon from "../IconsSVG/CloseIcon.jsx";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import measures from "../../constants/measures";
@@ -63,58 +66,79 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
 
   return (
     <>
-      <div>
-        <h2>Ingredients</h2>
-        <button type="button" onClick={addIngredientField}>
-          +
-        </button>
-        <p>{ingredientsCount}</p>
-        <button type="button" onClick={removeIngredientField}>
-          -
-        </button>
+      <div className={css.thumbContainer}>
+        <div className={css.boxOne}>
+          <h2>Ingredients</h2>
+          <div className={css.counterBox}>
+            <button
+              className={css.counterButton}
+              type="button"
+              onClick={removeIngredientField}
+            >
+              <MinusIcon></MinusIcon>
+            </button>
+            <p className={css.counter}>{ingredientsCount}</p>
+            <button
+              className={css.counterButton}
+              type="button"
+              onClick={addIngredientField}
+            >
+              <PlusIcon></PlusIcon>
+            </button>
+          </div>
+        </div>
         {Array.from({ length: ingredientsCount }).map((_, index) => (
-          <div key={index}>
+          <div className={css.ingredient} key={index}>
             <select
+              className={css.select}
               value={formData.ingredients[index]?.ingredientId || ""}
               onChange={(e) =>
                 handleIngredientChange(index, "ingredientId", e.target.value)
               }
               required
             >
-              <option value="">Select an ingredient</option>
+              <option value="">Select</option>
               {ingredientsList.map((ingredient) => (
                 <option key={ingredient._id} value={ingredient._id}>
                   {ingredient.ttl}
                 </option>
               ))}
             </select>
-            <input
-              type="number"
-              placeholder="Quantity"
-              value={formData.ingredients[index]?.quantity || ""}
-              onChange={(e) =>
-                handleIngredientChange(index, "quantity", e.target.value)
-              }
-              required
-            />
-            <select
-              placeholder="measure"
-              value={formData.ingredients[index]?.measure || ""}
-              onChange={(e) =>
-                handleIngredientChange(index, "measure", e.target.value)
-              }
-              required
-            >
-              <option value="">Select measure</option>
-              {measures.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-            <button type="button" onClick={removeIngredientField}>
-              X
-            </button>
+            <div className={css.boxTwo}>
+              <input
+                className={css.quantity}
+                type="number"
+                placeholder="Quantity"
+                value={formData.ingredients[index]?.quantity || ""}
+                onChange={(e) =>
+                  handleIngredientChange(index, "quantity", e.target.value)
+                }
+                required
+              />
+              <select
+                className={css.measure}
+                placeholder="measure"
+                value={formData.ingredients[index]?.measure || ""}
+                onChange={(e) =>
+                  handleIngredientChange(index, "measure", e.target.value)
+                }
+                required
+              >
+                <option value="">Select</option>
+                {measures.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+              <button
+                className={css.closeButton}
+                type="button"
+                onClick={removeIngredientField}
+              >
+                <CloseIcon></CloseIcon>
+              </button>
+            </div>
           </div>
         ))}
       </div>

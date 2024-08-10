@@ -1,0 +1,177 @@
+.thumbContainer {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 44px;
+}
+
+.boxOne {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+}
+
+.counterBox {
+  color: #333;
+  display: flex;
+  justify-content: space-evenly;
+  width: 92px;
+  height: 28px;
+  align-items: center;
+  border: 1px solid rgb(51, 51, 51, 0.3);
+  border-radius: 15px;
+  padding: 0;
+}
+
+.counter {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+
+.counterButton {
+  background-color: transparent;
+  border: none;
+  color: #333333;
+}
+
+.ingredient {
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.boxTwo {
+  display: flex;
+  flex-direction: row;
+}
+
+.select {
+  width: 180px;
+  height: 53px;
+  border: none;
+  margin-right: 14px;
+  background-color: #f5f5f5;
+  padding: 16px;
+  outline: none;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgb(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+.quantity {
+  width: 74px;
+  height: 53px;
+  margin-right: 0;
+  border: none;
+  background-color: #f5f5f5;
+  padding: 16px 0 16px 16px;
+  outline: none;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #000;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.measure {
+  width: 75px;
+  height: 53px;
+  border: none;
+  margin-right: 5px;
+  background-color: #f5f5f5;
+  padding: 16px 16px 16px 0;
+  outline: none;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #000;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .thumbContainer {
+    width: 704px;
+    margin-bottom: 100px;
+  }
+
+  .boxOne {
+    margin-bottom: 32px;
+  }
+
+  .ingredient {
+    margin-bottom: 24px;
+  }
+
+  .select {
+    width: 398px;
+    height: 59px;
+    margin-right: 32px;
+    font-size: 18px;
+  }
+
+  .quantity {
+    width: 97px;
+    height: 59px;
+    font-size: 18px;
+  }
+
+  .measure {
+    width: 86px;
+    height: 59px;
+    font-size: 18px;
+    margin-right: 130px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1440px) {
+  .thumbContainer {
+    width: 650px;
+    margin-bottom: 100px;
+  }
+
+  .boxOne {
+    margin-bottom: 32px;
+  }
+
+  .ingredient {
+    margin-bottom: 24px;
+  }
+
+  .select {
+    width: 398px;
+    height: 59px;
+    border: none;
+    margin-right: 32px;
+    font-size: 18px;
+  }
+
+  .quantity {
+    width: 97px;
+    height: 59px;
+    font-size: 18px;
+  }
+
+  .measure {
+    width: 86px;
+    height: 59px;
+    margin-right: 20px;
+    font-size: 18px;
+  }
+}

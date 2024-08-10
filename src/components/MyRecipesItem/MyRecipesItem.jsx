@@ -3,39 +3,35 @@ import css from "./MyRecipesItem.module.css";
 import ButonFancy from "../ButonFancy/ButonFancy";
 import DeleteIcon from "../IconsSVG/DeleteIcon";
 
+import DeleteIcon from "../IconsSVG/DeleteIcon";
+
+const DEFAULT_IMAGE_URL = "../../../public/images/no-image.png";
+
 const MyRecipesItem = ({ recipe, onSeeRecipe, onRemoveRecipe }) => {
   const { _id, preview, title, description, time } = recipe;
 
+  const imageSrc = preview || DEFAULT_IMAGE_URL;
+
   return (
     <>
-      <div className={css.recipe}>
-        <div>
-          <img className={css.image} src={preview} alt={title} />
-        </div>
-        <div className={css.recipeContainer}>
-          <div className={css.titleContainer}>
-            <h2 className={css.title}>{title}</h2>
+      <div className={css.container}>
+        <img className={css.image} src={imageSrc} alt={title} />
+        <div className={css.descContainer}>
+          <div className={css.title}>
+            <h3>{title}</h3>
             <button
+              className={css.deleteButton}
               onClick={() => onRemoveRecipe(_id)}
-              className={css.removeButton}>
-              <DeleteIcon
-                width={"24px"}
-                height={"24px"}
-                className={css.binIcon}
-              />
+            >
+              <DeleteIcon></DeleteIcon>
             </button>
-
           </div>
           <p className={css.description}>{description}</p>
-          <div className={css.timeContainer}>
+          <div className={css.buttonBox}>
             <p>{time}</p>
-            <ButonFancy
-              height="59px"
-              className={css.seeRecipeButton}
-              onClick={() => onSeeRecipe(_id)}
-            >
+            <button className={css.seeButton} onClick={() => onSeeRecipe(_id)}>
               See Recipe
-            </ButonFancy>
+            </button>
           </div>
         </div>
       </div>
