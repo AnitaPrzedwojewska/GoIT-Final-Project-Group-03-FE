@@ -1,25 +1,45 @@
 import css from "./Paginator.module.css";
 import PropTypes from "prop-types";
+import RightArrow from "../IconsSVG/RightArrow";
+import LeftArrow from "../IconsSVG/LeftArrow";
 
 const Paginator = ({ currentPage, totalPages, onPageChange }) => {
   console.log("Rendering Pagination with:", { currentPage, totalPages });
   const pages = [...Array(totalPages).keys()].map((_, index) => index + 1);
 
   return (
-    <div className={css.paginationContainer}>
-      {pages.map((page) => (
+    <>
+      <div className={css.paginationContainer}>
         <button
-          key={page}
-          className={`${css.pageButton} ${
-            currentPage === page ? css.active : ""
-          }`}
-          onClick={() => onPageChange(page)}
-          disabled={currentPage === page}
+          className={css.arrowButton}
+          onClick={() => onPageChange(currentPage - 1)}
+          disabled={currentPage === 1}
         >
-          {page}
+          <LeftArrow></LeftArrow>
         </button>
-      ))}
-    </div>
+
+        {pages.map((page) => (
+          <button
+            key={page}
+            className={`${css.pageButton} ${
+              currentPage === page ? css.active : ""
+            }`}
+            onClick={() => onPageChange(page)}
+            disabled={currentPage === page}
+          >
+            {page}
+          </button>
+        ))}
+
+        <button
+          className={css.arrowButton}
+          onClick={() => onPageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          <RightArrow></RightArrow>
+        </button>
+      </div>
+    </>
   );
 };
 

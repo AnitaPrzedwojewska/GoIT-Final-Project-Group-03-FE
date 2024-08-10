@@ -1,24 +1,27 @@
-.paginationContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.arrowButton {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.arrowButton svh {
+  stroke: #a9a9a9;
+}
+
+.arrowButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .pageButton {
-  margin: 0 5px;
-  padding: 5px 10px;
+  padding: 8px 16px;
+  margin: 0 4px;
+  background-color: var(--light-gray);
   border: none;
-  border-radius: 4px;
-  background-color: #f0f0f0;
   cursor: pointer;
 }
 
 .pageButton.active {
-  background-color: #007bff;
+  background-color: var(--dark-gray);
   color: white;
-}
-
-.pageButton:disabled {
-  cursor: not-allowed;
-  background-color: #cccccc;
 }
