@@ -19,22 +19,20 @@ const SubscribeForm = () => {
   const dispatch = useDispatch();
 
   const {email, subscribe} = useUser();
-  console.log('SubscribeForm - email: ', email);
-  console.log('SubscribeForm - subscribe: ', subscribe);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const form = event.currentTarget;
     if (subscribe) {
-      Notiflix.Notify.warning("You have already subscribed to the newsletter");
+      Notiflix.Notify.warning("You have already subscribed.");
     } else {
       try {
         const response = await subscribeNewsletter(email);
-        console.log('subscribe - response: ', response);
         if (response.status !== 200) {
           Notiflix.Notify.failure("Something is wrong. Failed subscription.");
         } else {
           dispatch(get());
-          Notiflix.Notify.success("You have subscribed to the newsletter.");
+          Notiflix.Notify.success("Subscription completed successfully.");
         }
         dispatch(get());
       } catch (error) {
@@ -42,10 +40,10 @@ const SubscribeForm = () => {
         Notiflix.Notify.failure("Something is wrong. Failed subscription.");
       }
     }
+    form.reset();
   }
 
   const handleClick = (event) => {
-    console.log('event.target.value: ', event.target.value);
     event.target.value = email;
   };
 
