@@ -1,12 +1,12 @@
 // import css from "./SearchTypeSelector.module.css";
 import PropTypes from "prop-types";
 
-const SearchTypeSelector = ({ children }) => {
+const SearchTypeSelector = () => {
   return (
-    <>
-      <div>SearchTypeSelector</div>
-      <div>{children}</div>
-    </>
+    <select>
+      <option value="all">All</option>
+      <option value="beef">Beef</option>
+    </select>
   );
 };
 
