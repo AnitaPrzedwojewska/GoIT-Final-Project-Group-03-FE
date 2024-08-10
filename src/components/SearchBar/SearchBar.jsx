@@ -1,22 +1,15 @@
 // import css from "./SearchBar.module.css";
-import PropTypes from "prop-types";
 
-import SearchForm from '../SearchForm/SearchForm'
-import SearchTypeSelector from '../SearchTypeSelector/SearchTypeSelector'
+import SearchForm from "../SearchForm/SearchForm";
+import SearchTypeSelector from "../SearchTypeSelector/SearchTypeSelector";
 
-const SearchBar = ({ children }) => {
+const SearchBar = () => {
   return (
-    <>
-      <div>SearchBar</div>
-      <div>{children}</div>
-      <SearchForm></SearchForm>
-      <SearchTypeSelector></SearchTypeSelector>
-    </>
+    <div className="search-bar">
+      <SearchForm />
+      <SearchTypeSelector />
+    </div>
   );
-};
-
-SearchBar.propTypes = {
-  children: PropTypes.node,
 };
 
 export default SearchBar;

@@ -1,12 +1,12 @@
 import css from "./MyRecipesList.module.css";
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import MainTitle from "../MainTitle/MainTitle";
-import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
 import deleteMyRecipe from "../../api/recipes/deleteMyRecipe";
 import getMyRecipes from "../../api/recipes/getMyRecipes";
 import Notiflix from "notiflix";
+import MainTitle from "../MainTitle/MainTitle";
+import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
 
 const MyRecipesList = () => {
   const [recipes, setRecipes] = useState([]);

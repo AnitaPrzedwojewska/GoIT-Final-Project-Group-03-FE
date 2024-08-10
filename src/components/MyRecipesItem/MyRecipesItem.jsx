@@ -1,5 +1,7 @@
-import css from "./MyRecipesItem.module.css";
 import PropTypes from "prop-types";
+import css from "./MyRecipesItem.module.css";
+import ButonFancy from "../ButonFancy/ButonFancy";
+import DeleteIcon from "../IconsSVG/DeleteIcon";
 
 import DeleteIcon from "../IconsSVG/DeleteIcon";
 

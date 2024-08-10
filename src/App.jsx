@@ -3,9 +3,13 @@ import { useEffect } from "react";
 
 // npm packages
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 // config
 import setAxiosDefault from "./config.js/axios";
+
+// functions
+import { refresh } from './redux/auth/auth.operations.js';
 
 // contants
 import routes from "./constants/routes.js";
@@ -31,8 +35,13 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 
 const App = () => {
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
     setAxiosDefault();
+    dispatch(refresh());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

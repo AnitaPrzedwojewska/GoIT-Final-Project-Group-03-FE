@@ -4,7 +4,7 @@ const endpoints = {
   USER_LOGIN: "/users/login",
   USER_CURRENT: "/users/current",
   USER_UPDATE: "/users/update",
-  USER_LOGOUT: "/users/logoutUser",
+  USER_LOGOUT: "/users/logout",
   OTHER_SUBSCRIBE: "/subscribe",
 
   // ingredients

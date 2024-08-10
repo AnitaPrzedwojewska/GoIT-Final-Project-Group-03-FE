@@ -1,6 +1,16 @@
+// node modules
 import { useEffect, useState } from "react";
+
+// npm packages
 import { NavLink } from "react-router-dom";
+
+// functions
 import getRecipeByCategory from "../../api/recipes/getRecipesByCategory";
+
+// components
+import RecipeTile from "../RecipeTile/RecipeTile";
+
+// styles
 import css from "./PreviewCategories.module.css";
 
 const PreviewCategories = () => {
@@ -35,12 +45,11 @@ const PreviewCategories = () => {
       }
       setRecipes(fetchedRecipes);
     };
-
     fetchRecipes();
-
     return () => {
       window.removeEventListener("resize", updateItemsToShow); // cleanup
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -52,12 +61,11 @@ const PreviewCategories = () => {
           <ul className={css.recipeList}>
             {recipes[category]?.slice(0, itemsToShow).map((recipe) => (
               <li key={recipe._id} className={css.recipeItem}>
-                <img
-                  src={recipe.preview}
-                  alt={recipe.title}
-                  className={css.recipeImage}
+                <RecipeTile
+                  id={recipe._id}
+                  title={recipe.title}
+                  preview={recipe.preview}
                 />
-                <p className={css.recipeTitle}>{recipe.title}</p>
               </li>
             ))}
           </ul>
@@ -70,7 +78,7 @@ const PreviewCategories = () => {
         </div>
       ))}
       <div className={css.buttonFancyContainer}>
-        <NavLink to="/categories/:categoryName" className={css.buttonFancy}>
+        <NavLink to="/categories/Breakfast" className={css.buttonFancy}>
           Other Categories
         </NavLink>
       </div>
