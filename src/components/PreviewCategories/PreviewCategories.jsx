@@ -49,7 +49,7 @@ const PreviewCategories = () => {
     return () => {
       window.removeEventListener("resize", updateItemsToShow); // cleanup
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -78,7 +78,7 @@ const PreviewCategories = () => {
         </div>
       ))}
       <div className={css.buttonFancyContainer}>
-        <NavLink to='/categories/:categoryName' className={css.buttonFancy}>
+        <NavLink to="/categories/Breakfast" className={css.buttonFancy}>
           Other Categories
         </NavLink>
       </div>

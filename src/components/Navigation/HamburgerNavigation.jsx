@@ -7,7 +7,7 @@ const HamburgerNavigation = () => {
   return (
     <ul className={hamburger.navList}>
       <li>
-        <NavLink className={hamburger.link} to="/categories/:categoryName">
+        <NavLink className={hamburger.link} to="/categories/Breakfast">
           Categories
         </NavLink>
       </li>
