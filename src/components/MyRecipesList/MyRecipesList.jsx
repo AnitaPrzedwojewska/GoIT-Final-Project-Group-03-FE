@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import deleteMyRecipe from "../../api/recipes/deleteMyRecipe";
 import getMyRecipes from "../../api/recipes/getMyRecipes";
 import Notiflix from "notiflix";
-import MainTitle from "../MainTitle/MainTitle";
 import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
 
 const MyRecipesList = () => {
@@ -58,7 +57,6 @@ const MyRecipesList = () => {
 
   return (
     <>
-      <MainTitle></MainTitle>
       <div className={css.container}>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
