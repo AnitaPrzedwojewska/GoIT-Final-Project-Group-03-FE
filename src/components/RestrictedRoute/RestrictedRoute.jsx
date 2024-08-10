@@ -3,7 +3,9 @@ import useAuth from "../../hooks/useAuth";
 
 import PropTypes from "prop-types";
 
-const RestrictedRoute = ({ redirectTo = "/" }) => {
+import routes from "../../constants/routes";
+
+const RestrictedRoute = ({ redirectTo = `/${routes.MAIN}` }) => {
   const { isLoggedIn } = useAuth();
 
   return isLoggedIn ? <Navigate to={redirectTo} /> : <Outlet />;
