@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Notiflix from "notiflix";
 import ButonFancy from "../ButonFancy/ButonFancy";
 import routes from "../../constants/routes";
-
 import css from "./Search.module.css";
 
 const Search = () => {
@@ -11,7 +11,11 @@ const Search = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    navigate(`/${routes.SEARCH}?query=${encodeURIComponent(inputValue)}`);
+    if (inputValue.trim() === "") {
+      Notiflix.Notify.warning("Please fill the input field before searching.");
+      return;
+    }
+    navigate(`/${routes.SEARCH}?keyword=${encodeURIComponent(inputValue)}`);
   };
 
   return (
@@ -35,7 +39,7 @@ const Search = () => {
             onChange={(e) => setInputValue(e.target.value)} //
           />
           <ButonFancy className={css.blackButton} type="submit">
-            Submit
+            Search
           </ButonFancy>
         </div>
       </form>

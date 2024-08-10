@@ -45,6 +45,7 @@
 }
 
 .input {
+  border-radius: 24px 44px;
   background-color: transparent;
   color: var(--grey4);
   border: none;
@@ -54,7 +55,7 @@
   margin: 0;
   width: 100%;
   height: 100%;
-  margin-left: 32px;
+  padding-left: 32px;
   position: absolute;
   left: 0;
   top: 0;
@@ -151,7 +152,7 @@
     width: 161px;
   }
   .input {
-    margin-left: 48px;
+    padding-left: 48px;
     font-size: 16px;
     line-height: 24px;
   }
