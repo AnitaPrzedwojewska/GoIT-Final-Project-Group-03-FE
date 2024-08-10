@@ -1,4 +1,4 @@
-// import css from "./MyRecipesList.module.css";
+import css from "./MyRecipesList.module.css";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -57,7 +57,7 @@ const MyRecipesList = () => {
   return (
     <>
       <MainTitle></MainTitle>
-      <div>
+      <div className={css.container}>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
             <MyRecipesItem
@@ -68,7 +68,7 @@ const MyRecipesList = () => {
             />
           ))
         ) : (
-          <p>No recipes added yet</p>
+          <p className={css.paragraph}>No recipes added yet</p>
         )}
       </div>
       {totalPages > 1 && (

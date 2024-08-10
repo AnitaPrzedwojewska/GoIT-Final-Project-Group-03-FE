@@ -26,7 +26,7 @@ const AddRecipesPage = () => {
           setFormData={setFormData}
         ></AddRecipeForm>
         <div className={css.side}>
-          <h3>Follow Us</h3>
+          <h3 className={css.header}>Follow Us</h3>
           <FollowUs className={css.followus}></FollowUs>
           <PopularRecipe></PopularRecipe>
         </div>

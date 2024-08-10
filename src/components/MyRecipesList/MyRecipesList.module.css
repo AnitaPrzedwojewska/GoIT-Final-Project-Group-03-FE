@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.paragraph {
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+}
+
+/* desktop */
+
+@media (min-width: 1440px) {
+}

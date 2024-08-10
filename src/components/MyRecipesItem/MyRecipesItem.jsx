@@ -1,18 +1,37 @@
-// import css from "./MyRecipesItem.module.css";
+import css from "./MyRecipesItem.module.css";
 import PropTypes from "prop-types";
+
+import DeleteIcon from "../IconsSVG/DeleteIcon";
+
+const DEFAULT_IMAGE_URL = "../../../public/images/no-image.png";
 
 const MyRecipesItem = ({ recipe, onSeeRecipe, onRemoveRecipe }) => {
   const { _id, preview, title, description, time } = recipe;
 
+  const imageSrc = preview || DEFAULT_IMAGE_URL;
+
   return (
     <>
-      <div>
-        <img src={preview} alt={title} />
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <p>Cooking time: {time}</p>
-        <button onClick={() => onSeeRecipe(_id)}>See Recipe</button>
-        <button onClick={() => onRemoveRecipe(_id)}>Remove Recipe</button>
+      <div className={css.container}>
+        <img className={css.image} src={imageSrc} alt={title} />
+        <div className={css.descContainer}>
+          <div className={css.title}>
+            <h3>{title}</h3>
+            <button
+              className={css.deleteButton}
+              onClick={() => onRemoveRecipe(_id)}
+            >
+              <DeleteIcon></DeleteIcon>
+            </button>
+          </div>
+          <p className={css.description}>{description}</p>
+          <div className={css.buttonBox}>
+            <p>{time}</p>
+            <button className={css.seeButton} onClick={() => onSeeRecipe(_id)}>
+              See Recipe
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
