@@ -20,7 +20,7 @@ const SearchForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className={css.form} onSubmit={onSubmit}>
       <div className={css.fancyInput}>
         <input
           className={css.input}

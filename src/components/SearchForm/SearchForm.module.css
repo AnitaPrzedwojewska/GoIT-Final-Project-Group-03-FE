@@ -1,3 +1,7 @@
+.form {
+  display: flex;
+  justify-content: center;
+}
 .fancyInput {
   border: 1px solid var(--white3);
   border-radius: 24px 44px;

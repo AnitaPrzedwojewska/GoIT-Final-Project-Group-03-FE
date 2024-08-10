@@ -6,8 +6,8 @@ import SearchTypeSelector from "../SearchTypeSelector/SearchTypeSelector";
 const SearchBar = () => {
   return (
     <div className="search-bar">
-      <SearchTypeSelector />
       <SearchForm />
+      <SearchTypeSelector />
     </div>
   );
 };
