@@ -8,6 +8,7 @@ import getRecipeCategories from "../../api/recipes/getRecipeCategories.js";
 
 const RecipeDescriptionFields = ({ formData, setFormData }) => {
   const [categories, setCategories] = useState([]);
+  const [thumbPreview, setThumbPreview] = useState(null);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -30,19 +31,35 @@ const RecipeDescriptionFields = ({ formData, setFormData }) => {
     }));
   };
 
+  const handleThumbChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFormData((prevData) => ({
+        ...prevData,
+        thumb: file,
+      }));
+
+      // Create a preview URL for the image and update the state
+      const previewUrl = URL.createObjectURL(file);
+      setThumbPreview(previewUrl);
+    }
+  };
+
   return (
     <>
       <div className={css.thumbContainer}>
         <div>
           <label className={css.thumb}>
-            <input
-              type="file"
-              name="thumb"
-              onChange={(e) =>
-                setFormData({ ...formData, thumb: e.target.files[0] })
-              }
-            />
-            <PhotoIcon className={css.icon}></PhotoIcon>
+            <input type="file" name="thumb" onChange={handleThumbChange} />
+            {thumbPreview ? (
+              <img
+                src={thumbPreview}
+                alt="Thumb Preview"
+                className={css.thumbImage}
+              />
+            ) : (
+              <PhotoIcon className={css.icon}></PhotoIcon>
+            )}
           </label>
         </div>
         <div className={css.container}>
