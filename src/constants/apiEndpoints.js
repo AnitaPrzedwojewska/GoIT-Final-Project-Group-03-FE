@@ -23,7 +23,7 @@ const endpoints = {
   // my recipes
   MY_RECIPES_ADD: "/ownRecipes/add",
   MY_RECIPES_DELETE: "/ownRecipes", // /:id
-  MY_RECIPES_GET: "/ownRecipes",
+  MY_RECIPES_GET: "/ownRecipes/",
 
   // recipes
   RECIPE_CATEGORIES: "/recipes/category-list",
