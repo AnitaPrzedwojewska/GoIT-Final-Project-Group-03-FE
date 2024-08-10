@@ -6,6 +6,7 @@ import MainTitle from "../MainTitle/MainTitle";
 import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
 import deleteMyRecipe from "../../api/recipes/deleteMyRecipe";
 import getMyRecipes from "../../api/recipes/getMyRecipes";
+import Notiflix from "notiflix";
 
 const MyRecipesList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -45,8 +46,9 @@ const MyRecipesList = () => {
     const response = await deleteMyRecipe(id);
     if (!response.error) {
       setRecipes(recipes.filter((recipe) => recipe._id !== id));
+      Notiflix.Notify.success("Recipe deleted successfully!");
     } else {
-      console.error("Error deleting recipe:", response.error);
+      Notiflix.Notify.failure("Error deleting recipe. Try again!");
     }
   };
 
