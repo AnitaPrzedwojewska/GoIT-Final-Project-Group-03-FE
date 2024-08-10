@@ -12,9 +12,28 @@
   border-radius: 24px 44px;
   color: var(--white2);
   margin-bottom: 72px;
+  font-size: 16px;
 }
 
 .addButton:hover,
 .addButton:focus {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .addButton {
+    width: 161px;
+    height: 52px;
+    margin-bottom: 100px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1440px) {
+  .addButton {
+    margin-bottom: 0;
+  }
 }

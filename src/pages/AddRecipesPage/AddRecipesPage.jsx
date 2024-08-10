@@ -25,8 +25,11 @@ const AddRecipesPage = () => {
           formData={formData}
           setFormData={setFormData}
         ></AddRecipeForm>
-        <FollowUs className={css.followus}></FollowUs>
-        <PopularRecipe></PopularRecipe>
+        <div className={css.side}>
+          <h3>Follow Us</h3>
+          <FollowUs className={css.followus}></FollowUs>
+          <PopularRecipe></PopularRecipe>
+        </div>
       </div>
     </>
   );
