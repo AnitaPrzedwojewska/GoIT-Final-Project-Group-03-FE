@@ -1,23 +1,24 @@
 // node modules
-import { useState, useRef } from 'react';
+import { useRef, useState } from "react";
 
 // npm packages
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
 
 // constants
-import routes from '../../constants/routes.js';
+import routes from "../../constants/routes.js";
 
 // functions
-import { getCategory } from '../../redux/recipes/recipes.selectors.js';
-import { getCategories } from "../../redux/recipes/recipes.selectors.js";
-import { setCategory } from '../../redux/recipes/recipes.slices.js';
+import {
+  getCategories,
+  getCategory,
+} from "../../redux/recipes/recipes.selectors.js";
+import { setCategory } from "../../redux/recipes/recipes.slices.js";
 
 // styles
-import css from './CategoriesNav.module.css';
+import css from "./CategoriesNav.module.css";
 
 const CategoriesNav = () => {
-
   const dispatch = useDispatch();
   const category = useSelector(getCategory);
   const categories = useSelector(getCategories);
@@ -29,13 +30,13 @@ const CategoriesNav = () => {
 
   const handleMouseDown = (e) => {
     setIsMouseDown(true);
-    setStartX(e.pageX = itemsRef.current.offsetLeft);
-    setScrollLeft(itemsRef.current.scrollLeft)
-  }
+    setStartX((e.pageX = itemsRef.current.offsetLeft));
+    setScrollLeft(itemsRef.current.scrollLeft);
+  };
 
   const handleMouseLeave = () => {
-    setIsMouseDown(false)
-  }
+    setIsMouseDown(false);
+  };
 
   const handleMouseUp = () => {
     setIsMouseDown(false);
@@ -60,14 +61,20 @@ const CategoriesNav = () => {
           onMouseDown={handleMouseDown}
           onMouseLeave={handleMouseLeave}
           onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}>
+          onMouseMove={handleMouseMove}
+        >
           {categories.map((cat) => (
             <li key={cat.title} className={css.menuItem}>
               <NavLink
                 // className={css.menuLink `${cat.title} == ${category} && css.active}`}
-                className={({ isActive } ) => `${css.menuLink} ${isActive && cat.title === category ? css.active : ''}`}
+                className={({ isActive }) =>
+                  `${css.menuLink} ${
+                    isActive && cat.title === category ? css.active : ""
+                  }`
+                }
                 to={`/${routes.CATEGORIES}/${cat.title}`}
-                onMouseUp={() => dispatch(setCategory(cat.title))}>
+                onMouseUp={() => dispatch(setCategory(cat.title))}
+              >
                 {cat.title}
               </NavLink>
             </li>
@@ -76,6 +83,6 @@ const CategoriesNav = () => {
       )}
     </div>
   );
-}
+};
 
 export default CategoriesNav;

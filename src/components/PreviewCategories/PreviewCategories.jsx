@@ -52,6 +52,10 @@ const PreviewCategories = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <div>
       {categories.map((category) => (
@@ -71,14 +75,22 @@ const PreviewCategories = () => {
           </ul>
 
           <div className={css.buttonContainer}>
-            <NavLink to={`/categories/${category}`} className={css.button}>
+            <NavLink
+              to={`/categories/${category}`}
+              className={css.button}
+              onClick={handleClick}
+            >
               See all
             </NavLink>
           </div>
         </div>
       ))}
       <div className={css.buttonFancyContainer}>
-        <NavLink to="/categories/Breakfast" className={css.buttonFancy}>
+        <NavLink
+          to="/categories/Breakfast"
+          className={css.buttonFancy}
+          onClick={handleClick}
+        >
           Other Categories
         </NavLink>
       </div>
