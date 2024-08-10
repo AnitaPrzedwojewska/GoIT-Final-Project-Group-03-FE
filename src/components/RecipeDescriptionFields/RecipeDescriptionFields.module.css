@@ -1,6 +1,14 @@
 /* mobile first */
+.thumbContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   margin-bottom: 44px;
+  width: 350px;
 }
 
 .thumb {
@@ -9,15 +17,18 @@
   height: 268px;
   background-color: var(--green1);
   border-radius: 8px;
+  border: 1px solid #000000;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 32px;
+  margin-right: auto;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .thumb input[type="file"] {
-  display: none; /* Hide the default file input */
+  display: none;
 }
 
 .icon {
@@ -37,7 +48,7 @@
   border-right: none;
   border-bottom: 1px solid #e0e0e0;
   text-transform: capitalize;
-  width: 343px;
+  width: 350px;
   height: 40px;
   text-align: top;
   font-size: 14px;

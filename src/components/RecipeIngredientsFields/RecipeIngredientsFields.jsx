@@ -1,6 +1,7 @@
 import css from "./RecipeIngredientsFields.module.css";
 import MinusIcon from "../IconsSVG/MinusIcon.jsx";
 import PlusIcon from "../IconsSVG/PlusIcon.jsx";
+import CloseIcon from "../IconsSVG/CloseIcon.jsx";
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import measures from "../../constants/measures";
@@ -65,7 +66,7 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
 
   return (
     <>
-      <div>
+      <div className={css.thumbContainer}>
         <div className={css.boxOne}>
           <h2>Ingredients</h2>
           <div className={css.counterBox}>
@@ -87,15 +88,16 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
           </div>
         </div>
         {Array.from({ length: ingredientsCount }).map((_, index) => (
-          <div key={index}>
+          <div className={css.ingredient} key={index}>
             <select
+              className={css.select}
               value={formData.ingredients[index]?.ingredientId || ""}
               onChange={(e) =>
                 handleIngredientChange(index, "ingredientId", e.target.value)
               }
               required
             >
-              <option value="">Select an ingredient</option>
+              <option value="">Select</option>
               {ingredientsList.map((ingredient) => (
                 <option key={ingredient._id} value={ingredient._id}>
                   {ingredient.ttl}
@@ -103,6 +105,7 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
               ))}
             </select>
             <input
+              className={css.quantity}
               type="number"
               placeholder="Quantity"
               value={formData.ingredients[index]?.quantity || ""}
@@ -112,6 +115,7 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
               required
             />
             <select
+              className={css.measure}
               placeholder="measure"
               value={formData.ingredients[index]?.measure || ""}
               onChange={(e) =>
@@ -119,15 +123,19 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
               }
               required
             >
-              <option value="">Select measure</option>
+              <option value="">Select</option>
               {measures.map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>
               ))}
             </select>
-            <button type="button" onClick={removeIngredientField}>
-              X
+            <button
+              className={css.closeButton}
+              type="button"
+              onClick={removeIngredientField}
+            >
+              <CloseIcon></CloseIcon>
             </button>
           </div>
         ))}
