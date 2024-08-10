@@ -1,28 +1,41 @@
-import PropTypes from "prop-types";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Notiflix from "notiflix";
+import routes from "../../constants/routes";
+
 import ButonFancy from "../ButonFancy/ButonFancy";
 import css from "./SearchForm.module.css";
 
-const SearchForm = ({ onSubmit }) => {
-  return (
-    <>
-      <div>SearchForm</div>
-      <form onSubmit={onSubmit}>
-        <div className={css.fancyInput}>
-          <input
-            className={css.input}
-            id='searchInput'
-            type='text'
-            placeholder='Enter the text'
-          />
-          <ButonFancy className={css.greenButton}>Submit</ButonFancy>
-        </div>
-      </form>
-    </>
-  );
-};
+const SearchForm = () => {
+  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState("");
 
-SearchForm.propTypes = {
-  onSubmit: PropTypes.func,
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (inputValue.trim() === "") {
+      Notiflix.Notify.warning("Please fill the input field before searching.");
+      return;
+    }
+    navigate(`/${routes.SEARCH}?keyword=${encodeURIComponent(inputValue)}`);
+  };
+
+  return (
+    <form onSubmit={onSubmit}>
+      <div className={css.fancyInput}>
+        <input
+          className={css.input}
+          id="searchInput"
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Search recipes..."
+        />
+        <ButonFancy className={css.greenButton} type="submit">
+          Search
+        </ButonFancy>
+      </div>
+    </form>
+  );
 };
 
 export default SearchForm;
