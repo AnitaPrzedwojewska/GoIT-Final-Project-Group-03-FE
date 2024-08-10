@@ -1,0 +1,92 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  classic ------------------------------ */
+.classic {
+  border-radius: 6px;
+}
+
+/*  fancy ------------------------------ */
+.fancy {
+  border-radius: 24px 44px;
+}
+
+
+@media (min-width: 768px) {
+  .classic {
+    padding: 16px 50px;
+  }
+}
+@media (min-width: 1440px) {
+  .classic {
+    height: 59px;
+  }
+}
+
+/*  auth ------------------------------ */
+.auth {
+  background-color: var(--green1);
+  color: var(--white2);
+}
+.auth:hover {
+  color: var(--black3);
+}
+@media (min-width: 768px) {
+  .auth {
+    padding: 16px 50px;
+  }
+}
+@media (min-width: 1440px) {
+  .auth {
+    width: 339px;
+  }
+}
+
+/*  subscribe ------------------------------ */
+
+.subscribe {
+  background-color: var(--green1);
+  color: var(--white2);
+}
+.subscribe:hover {
+  color: var(--black3);
+}
+@media (min-width: 768px) {
+  .subscribe {
+    padding: 16px 50px;
+  }
+}
+@media (min-width: 1440px) {
+  .subscribe {
+    width: 339px;
+  }
+}
+
+/*  register ------------------------------ */
+
+.register {
+  background-color: var(--green1);
+  color: var(--white2);
+  width: 279px;
+  height: 45px;
+}
+.register:hover {
+  color: var(--black3);
+}
+@media (min-width: 768px) {
+  .register {
+    width: 400px;
+    height: 56px;
+  }
+}
+@media (min-width: 1440px) {
+  .register {
+    width: 400px;
+    height: 59px;
+  }
+}
+
+

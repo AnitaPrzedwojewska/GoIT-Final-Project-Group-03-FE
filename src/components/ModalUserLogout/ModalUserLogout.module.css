@@ -1,4 +1,4 @@
-.modalOverlay {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,33 +9,75 @@
   z-index: 1001;
 }
 
-.modalContent {
-  width: 500px;
-  height: 215px;
-  border: 30px;
+.content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--white2);
+  width: 330px;
+  height: 179px;
   border-radius: 30px;
+  padding: 44px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 50px;
+  font-size: 14px;
+}
+@media screen and (min-width: 768px) {
+  .content {
+    width: 480px;
+    height: 215px;
+    border-radius: 30px;
+    padding: 50px 40px;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .content {
+    width: 500px;
+    height: 215px;
+    border-radius: 30px;
+    padding: 50px;
+    font-size: 24px;
+  }
 }
 
-.description {
+.question {
   margin-bottom: 32px;
   font-size: 18px;
   line-height: 24px;
 }
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .buttons {
+    gap: 16px;
+    font-size: 16px;
+  }
+}
+
 .smallClassicButton {
+  width: 137px;
   height: 49px;
 }
-@media (min-width: 750px) {
+@media (min-width: 768px) {
   .smallClassicButton {
+    width: 192px;
     height: 59px;
   }
+}
+
+.buttonLogout {
+  background: var(--green1);
+}
+.buttonLogout:hover {
+  background-color: var(--black3);
 }
 
 .buttonCancel {
@@ -44,12 +86,6 @@
   margin-left: 16px;
 }
 .buttonCancel:hover {
-  background-color: var(--white1);
-}
-
-.buttonLogout {
-  background: var(--green1);
-}
-.buttonLogout:hover {
+  color: var(--white2);
   background-color: var(--black3);
 }
