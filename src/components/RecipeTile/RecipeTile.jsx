@@ -10,7 +10,6 @@ import routes from "../../constants/routes";
 // styles
 import css from "./RecipeTile.module.css";
 
-
 const RecipeTile = ({ id, title, preview }) => {
   return (
     <>
@@ -25,7 +24,7 @@ const RecipeTile = ({ id, title, preview }) => {
 RecipeTile.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  preview: PropTypes.string.isRequired,
+  preview: PropTypes.string,
 };
 
 export default RecipeTile;
