@@ -24,10 +24,10 @@ const MyRecipesList = () => {
         if (response && response.data) {
           const { results, total } = response.data;
           setRecipes(results || []);
-          // const calculatedTotalPages = total
-          //   ? Math.ceil(total / recipesPerPage)
-          //   : 1;
-          setTotalPages(2);
+          const calculatedTotalPages = total
+            ? Math.ceil(total / recipesPerPage)
+            : 1;
+          setTotalPages(calculatedTotalPages);
 
           console.log("Fetched recipes:", results);
           console.log("Total recipes:", total);
