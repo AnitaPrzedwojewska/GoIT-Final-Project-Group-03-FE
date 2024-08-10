@@ -13,7 +13,7 @@
     background-color: var(--green4);
     padding: 0px 32px;
     gap: 40px;
-    margin: 30px;
+    margin: 15px;
     border-radius: 10px;
     list-style: none;
     font-size: 18px;
@@ -44,7 +44,7 @@
 }
 
 .measure {
-    width: 68px;
+    width: 85px;
     height: 35px;
     background-color: var(--green1);
     border-radius: 5px;

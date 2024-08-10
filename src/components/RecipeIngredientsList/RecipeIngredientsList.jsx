@@ -32,7 +32,7 @@ const RecipeIngredientsList = () => {
             </div>
             <div className={css.ingredientContentMeasure}>
               <div className={css.measure}>
-                {ingr.measure}
+                5 {ingr.measure}
               </div>
               <div>
                 <input type="checkbox" className={css.checkbox}></input>
