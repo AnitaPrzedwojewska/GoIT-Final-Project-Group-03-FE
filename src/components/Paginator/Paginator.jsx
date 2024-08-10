@@ -9,35 +9,37 @@ const Paginator = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <>
-      <div className={css.paginationContainer}>
-        <button
-          className={css.arrowButton}
-          onClick={() => onPageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          <LeftArrow></LeftArrow>
-        </button>
-
-        {pages.map((page) => (
+      <div className={css.container}>
+        <div className={css.paginationContainer}>
           <button
-            key={page}
-            className={`${css.pageButton} ${
-              currentPage === page ? css.active : ""
-            }`}
-            onClick={() => onPageChange(page)}
-            disabled={currentPage === page}
+            className={css.arrowButton}
+            onClick={() => onPageChange(currentPage - 1)}
+            disabled={currentPage === 1}
           >
-            {page}
+            <LeftArrow></LeftArrow>
           </button>
-        ))}
-
-        <button
-          className={css.arrowButton}
-          onClick={() => onPageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          <RightArrow></RightArrow>
-        </button>
+          <div className={css.numbersContainer}>
+            {pages.map((page) => (
+              <button
+                key={page}
+                className={`${css.pageButton} ${
+                  currentPage === page ? css.active : ""
+                }`}
+                onClick={() => onPageChange(page)}
+                disabled={currentPage === page}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+          <button
+            className={css.arrowButton}
+            onClick={() => onPageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            <RightArrow></RightArrow>
+          </button>
+        </div>
       </div>
     </>
   );
