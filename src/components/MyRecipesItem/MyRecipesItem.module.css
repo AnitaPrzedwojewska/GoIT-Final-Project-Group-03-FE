@@ -17,6 +17,7 @@
 
 .descContainer {
   min-width: 187px;
+  padding-left: 0;
 }
 
 .title {
@@ -57,17 +58,19 @@
 
 .description {
   font-size: 8px;
-  line-height: 125%;
   letter-spacing: -0.02em;
   color: var(--black2);
   margin-bottom: 24px;
   width: 163px;
-  height: 39px;
+  height: 35px;
   display: -webkit-box;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-sizing: border-box;
+  line-height: 1.5em;
+  max-height: calc(1.5em * 4);
+  line-clamp: 4;
 }
 
 .buttonBox {
@@ -107,6 +110,7 @@
     padding: 28px 24px;
     width: 704px;
     height: 288px;
+    gap: 8px;
   }
 
   .image {
@@ -116,6 +120,7 @@
 
   .descContainer {
     min-width: 420px;
+    padding-left: 16px;
   }
 
   .title h3 {
@@ -136,10 +141,9 @@
 
   .description {
     font-size: 14px;
-    line-height: 129%;
     margin-bottom: 46px;
     width: 404px;
-    height: 89px;
+    height: 107px;
   }
 
   .buttonBox p {
@@ -157,4 +161,55 @@
 /* desktop */
 
 @media (min-width: 1440px) {
+  .container {
+    padding: 40px;
+    width: 1240px;
+    height: 404px;
+    gap: 14px;
+  }
+
+  .image {
+    width: 318px;
+    height: 324px;
+  }
+
+  .descContainer {
+    min-width: 806px;
+    padding-left: 40px;
+  }
+
+  .title h3 {
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+  }
+
+  .deleteButton {
+    width: 44px;
+    height: 44px;
+  }
+
+  .deleteButton svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .description {
+    font-size: 18px;
+    margin-bottom: 67px;
+    width: 806px;
+    height: 134px;
+  }
+
+  .buttonBox p {
+    font-size: 14px;
+    line-height: 143%;
+  }
+
+  .seeButton {
+    width: 172px;
+    height: 59px;
+    font-size: 16px;
+  }
 }
