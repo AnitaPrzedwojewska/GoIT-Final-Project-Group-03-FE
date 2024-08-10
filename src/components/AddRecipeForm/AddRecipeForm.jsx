@@ -1,4 +1,4 @@
-// import css from "./AddRecipeForm.module.css";
+import css from "./AddRecipeForm.module.css";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
@@ -37,11 +37,13 @@ const AddRecipeForm = ({ formData, setFormData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={css.container} onSubmit={handleSubmit}>
       <RecipeDescriptionFields formData={formData} setFormData={setFormData} />
       <RecipeIngredientsFields formData={formData} setFormData={setFormData} />
       <RecipePreparationFields formData={formData} setFormData={setFormData} />
-      <button type="submit">Add</button>
+      <button className={css.addButton} type="submit">
+        Add
+      </button>
     </form>
   );
 };

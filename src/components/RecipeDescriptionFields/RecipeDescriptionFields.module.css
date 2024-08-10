@@ -1,4 +1,5 @@
 /* mobile first */
+
 .thumbContainer {
   display: flex;
   flex-direction: column;
@@ -17,14 +18,18 @@
   height: 268px;
   background-color: var(--green1);
   border-radius: 8px;
-  border: 1px solid #000000;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 32px;
   margin-right: auto;
+}
+
+.thumb:hover,
+.thumb:focus {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #000000;
 }
 
 .thumb input[type="file"] {
@@ -108,6 +113,7 @@
 .select option {
   color: #000;
 }
+
 /* tablet */
 
 @media (min-width: 768px) and (max-width: 1439px) {
