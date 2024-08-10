@@ -10,9 +10,8 @@
 }
 
 .modalContent {
-  width: 500px;
-  height: 420px;
-  border: 6px;
+  width: 330px;
+  height: 327px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,15 +23,15 @@
 }
 
 .container {
-  margin: 60px 50px;
+  margin: 32px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 .imageUpload {
-  width: 103px;
-  height: 103px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   background-color: var(--grey2);
   background-size: cover;
@@ -91,19 +90,21 @@
   border: 1px solid var(--black2);
   border-radius: 6px;
   outline: none;
-  width: 400px;
-  height: 59px;
+  width: 282px;
+  height: 48px;
   display: flex;
   align-items: left;
   justify-content: center;
   padding-left: 51px;
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 14px;
+  line-height: 21px;
 }
 .input::placeholder {
   margin-left: 42px;
 }
 .inputIcon {
+  width: 12px;
+  height: 13px;
   position: absolute;
   left: 23px;
   top: 20px;
@@ -113,23 +114,73 @@
 .buttonSave {
   background-color: var(--green1);
   color: var(--white2);
-  width: 279px;
-  height: 45px;
-  padding: 14px 110px;
-}
-@media (min-width: 750px) {
-  .buttonSave {
-    width: 400px;
-    height: 56px;
-    padding: 21px 138px;
-  }
-}
-@media (min-width: 1025px) {
-  .buttonSave {
-    height: 59px;
-  }
+  width: 282px;
+  height: 49px;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonSave:hover {
   color: var(--black3);
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .buttonSave {
+    width: 400px;
+    height: 56px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .modalContent {
+    width: 480px;
+    height: 402px;
+  }
+  .input {
+    width: 400px;
+    height: 56px;
+    font-size: 18px;
+  }
+  .imageUpload {
+    width: 103px;
+    height: 103px;
+  }
+  .container {
+    margin: 60px 50px;
+  }
+  .inputIcon {
+    width: 16px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .buttonSave {
+    width: 400px;
+    height: 59px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .modalContent {
+    width: 500px;
+    height: 425px;
+  }
+  .input {
+    width: 400px;
+    height: 59px;
+    font-size: 18px;
+  }
+  .imageUpload {
+    width: 103px;
+    height: 103px;
+  }
+  .container {
+    margin: 60px 50px;
+  }
+  .inputIcon {
+    width: 16px;
+    height: 18px;
+  }
 }
