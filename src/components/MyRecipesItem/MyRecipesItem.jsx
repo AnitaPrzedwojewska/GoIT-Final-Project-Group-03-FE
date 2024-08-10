@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import css from "./MyRecipesItem.module.css";
 import ButonFancy from "../ButonFancy/ButonFancy";
-import ButonClassic from "../ButonClassic/ButonClassic";
+import DeleteIcon from "../IconsSVG/DeleteIcon";
 
 const MyRecipesItem = ({ recipe, onSeeRecipe, onRemoveRecipe }) => {
   const { _id, preview, title, description, time } = recipe;
@@ -18,11 +18,11 @@ const MyRecipesItem = ({ recipe, onSeeRecipe, onRemoveRecipe }) => {
             <button
               onClick={() => onRemoveRecipe(_id)}
               className={css.removeButton}>
-              {/* <BinIcon
+              <DeleteIcon
                 width={"24px"}
                 height={"24px"}
                 className={css.binIcon}
-              /> */}
+              />
             </button>
 
           </div>
