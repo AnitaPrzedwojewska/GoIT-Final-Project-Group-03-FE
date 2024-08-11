@@ -19,12 +19,13 @@ const RecipePageHero = () => {
   return (
     <>
       <div className={css.recipeHeroContainer}>
-        <h1 className={css.recipeName}>{title}</h1>
-        <p>{description}</p>
+        <div className={css.nameContainer}>
+          <h1 className={css.recipeName}>{title}</h1>
+        </div>
+        <p className={css.desc}>{description}</p>
         <ButonFancy className={css.addRecipeButton}>Add to favourite recipes</ButonFancy>
-        <p>{time}</p>
+        <p>{time} min</p>
       </div>
-
     </>
   );
 };
