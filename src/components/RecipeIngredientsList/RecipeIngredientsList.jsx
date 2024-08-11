@@ -18,14 +18,11 @@ const RecipeIngredientsList = () => {
     <>
       <div className={css.ingredientHeader}>
         <div className={css.ingredientHeaderName}>
-          <div className={css.ingredientImg}>
             <p>Ingredients</p>
-          </div>
-
         </div>
         <div className={css.ingredientHeaderSpecify}>
-          <p>Number</p>
-          <p>Add to list</p>
+            <p>Number</p>
+            <p>Add to list</p>
         </div>
       </div>
       { !ingredients ? (<p>Sorry, something went wrong, </p>) :

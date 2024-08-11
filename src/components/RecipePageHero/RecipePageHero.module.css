@@ -1,0 +1,31 @@
+.recipeHeroContainer {
+    height: 493px;
+    width: 100%;
+    background-image: url("/public/images-bkg/desktop-recipe-vege-assortment.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.recipeName {
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--green1);
+}
+
+.addRecipeButton {
+    width: 270px;
+    height: 59px;
+    background-color: transparent;
+    border: 2px solid var(--green1);
+    font-size: 16px;
+    color: var(--black2);
+}
+
+.addRecipeButton:hover {
+    background-color: var(--green4);
+}
