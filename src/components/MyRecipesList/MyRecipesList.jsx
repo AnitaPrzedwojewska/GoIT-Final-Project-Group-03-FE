@@ -28,10 +28,6 @@ const MyRecipesList = () => {
             ? Math.ceil(total / recipesPerPage)
             : 1;
           setTotalPages(calculatedTotalPages);
-
-          console.log("Fetched recipes:", results);
-          console.log("Total recipes:", total);
-          console.log("Calculated total pages:", totalPages);
         } else {
           setRecipes([]);
           setTotalPages(1);
