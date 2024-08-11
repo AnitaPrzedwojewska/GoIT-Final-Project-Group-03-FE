@@ -11,6 +11,8 @@ const PopularRecipes = () => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         setDisplayLimit(4);
+      } else if (window.innerWidth >= 1440) {
+        setDisplayLimit(4);
       } else {
         setDisplayLimit(2);
       }

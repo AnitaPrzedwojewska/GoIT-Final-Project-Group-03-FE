@@ -66,17 +66,34 @@
 /* tablet */
 
 @media (min-width: 768px) and (max-width: 1439px) {
-  .addButton {
-    width: 161px;
-    height: 52px;
-    margin-bottom: 100px;
+  .container {
+    width: 704px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .itemsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .recipeItem {
+    width: 336px;
+    height: 98px;
+  }
+
+  .preview {
+    border-radius: 8px;
+    width: 104px;
+    height: 85px;
+    margin-right: 12px;
   }
 }
 
 /* desktop */
 
 @media (min-width: 1440px) {
-  .addButton {
-    margin-bottom: 0;
-  }
 }
