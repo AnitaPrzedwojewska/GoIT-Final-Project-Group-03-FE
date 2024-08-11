@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 275px;
+  height: 51px;
+  background-color: var(--white2);
+  border-radius: 26px;
+  box-shadow: 0 4px 4px 0 rgba(135, 135, 135, 0.2);
+  padding: 12px 20px;
+}
+
+.numbersContainer {
+  padding: 0;
+  width: 155px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.pageButton {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  color: #656565;
+  width: 27px;
+  height: 27px;
+  border-radius: 100%;
+}
+
+.pageButton.active {
+  background-color: #ebf3d4;
+  color: var(--black3);
+}
+
+.pageButton:disabled {
+  cursor: not-allowed;
+}
+
+.arrowButton {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.arrowButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    margin-top: 50px;
+  }
+
+  .paginationContainer {
+    width: 324px;
+    height: 55px;
+    padding: 14px 20px;
+  }
+
+  .numbersContainer {
+    width: 180px;
+    height: 27px;
+    gap: 24px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1440px) {
+  .container {
+    margin-top: 50px;
+  }
+
+  .paginationContainer {
+    width: 324px;
+    height: 55px;
+    padding: 14px 20px;
+  }
+
+  .numbersContainer {
+    width: 180px;
+    height: 27px;
+    gap: 24px;
+  }
+}

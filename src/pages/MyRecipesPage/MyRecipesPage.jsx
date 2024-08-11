@@ -1,13 +1,14 @@
-import MainPageTitle from "../../components/MainPageTitle/MainPageTitle";
+import css from "./MyRecipesPage.module.css";
+import MainTitle from "../../components/MainTitle/MainTitle";
 import MyRecipesList from "../../components/MyRecipesList/MyRecipesList";
-import Paginator from "../../components/Paginator/Paginator";
 
 const MyRecipesPage = () => {
   return (
     <>
-      <MainPageTitle />
-      <MyRecipesList />
-      <Paginator />
+      <MainTitle>My recipes</MainTitle>
+      <div className={css.container}>
+        <MyRecipesList />
+      </div>
     </>
   );
 };

@@ -1,10 +1,15 @@
 import { NavLink } from "react-router-dom";
 
+import css from './RegisterPage.module.css';
+
+import AuthForm from '../../components/AuthForm/AuthForm'
+
 const RegisterPage = () => {
   return (
-    <>
-      <NavLink to='/signin'>Sign in</NavLink>
-    </>
+    <div className={css.registerPage}>
+      <AuthForm />
+      <NavLink className={css.link} to='/signin'>Sign in</NavLink>
+    </div>
   );
 };
 

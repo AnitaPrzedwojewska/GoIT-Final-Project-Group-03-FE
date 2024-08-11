@@ -1,0 +1,57 @@
+.classicButton {
+  padding: 11px 67px;
+  border-radius: 6px;
+}
+/*-----------------------------------------------------------------------------------------------*/
+
+.subscribeClassicButton {
+  background-color: var(--green1);
+  color: var(--white2);
+  padding: 11px 67px;
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .subscribeClassicButton {
+    padding: 16px 50px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .subscribeClassicButton {
+    width: 339px;
+    padding: 21px 138px;
+  }
+}
+
+.subscribeClassicButton:hover {
+  color: var(--black3);
+}
+/*----------------------------------------------------------------------*/
+.registerClassicButton {
+  background-color: var(--green1);
+  color: var(--white2);
+  width: 279px;
+  height: 45px;
+  padding: 14px 110px;
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .registerClassicButton {
+    width: 400px;
+    height: 56px;
+    padding: 21px 138px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .registerClassicButton {
+    width: 400px;
+    height: 59px;
+    padding: 21px 138px;
+  }
+}
+
+.registerClassicButton:hover {
+  color: var(--black3);
+}
+

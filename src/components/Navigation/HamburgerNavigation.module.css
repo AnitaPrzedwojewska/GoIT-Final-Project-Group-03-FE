@@ -1,0 +1,52 @@
+@media screen and (max-width: 767px) {
+  .navList {
+    font-size: 18px;
+    gap: 32px;
+    padding-top: 182px;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .navList {
+    font-size: 24px;
+    gap: 40px;
+    padding-top: 186px;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  /* nav */
+
+  .navList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: medium;
+    color: var(--black2);
+  }
+
+  .link {
+    color: inherit;
+  }
+
+  .link:hover,
+  .link:focus,
+  .link:active {
+    color: var(--green1);
+  }
+
+  .link:hover {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hamburgerMenu,
+  .navList {
+    display: none;
+  }
+}

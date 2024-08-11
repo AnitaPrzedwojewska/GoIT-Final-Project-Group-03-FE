@@ -1,0 +1,50 @@
+.tile {
+  position: relative;
+  display: block;
+  width: 343px;
+  height: 323px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tile .photo {
+  object-fit: cover;
+}
+
+.name {
+  position: absolute;
+  left: 18px;
+  bottom: 26px;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 307px;
+  height: 52px;
+  overflow: hidden;
+  padding: 16px;
+  background-color: var(--white1);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: medium;
+  color: var(--black4);
+}
+
+@media screen and (min-width: 768px) {
+  .tile {
+    width: 336px;
+    height: 323px;
+  }
+  .name {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .tile {
+    width: 300px;
+    height: 323px;
+  }
+  .name {
+    width: 268px;
+  }
+}

@@ -1,17 +1,13 @@
-// import css from "./Logo.module.css";
-import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
+import css from "./Logo.module.css";
+import LogoIcon from "../IconsSVG/LogoIcon";
 
-const Logo = ({ children }) => {
+const Logo = () => {
   return (
-    <>
-      <div>Logo</div>
-      <div>{children}</div>
-    </>
+    <NavLink to="/" className={css.LogoBkg}>
+      <LogoIcon className={css.logoIcon} />
+    </NavLink>
   );
-};
-
-Logo.propTypes = {
-  children: PropTypes.node,
 };
 
 export default Logo;

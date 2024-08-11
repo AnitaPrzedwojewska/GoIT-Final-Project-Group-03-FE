@@ -1,3 +1,6 @@
+.page {
+  position: relative;
+}
 .container {
   width: 100%;
   padding: 12px;
@@ -5,25 +8,31 @@
 
 .mainSection {
   background-color: var(--white2);
+  margin-bottom: 100px;
 }
 
 @media screen and (min-width: 320px) {
   .container {
-    width: 320px;
+    width: 375px;
     margin: 0 auto;
-    padding: 28px 32px 18px;
+    padding: 16px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
-    padding: 20px 32px 24px;
+    padding: 0 32px 24px;
   }
 }
 @media screen and (min-width: 1440px) {
+  .page {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
   .container {
     width: 1440px;
-    padding: 64px 100px 50px;
+    padding: 100px;
   }
 }

@@ -1,0 +1,231 @@
+.form {
+  background-color: var(--grey1);
+  color: var(--white1);
+  width: 335px;
+  height: ;
+  padding: 32px 28px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.registration {
+  height: 350px;
+}
+
+.login {
+  height: 315px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.inputBox {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.input {
+  background-color: transparent;
+  color: var(--white1);
+  border: 1px solid var(--white1);
+  border-radius: 6px;
+  outline: none;
+  width: 279px;
+  height: 45px;
+  display: flex;
+  align-items: left;
+  padding-left: 40px;
+}
+.input::placeholder {
+  margin-left: 42px;
+}
+.input:hover {
+  border: 2px solid;
+}
+.valid {
+  border: 2px solid var(--green3);
+}
+.validText {
+  margin-left: 5px;
+  color: var(--green3);
+  font-size: 10px;
+}
+.invalid {
+  border: 2px solid var(--red);
+}
+.invalidText {
+  margin-left: 5px;
+  color: var(--red);
+  font-size: 10px;
+}
+.icon {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  display: flex;
+  height: 15px;
+  width: 15px;
+  color: var(--white1);
+}
+.validIcon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+.invalidIcon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+.buttonBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.registerClassicButton {
+  background-color: var(--green1);
+  color: var(--white2);
+  width: 279px;
+  height: 45px;
+  padding: 14px 110px;
+  border: none;
+}
+
+.registerClassicButton:hover {
+  color: var(--black3);
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .form {
+    background-color: var(--grey1);
+    color: var(--white2);
+    width: 500px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .validText {
+    margin-left: 25px;
+  }
+  .invalidText {
+    margin-left: 25px;
+  }
+
+  .registration {
+    height: 481px;
+  }
+
+  .login {
+    height: 419px;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 600;
+    letter-spacing: -2%;
+    margin: 20px 25px 20px;
+  }
+  .inputBox {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .input {
+    width: 400px;
+    height: 59px;
+    padding-left: 42px;
+  }
+  .icon {
+    left: 40px;
+    top: 20px;
+    height: 18px;
+    width: 18px;
+  }
+  .validIcon {
+    position: absolute;
+    right: 30px;
+    top: 18px;
+  }
+  .invalidIcon {
+    position: absolute;
+    right: 30px;
+    top: 18px;
+  }
+  .registerClassicButton {
+    width: 400px;
+    height: 56px;
+    padding: 21px 138px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .form {
+    background-color: var(--grey1);
+    color: var(--white2);
+    width: 500px;
+  }
+  .registration {
+    height: 484px;
+  }
+  .validText {
+    margin-left: 25px;
+  }
+  .invalidText {
+    margin-left: 25px;
+  }
+
+  .login {
+    height: 419px;
+  }
+  .inputBox {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .input {
+    width: 400px;
+    height: 59px;
+    padding-left: 42px;
+  }
+  .icon {
+    left: 40px;
+    top: 20px;
+    height: 18px;
+    width: 18px;
+  }
+  .validIcon {
+    position: absolute;
+    right: 30px;
+    top: 18px;
+  }
+  .invalidIcon {
+    position: absolute;
+    right: 30px;
+    top: 18px;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 600;
+    letter-spacing: -2%;
+    margin: 20px 25px 20px;
+  }
+  .registerClassicButton {
+    width: 400px;
+    height: 59px;
+    padding: 21px 138px;
+  }
+}

@@ -26,24 +26,44 @@
   gap: 8px;
 }
 
+.inputBox {
+  display: block;
+  position: relative;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
 .input {
   background-color: transparent;
   color: var(--white2);
   border: 1px solid var(--white2);
   border-radius: 6px;
   outline: none;
-  font-size: 10px;
-  line-height: 1.4;
   width: 204px;
   height: 38px;
-  padding: 10px 14px;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  padding-left: 42px;
+}
+.input::placeholder {
+  margin-left: 42px;
+}
+
+.icon {
+  position: absolute;
+  left: 14px;
+  top: 13px;
+  height: 12px;
+  width: 16px;
+  color: var(--white2);
 }
 
 .label {
   position: relative;
 }
 
-.button {
+.subscribeBtn {
   width: 204px;
   height: 38px;
   color: var(--white2);
@@ -52,8 +72,8 @@
   border-radius: 6px;
   outline: none;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.4;
@@ -64,10 +84,19 @@
     flex-direction: row;
     gap: 12px;
   }
+  .inputBox {
+    font-size: 14px;
+  }
   .input {
     width: 259px;
     height: 50px;
-    font-size: 14px;
+    padding-left: 51px;
+  }
+  .icon {
+    height: 16px;
+    width: 20px;
+    left: 15px;
+    top: 17px;
   }
   .button {
     width: 187px;
@@ -81,10 +110,17 @@
     flex-direction: column;
     gap: 16px;
   }
+  .inputBox {
+    font-size: 18px;
+  }
   .input {
     width: 339px;
     height: 60px;
-    font-size: 18px;
+    padding-left: 51px;
+  }
+  .icon {
+    left: 16px;
+    top: 21px;
   }
   .button {
     width: 339px;

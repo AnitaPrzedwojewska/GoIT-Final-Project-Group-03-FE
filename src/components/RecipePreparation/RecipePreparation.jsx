@@ -1,17 +1,23 @@
-// import css from "./RecipePreparation.module.css";
-import PropTypes from "prop-types";
+// npm packages
+import { useSelector } from "react-redux";
 
-const RecipePreparation = ({ children }) => {
+// functions
+import { getForPreparation } from '../../redux/recipes/recipes.selectors';
+
+// styles
+// import css from "./RecipePreparation.module.css";
+
+const RecipePreparation = () => {
+
+  const { instructions, image } = useSelector(getForPreparation);
+
   return (
     <>
       <div>RecipePreparation</div>
-      <div>{children}</div>
+      <div>{instructions}</div>
+      <img src={image} />
     </>
   );
-};
-
-RecipePreparation.propTypes = {
-  children: PropTypes.node,
 };
 
 export default RecipePreparation;

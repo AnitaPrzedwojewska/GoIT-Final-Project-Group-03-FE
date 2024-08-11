@@ -1,37 +1,79 @@
-// import { useState } from 'react'
-import { Route, Routes } from "react-router-dom";
+// node modules
+import { useEffect } from "react";
 
-import WelcomePage from "./pages/WelcomePage/WelcomePage";
-import SharedLayout from "./pages/SharedLayout/SharedLayout";
-import MainPage from "./pages/MainPage/MainPage";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import SigninPage from "./pages/SigninPage/SigninPage";
-import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
-import RecipePage from "./pages/RecipePage/RecipePage";
+// npm packages
+import { Navigate, Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+// config
+import setAxiosDefault from "./config.js/axios";
+
+// functions
+// import { refresh } from './redux/auth/auth.operations.js';
+import { clear } from './redux/user/user.slices';
+
+// contants
+import routes from "./constants/routes.js";
+
+//pages
 import AddRecipesPage from "./pages/AddRecipesPage/AddRecipesPage";
-import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
+import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import FavoritePage from "./pages/FavoritePage/FavoritePage";
-import ShoppingListPage from "./pages/ShoppingListPage/ShoppingListPage";
-import SearchPage from "./pages/SearchPage/SearchPage";
+import MainPage from "./pages/MainPage/MainPage";
+import MyRecipesPage from "./pages/MyRecipesPage/MyRecipesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import RecipePage from "./pages/RecipePage/RecipePage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import SharedLayout from "./pages/SharedLayout/SharedLayout";
+import ShoppingListPage from "./pages/ShoppingListPage/ShoppingListPage";
+import SigninPage from "./pages/SigninPage/SigninPage";
+import WelcomePage from "./pages/WelcomePage/WelcomePage";
+
+// components
+import CategoryRecipes from "./components/CategoryRecipes/CategoryRecipes";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 
 const App = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setAxiosDefault();
+    dispatch(clear());
+    // dispatch(refresh());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<WelcomePage />} />
-          <Route path="register" element={<RegisterPage />} />
-          <Route path="signin" element={<SigninPage />} />
-          <Route path="main" element={<MainPage />} />
-          <Route path="categories/:categoryName" element={<CategoriesPage />} />
-          <Route path="recipe/:recipeId" element={<RecipePage />} />
-          <Route path="add" element={<AddRecipesPage />} />
-          <Route path="my" element={<MyRecipesPage />} />
-          <Route path="favorite" element={<FavoritePage />} />
-          <Route path="shopping-list" element={<ShoppingListPage />} />
-          <Route path="search" element={<SearchPage />} />
+        <Route element={<RestrictedRoute redirectTo={"/"} />}>
+          <Route path={`/${routes.WELCOME}`} element={<WelcomePage />} />
+          <Route path={`/${routes.REGISTER}`} element={<RegisterPage />} />
+          <Route path={`/${routes.LOGIN}`} element={<SigninPage />} />
         </Route>
+
+        <Route element={<PrivateRoute redirectTo={`/${routes.WELCOME}`} />}>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<Navigate to={`/${routes.MAIN}`} />} />
+            <Route path={routes.MAIN} element={<MainPage />} />
+            <Route path={routes.CATEGORIES} element={<CategoriesPage />}>
+              <Route path=":categoryName" element={<CategoryRecipes />} />
+            </Route>
+            <Route
+              path={`${routes.RECIPES}/:recipeId`}
+              element={<RecipePage />}
+            />
+            <Route path={routes.ADD} element={<AddRecipesPage />} />
+            <Route path={routes.MY} element={<MyRecipesPage />} />
+            <Route path={routes.FAVORITE} element={<FavoritePage />} />
+            <Route path={routes.SHOPPING_LIST} element={<ShoppingListPage />} />
+            <Route path={routes.SEARCH} element={<SearchPage />} />
+          </Route>
+        </Route>
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>

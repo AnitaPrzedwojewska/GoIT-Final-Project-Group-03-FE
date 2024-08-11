@@ -11,7 +11,10 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import { authReducer } from "./auth/authSlice";
+import { authReducer } from "./auth/auth.slices";
+import { userReducer } from "./user/user.slices";
+import { appReducer } from "./app/app.slices";
+import { recipesReducer } from "./recipes/recipes.slices";
 
 const authPersistConfig = {
   key: "auth",
@@ -22,6 +25,9 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    user: userReducer,
+    app: appReducer,
+    recipes: recipesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -29,7 +35,6 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-  // devTools: process.env.NODE_ENV === "development",
   devTools: true,
 });
 

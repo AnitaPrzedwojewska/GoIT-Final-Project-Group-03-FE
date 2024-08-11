@@ -1,0 +1,59 @@
+.nav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--grey2);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 28px;
+  list-style: none;
+  font-size: 14px;
+  padding: 10px 10px 19px;
+  overflow-x: auto;
+  scrollbar-color: transparent transparent;
+}
+
+.menuItem {
+  color: var(--gray2);
+  cursor: pointer;
+}
+
+.menuLink {
+  position: relative;
+}
+
+.menuLink.active {
+  color: var(--green1);
+}
+
+.menuLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -19px;
+  height: 1px;
+  background-color: transparent;
+  transition: backroud-color 0.3s;
+}
+
+.menuLink.active::after {
+  background-color: var(--green1);
+  z-index: 100;
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    gap: 55px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .menu {
+    gap: 55px;
+  }
+}

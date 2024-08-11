@@ -1,20 +1,26 @@
+// npm packages
+import { useSelector } from "react-redux";
+
+// functions
+import { getForRecipePageHero } from "../../redux/recipes/recipes.selectors";
+
+// styles
 // import css from "./RecipePageHero.module.css";
-import PropTypes from "prop-types";
 
-import MainPageTitle from '../MainPageTitle/MainPageTitle'
+const RecipePageHero = () => {
 
-const RecipePageHero = ({ children }) => {
+  const { _id, title, description, time } = useSelector(getForRecipePageHero);
+  console.log("PageHero - data:");
+  console.log(`${_id}: ${title} - ${time}`);
+  console.log(description);
+
   return (
     <>
-      <div>RecipePageHero</div>
-      <div>{children}</div>
-      <MainPageTitle></MainPageTitle>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <p>{time}</p>
     </>
   );
-};
-
-RecipePageHero.propTypes = {
-  children: PropTypes.node,
 };
 
 export default RecipePageHero;

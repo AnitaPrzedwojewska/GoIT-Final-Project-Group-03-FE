@@ -1,29 +1,75 @@
+// npm packages
+import { useDispatch } from "react-redux";
+import Notiflix from "notiflix";
+
+// functions
+import useUser from '../../hooks/useUser';
+import subscribeNewsletter from '../../api/others/subscribeNewsletter';
+import { get } from '../../redux/user/user.operations';
+
+// components
+import SubscribeFormTitle from './SubscribeFormTitle';
+import EmailIcon from "../IconsSVG/EmailIcon";
+
+// styles
 import css from "./SubscribeForm.module.css";
 
-// import Button from "../BtnClassic/btnClassic";
-// import LetterIcon from "../IconsSVG/LetterIcon";
-
 const SubscribeForm = () => {
+
+  const dispatch = useDispatch();
+
+  const {email, subscribe} = useUser();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    if (subscribe) {
+      Notiflix.Notify.warning("You have already subscribed.");
+    } else {
+      try {
+        const response = await subscribeNewsletter(email);
+        if (response.status !== 200) {
+          Notiflix.Notify.failure("Something is wrong. Failed subscription.");
+        } else {
+          dispatch(get());
+          Notiflix.Notify.success("Subscription completed successfully.");
+        }
+        dispatch(get());
+      } catch (error) {
+        console.log(error)
+        Notiflix.Notify.failure("Something is wrong. Failed subscription.");
+      }
+    }
+    form.reset();
+  }
+
+  const handleClick = (event) => {
+    event.target.value = email;
+  };
+
   return (
     <div className={css.subscribeForm}>
-      <div className={css.inviteBlock}>
-        <h5 className={css.inviteTitle}>Subscribe to our Newsletter</h5>
-        <p className={css.inviteText}>
-          Subscribe up to our newsletter. Be in touch with <br />
-          latest news and special offers, etc.
-        </p>
-      </div>
-      <form className={css.form}>
+      <SubscribeFormTitle />
+      <form className={css.form} onSubmit={handleSubmit}>
         <div>
-          <input
-            className={css.input}
-            id='mainInput'
-            type='text'
-            placeholder='Enter your email address'
-          />
-          {/* <LetterIcon /> */}
+          <div className={css.inputBox}>
+            <div className={css.icon}>
+              <EmailIcon />
+            </div>
+            <input
+              className={css.input}
+              name='email'
+              id='email'
+              type='text'
+              placeholder='Enter your email address'
+              readOnly
+              onClick={handleClick}
+            />
+          </div>
         </div>
-        <button className={css.button}>Subscribe</button>
+        <button type='submit' className={css.subscribeBtn}>
+          Subscribe
+        </button>
       </form>
     </div>
   );

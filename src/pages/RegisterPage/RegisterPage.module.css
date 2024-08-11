@@ -1,0 +1,44 @@
+.registerPage {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  padding-top: 305px;
+  color: var(--white2);
+  background-color: var(--white2);
+  background-image: url("../../../public/images-bkg/mobile-register-black-footer.png"),
+    url("../../../public/images/signin-logo1.png");
+  background-size: 100% 50%, 285px 250px;
+  background-repeat: no-repeat;
+  background-position: bottom, center 90px;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .registerPage {
+    justify-content: center;
+    background-image: url("../../../public/images-bkg/tablet-register-black-footer.png"),
+      url("../../../public/images/signin-logo1.png");
+    background-size: 100% 55%, 409px 359px;
+    background-repeat: no-repeat;
+    background-position: bottom, center 30px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .registerPage {
+    align-items: left;
+    padding-top: 155px;
+    padding-left: 760px;
+    background-image: url("../../../public/images/signin-logo1.png"),
+      url("../../../public/images-bkg/mobile-register-black-footer.png");
+    background-size: 532px 468px, 100% 50%;
+    background-repeat: no-repeat;
+    background-position: 20% center, bottom;
+  }
+}

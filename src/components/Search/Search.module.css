@@ -1,5 +1,39 @@
+.contentContainer {
+  width: 303px;
+  height: 300px;
+  margin: 60px auto;
+}
+.greenTitle {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.5%;
+  text-align: center;
+  color: var(--green1);
+}
+.blackTitle {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: -0.5%;
+  text-align: center;
+  color: var(--black2);
+}
+.content {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -2%;
+  padding: 15px;
+  text-align: center;
+}
+.form {
+  position: absolute;
+  top: 700px;
+  color: var(--black2);
+}
 .fancyInput {
   border: 1px solid var(--white3);
+  background-color: var(--white3);
   border-radius: 24px 44px;
   color: var(--grey4);
   width: 295px;
@@ -11,8 +45,9 @@
 }
 
 .input {
+  border-radius: 24px 44px;
   background-color: transparent;
-  color: var(--black2);
+  color: var(--grey4);
   border: none;
   outline: none;
   font-size: 12px;
@@ -20,7 +55,7 @@
   margin: 0;
   width: 100%;
   height: 100%;
-  margin-left: 32px;
+  padding-left: 32px;
   position: absolute;
   left: 0;
   top: 0;
@@ -45,7 +80,31 @@
   background-color: var(--green1);
 }
 
-@media (min-width: 750px) {
+@media (min-width: 768px) and (max-width: 1439px) {
+  .contentContainer {
+    width: 364px;
+    margin-left: 8px;
+    margin-top: 20%;
+  }
+  .greenTitle {
+    font-size: 72px;
+    line-height: 72px;
+  }
+  .blackTitle {
+    font-size: 72px;
+    line-height: 72px;
+  }
+  .content {
+    height: 54px;
+    padding: 0;
+    padding-top: 24px;
+    text-align: start;
+  }
+  .form {
+    position: absolute;
+    top: 400px;
+    color: var(--black2);
+  }
   .fancyInput {
     width: 362px;
     height: 59px;
@@ -58,12 +117,43 @@
     line-height: 24px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1440px) and (max-width: 2000px) {
+  .contentContainer {
+    width: 505px;
+    margin-left: 8px;
+    margin-top: 5%;
+  }
+  .greenTitle {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  .blackTitle {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  .content {
+    width: 465px;
+    padding: 0;
+    padding-top: 14px;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: start;
+  }
+  .form {
+    position: absolute;
+    top: 450px;
+    color: var(--black2);
+  }
   .fancyInput {
     width: 510px;
     height: 70px;
   }
+  .blackButton {
+    width: 161px;
+  }
   .input {
-    margin-left: 48px;
+    padding-left: 48px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }

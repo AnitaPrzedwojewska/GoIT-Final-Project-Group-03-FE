@@ -1,14 +1,19 @@
-const NameIcon = (props) => {
+import PropTypes from "prop-types";
+const NameIcon = ({ strokeColor = "#FAFAFA", ...props }) => {
   return (
-    <svg width='1em' height='1em' fill='none' viewBox='0 0 24 25' {...props}>
+    <svg fill="none" viewBox="0 0 14 15" {...props}>
       <path
-        d='M20 21.5C20 20.1044 20 19.4067 19.8278 18.8389C19.44 17.5605 18.4395 16.56 17.1611 16.1722C16.5933 16 15.8956 16 14.5 16H9.5C8.10444 16 7.40665 16 6.83886 16.1722C5.56045 16.56 4.56004 17.5605 4.17224 18.8389C4 19.4067 4 20.1044 4 21.5M16.5 8C16.5 10.4853 14.4853 12.5 12 12.5C9.51472 12.5 7.5 10.4853 7.5 8C7.5 5.51472 9.51472 3.5 12 3.5C14.4853 3.5 16.5 5.51472 16.5 8Z'
-        stroke='currentColor'
-        strokeWidth='2'
-        strokeLinecap='round'
-        strokeLinejoin='round'></path>
+        d="M13 14.25C13 13.2033 13 12.68 12.8708 12.2541C12.58 11.2953 11.8297 10.545 10.8709 10.2542C10.445 10.125 9.92167 10.125 8.875 10.125H5.125C4.07833 10.125 3.55499 10.125 3.12914 10.2542C2.17034 10.545 1.42003 11.2953 1.12918 12.2541C1 12.68 1 13.2033 1 14.25M10.375 4.125C10.375 5.98896 8.86396 7.5 7 7.5C5.13604 7.5 3.625 5.98896 3.625 4.125C3.625 2.26104 5.13604 0.75 7 0.75C8.86396 0.75 10.375 2.26104 10.375 4.125Z"
+        stroke={strokeColor}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
     </svg>
   );
 };
 
+NameIcon.propTypes = {
+  strokeColor: PropTypes.string,
+};
 export default NameIcon;

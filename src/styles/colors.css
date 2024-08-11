@@ -1,19 +1,22 @@
 :root {
   --green1: #8baa36;
   --green2: #ebf3d4;
+  --green3: #3cbc81;
+  --green4: #ebf3d4;
   --white1: #ffffff;
   --white2: #fafafa;
   --white3: #f0f0f0;
   --black1: #1e1f28;
   --black2: #23262a;
   --black3: #22252a;
+  --black4: #3E4462;
   --grey1: #2a2c36;
   --grey2: #d9d9d9;
   --grey3: #c4c4c4;
   --grey4: #bdbdbd;
   --red: #e74a3b;
-  --green3: #3cbc81;
   --orange: #f6c23e;
   --whiteTransparent: #fafafa80;
   --black2Transparent: #23262a33;
+  --blue: #001833;
 }

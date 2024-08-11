@@ -1,0 +1,133 @@
+/* ingredient header */
+.ingredientHeader {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    background-color: var(--green1);
+    gap: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--white2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ingredientHeaderName {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.ingredientHeaderSpecify {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+/* iingredients container */
+
+.ingredientContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 24px;
+}
+
+.ingredient {
+    width: 100%;
+    height: 182px;
+    background-color: var(--green4);
+    padding: 0px 32px;
+    gap: 40px;
+    margin: 15px;
+    border-radius: 10px;
+    list-style: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ingredientContentName {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.ingredientContentMeasure {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.ingredientImg {
+    width: 180px;
+    height: 180px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.measure {
+    width: 85px;
+    height: 35px;
+    background-color: var(--green1);
+    border-radius: 5px;
+    color: var(--white2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  font: inherit;
+  color: var(--green1);
+  width: 35px;
+  height: 35px;
+  border: 0.15em solid var(--green1);
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  margin-right: 50px;
+  margin-left: 150px;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 20px 20px var(--green1);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}

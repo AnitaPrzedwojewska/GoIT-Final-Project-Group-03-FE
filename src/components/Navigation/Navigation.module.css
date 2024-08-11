@@ -5,8 +5,15 @@
   justify-content: baseline;
   gap: 30px;
   font-size: 14px;
-  font-weight: medium;
+  font-weight: 500;
   color: var(--black2);
+  margin-left: 231px;
+  margin-right: 226px;
+  white-space: nowrap;
+}
+.navLink:hover {
+  font-weight: 600;
+  color: var(--green1);
 }
 
 .link {
@@ -16,6 +23,10 @@
 .link:focus,
 .link:active {
   color: var(--green1);
+}
+
+.link:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1439px) {

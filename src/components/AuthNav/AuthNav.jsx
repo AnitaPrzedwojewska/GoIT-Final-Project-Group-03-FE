@@ -1,24 +1,18 @@
-// import css from "./AuthNav.module.css";
-import { NavLink } from 'react-router-dom'
-import PropTypes from "prop-types";
+import css from "./AuthNav.module.css";
 
-const AuthNav = ({ children }) => {
+import LogoIcon from "../IconsSVG/LogoIcon";
+import AuthNavWelcome from "./AuthNavWelcome";
+import AuthOptions from "./AuthNavOptions";
+
+
+const AuthNav = () => {
   return (
-    <>
-      <div>AuthNav</div>
-      <div>{children}</div>
-      <NavLink to='/register'>
-        <button>Registration</button>
-      </NavLink>
-      <NavLink to='/signin'>
-        <button>Sign in</button>
-      </NavLink>
-    </>
+    <div className={css.authNav}>
+      <LogoIcon className={css.logoIcon} />
+      <AuthNavWelcome />
+      <AuthOptions />
+    </div>
   );
-};
-
-AuthNav.propTypes = {
-  children: PropTypes.node,
 };
 
 export default AuthNav;
