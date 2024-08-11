@@ -9,7 +9,8 @@ import { useDispatch } from "react-redux";
 import setAxiosDefault from "./config.js/axios";
 
 // functions
-import { refresh } from './redux/auth/auth.operations.js';
+// import { refresh } from './redux/auth/auth.operations.js';
+import { clear } from './redux/user/user.slices';
 
 // contants
 import routes from "./constants/routes.js";
@@ -40,7 +41,8 @@ const App = () => {
 
   useEffect(() => {
     setAxiosDefault();
-    dispatch(refresh());
+    dispatch(clear());
+    // dispatch(refresh());
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
