@@ -11,7 +11,8 @@ const getPopularRecipes = async () => {
     return response.data;
   } catch (error) {
     console.log(error);
-    return error.message;
+    console.error("Error fetching popular recipes:", error);
+    return [];
   }
 };
 
