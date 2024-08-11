@@ -3,14 +3,14 @@ import { useEffect } from "react";
 
 // npm packages
 import { Navigate, Route, Routes } from "react-router-dom";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 // config
 import setAxiosDefault from "./config.js/axios";
 
 // functions
 // import { refresh } from './redux/auth/auth.operations.js';
-import { clear } from './redux/user/user.slices';
+// import { clear } from './redux/user/user.slices';
 
 // contants
 import routes from "./constants/routes.js";
@@ -37,11 +37,11 @@ import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 
 const App = () => {
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     setAxiosDefault();
-    dispatch(clear());
+    // dispatch(clear());
     // dispatch(refresh());
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

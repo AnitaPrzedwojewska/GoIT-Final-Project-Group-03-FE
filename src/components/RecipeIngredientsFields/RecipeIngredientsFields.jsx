@@ -27,14 +27,15 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
 
   const handleIngredientChange = (index, field, value) => {
     const updatedIngredients = [...formData.ingredients];
-    if (field === "ingredientId") {
+    if (field === "_id") {
       const selectedIngredient = ingredientsList.find(
         (ingredient) => ingredient._id === value
       );
       updatedIngredients[index] = {
         ...updatedIngredients[index],
-        ingredientId: selectedIngredient._id,
-        name: selectedIngredient.ttl,
+        _id: selectedIngredient._id,
+        ttl: selectedIngredient.ttl,
+        thb: selectedIngredient.thb,
       };
     } else {
       updatedIngredients[index] = {
@@ -51,7 +52,7 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
       ...formData,
       ingredients: [
         ...formData.ingredients,
-        { ingredientId: "", name: "", quantity: "", measure: "" },
+        { _id: "", ttl: "", quantity: "", measure: "" },
       ],
     });
   };
@@ -91,9 +92,9 @@ const RecipeIngredientsFields = ({ formData, setFormData }) => {
           <div className={css.ingredient} key={index}>
             <select
               className={css.select}
-              value={formData.ingredients[index]?.ingredientId || ""}
+              value={formData.ingredients[index]?._id || ""}
               onChange={(e) =>
-                handleIngredientChange(index, "ingredientId", e.target.value)
+                handleIngredientChange(index, "_id", e.target.value)
               }
               required
             >
@@ -150,8 +151,8 @@ RecipeIngredientsFields.propTypes = {
   formData: PropTypes.shape({
     ingredients: PropTypes.arrayOf(
       PropTypes.shape({
-        ingredientId: PropTypes.string,
-        name: PropTypes.string,
+        _id: PropTypes.string,
+        ttl: PropTypes.string,
         quantity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         measure: PropTypes.string,
       })
