@@ -10,8 +10,15 @@ const loginUser = async (userData) => {
     const response = await axios.post(url, userData);
     return response.data;
   } catch (error) {
-    console.log(error);
-    return error.message;
+    console.error('Error login', error.message);
+    // console.log(error);
+    // return error.message;
+
+    if (error.response && error.response.status === 401) {
+      alert('Wrong login or password');
+    } else {
+      alert('Other error occured. Try again later');
+    }
   }
 };
 
