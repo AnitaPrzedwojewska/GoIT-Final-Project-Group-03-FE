@@ -5,7 +5,9 @@ import { useSelector } from "react-redux";
 import { getForRecipePageHero } from "../../redux/recipes/recipes.selectors";
 
 // styles
-// import css from "./RecipePageHero.module.css";
+import css from "./RecipePageHero.module.css";
+
+import ButonFancy from "../ButonFancy/ButonFancy"
 
 const RecipePageHero = () => {
 
@@ -16,9 +18,13 @@ const RecipePageHero = () => {
 
   return (
     <>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <p>{time}</p>
+      <div className={css.recipeHeroContainer}>
+        <h1 className={css.recipeName}>{title}</h1>
+        <p>{description}</p>
+        <ButonFancy className={css.addRecipeButton}>Add to favourite recipes</ButonFancy>
+        <p>{time}</p>
+      </div>
+
     </>
   );
 };
