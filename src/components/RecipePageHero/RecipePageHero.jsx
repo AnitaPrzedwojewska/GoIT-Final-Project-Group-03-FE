@@ -23,7 +23,7 @@ const RecipePageHero = () => {
     if (!response.error) {
       Notiflix.Notify.success("Recipe added to favorites!");
     } else {
-      Notiflix.Notify.failure("Error adding recipe to favorites. Try again!");
+      Notiflix.Notify.warning("Recipe is already in your favorites!");
     }
   };
 
