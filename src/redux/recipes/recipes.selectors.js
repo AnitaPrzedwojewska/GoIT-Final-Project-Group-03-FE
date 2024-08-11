@@ -22,7 +22,9 @@ export const getForRecipePageHero = createSelector(
   },
 );
 
-export const getRecipeIngredients = (state) => state.recipes.recipe.ingredients;
+export const getRecipeIngredients = (state) => {
+  return state.recipes.recipe ? state.recipes.recipe.ingredients : [];
+};
 
 const getInstructions = (state) => state.recipes.recipe.instructions;
 const getImage = (state) => state.recipes.recipe.thumb;
