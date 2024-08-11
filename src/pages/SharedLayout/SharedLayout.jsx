@@ -7,19 +7,22 @@ import Overlays from "../../components/Overlays/Overlays";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Loader from "../../components/Loader/Loader";
+import BackgroundLayout from "../../components/BackgroundLayout/BackgroundLayout";
 
 const SharedLayout = () => {
   return (
     <div className={css.page}>
       <Header />
-      <div className={css.mainSection}>
-        <div className={css.container}>
-          <Suspense fallback={<Loader />}>
-            <Outlet />
-          </Suspense>
+      <BackgroundLayout>
+        <div className={css.mainSection}>
+          <div className={css.container}>
+            <Suspense fallback={<Loader />}>
+              <Outlet />
+            </Suspense>
+          </div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
+      </BackgroundLayout>
       <Overlays />
     </div>
   );

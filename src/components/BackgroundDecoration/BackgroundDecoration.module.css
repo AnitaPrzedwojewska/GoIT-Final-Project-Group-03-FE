@@ -1,0 +1,100 @@
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.elements {
+  position: relative;
+}
+
+.squareOne {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background-color: var(--green1);
+  transform: rotate(25deg);
+  display: inline-block;
+  top: 25px;
+  left: 220px;
+}
+
+.squareTwo {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background-color: var(--green1);
+  transform: rotate(25deg);
+  display: inline-block;
+  top: 65px;
+  right: 30px;
+}
+
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--black3);
+  transform: rotate(25deg);
+  display: inline-block;
+  top: 100px;
+  right: 200px;
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .squareOne {
+    width: 14px;
+    height: 14px;
+    top: 25px;
+    left: 280px;
+  }
+
+  .squareTwo {
+    width: 14px;
+    height: 14px;
+    top: 65px;
+    right: 60px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    top: 100px;
+    right: 300px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1440px) {
+  .elements {
+    position: relative;
+  }
+
+  .squareOne {
+    width: 14px;
+    height: 14px;
+    top: 150px;
+    left: 290px;
+  }
+
+  .squareTwo {
+    width: 14px;
+    height: 14px;
+    top: 85px;
+    right: 150px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    top: 250px;
+    right: 560px;
+  }
+}
