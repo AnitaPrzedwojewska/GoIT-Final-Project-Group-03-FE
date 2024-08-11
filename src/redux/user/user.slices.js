@@ -13,7 +13,13 @@ const userSlice = createSlice({
       state.email = initialState.email;
       state.avatar = initialState.avatar;
       state.subscribe = initialState.subscribe;
-      // state.favorites = initialState.favorites;
+      state.favorites = initialState.favorites;
+    },
+    addFavorite(state, action) {
+      state.favorites = state.favorites.push(action);
+    },
+    deleteFavorite(state, action) {
+      state.favorites = state.favorites.filter((fav) => fav._id !== action);
     }
   },
   extraReducers: (builder) => {
@@ -23,18 +29,16 @@ const userSlice = createSlice({
         state.email = action.payload.email;
         state.avatar = action.payload.avatarURL;
         state.subscribe = action.payload.subscribe;
-        // state.favorites = action.payload.favorites;
+        state.favorites = action.payload.favorites;
       })
       .addCase(update.fulfilled, (state, action) => {
         state.email = action.payload.email;
         state.avatar = action.payload.avatar;
         state.subscribe = action.payload.subscribe;
-        // state.favorites = action.payload.favorites;
+        state.favorites = action.payload.favorites;
       });
   },
 });
 
-export const {
-  clear
-} = userSlice.actions;
+export const { clear, addFavorite, deleteFavorite } = userSlice.actions;
 export const userReducer = userSlice.reducer;
