@@ -35,7 +35,7 @@ const RecipePageHero = () => {
         <ButonFancy className={css.addRecipeButton} onClick={handleAddFavorite}>
           Add to favourite recipes
         </ButonFancy>
-        <p>{time}</p>
+        <p>{time} min</p>
       </div>
     </>
   );

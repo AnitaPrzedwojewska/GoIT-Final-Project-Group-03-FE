@@ -78,8 +78,8 @@
 }
 
 .measure {
-    width: 85px;
-    height: 35px;
+    width: 125px;
+    height: 40px;
     background-color: var(--green1);
     border-radius: 5px;
     color: var(--white2);
