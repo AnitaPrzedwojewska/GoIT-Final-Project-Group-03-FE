@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import css from "./MyRecipesItem.module.css";
 import DeleteIcon from "../IconsSVG/DeleteIcon";
 
-const DEFAULT_IMAGE_URL = "../../../public/images/no-image.png";
+const DEFAULT_IMAGE_URL = "/images/no-image.png";
 
 const MyRecipesItem = ({ recipe, onSeeRecipe, onRemoveRecipe }) => {
   const { _id, preview, title, description, time } = recipe;

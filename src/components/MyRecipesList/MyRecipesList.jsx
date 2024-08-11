@@ -6,6 +6,7 @@ import deleteMyRecipe from "../../api/recipes/deleteMyRecipe";
 import getMyRecipes from "../../api/recipes/getMyRecipes";
 import Notiflix from "notiflix";
 import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
+import Paginator from "../Paginator/Paginator";
 
 const MyRecipesList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -23,7 +24,14 @@ const MyRecipesList = () => {
         if (response && response.data) {
           const { results, total } = response.data;
           setRecipes(results || []);
-          setTotalPages(total ? Math.ceil(total / recipesPerPage) : 1);
+          const calculatedTotalPages = total
+            ? Math.ceil(total / recipesPerPage)
+            : 1;
+          setTotalPages(calculatedTotalPages);
+
+          console.log("Fetched recipes:", results);
+          console.log("Total recipes:", total);
+          console.log("Calculated total pages:", totalPages);
         } else {
           setRecipes([]);
           setTotalPages(1);
@@ -35,7 +43,7 @@ const MyRecipesList = () => {
       }
     };
     fetchRecipes();
-  }, [currentPage]);
+  }, [currentPage, totalPages]);
 
   const handleSeeRecipe = (id) => {
     navigate(`/recipes/${id}`);
@@ -72,17 +80,11 @@ const MyRecipesList = () => {
         )}
       </div>
       {totalPages > 1 && (
-        <div>
-          {[...Array(totalPages).keys()].map((index) => (
-            <button
-              key={index}
-              onClick={() => handlePageChange(index + 1)}
-              disabled={currentPage === index + 1}
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div>
+        <Paginator
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       )}
     </>
   );
