@@ -1,11 +1,16 @@
-import { NavLink } from "react-router-dom";
+import css from "./FavoritePage.module.css";
+import MainTitle from "../../components/MainTitle/MainTitle";
+import FavoritesList from "../../components/FavoritesList/FavoritesList";
 
-const FavoritePage = () => {
+const MyFavoritesPage = () => {
   return (
     <>
-      <NavLink to='/recipe/:recipeId'>See recipe</NavLink>
+      <MainTitle>Favorites</MainTitle>
+      <div className={css.containerPage}>
+        <FavoritesList />
+      </div>
     </>
   );
 };
 
-export default FavoritePage;
+export default MyFavoritesPage;
