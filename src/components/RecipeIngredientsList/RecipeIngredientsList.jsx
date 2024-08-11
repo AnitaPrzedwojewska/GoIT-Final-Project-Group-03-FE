@@ -14,17 +14,27 @@ const RecipeIngredientsList = () => {
   const ingredients = useSelector(getRecipeIngredients);
   console.log("IngredientsList - data:");
   console.log(ingredients);
-
   return (
     <>
-      <div>RecipeIngredientsList</div>
-      { !ingredients ? (<p>Sorry, something wrong, </p>) :
+      <div className={css.ingredientHeader}>
+        <div className={css.ingredientHeaderName}>
+          <div className={css.ingredientImg}>
+            <p>Ingredients</p>
+          </div>
+
+        </div>
+        <div className={css.ingredientHeaderSpecify}>
+          <p>Number</p>
+          <p>Add to list</p>
+        </div>
+      </div>
+      { !ingredients ? (<p>Sorry, something went wrong, </p>) :
         (<ul className={css.ingredientContainer}>
         {ingredients.length>0 && (ingredients.map((ingr) => (
           <li className={css.ingredient} key={ingr._id}>
             <div className={css.ingredientContentName}>
               <div className={css.ingredientImg}>
-                IMG
+                {ingr.thb}
               </div>
               <div className={css.name}>
                 {ingr.name}
@@ -32,7 +42,7 @@ const RecipeIngredientsList = () => {
             </div>
             <div className={css.ingredientContentMeasure}>
               <div className={css.measure}>
-                5 {ingr.measure}
+                {ingr.quantity} {ingr.measure}
               </div>
               <div>
                 <input type="checkbox" className={css.checkbox}></input>

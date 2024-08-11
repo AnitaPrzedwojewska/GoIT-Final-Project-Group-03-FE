@@ -1,3 +1,38 @@
+/* ingredient header */
+.ingredientHeader {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    background-color: var(--green1);
+    gap: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--white2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ingredientHeaderName {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.ingredientHeaderSpecify {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+/* iingredients container */
+
 .ingredientContainer {
     display: flex;
     flex-direction: column;

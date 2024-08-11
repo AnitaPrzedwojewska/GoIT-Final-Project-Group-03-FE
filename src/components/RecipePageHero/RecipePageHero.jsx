@@ -17,7 +17,6 @@ const RecipePageHero = () => {
   return (
     <>
       <h1>{title}</h1>
-      <h6>Id: {_id}</h6>
       <p>{description}</p>
       <p>{time}</p>
     </>
