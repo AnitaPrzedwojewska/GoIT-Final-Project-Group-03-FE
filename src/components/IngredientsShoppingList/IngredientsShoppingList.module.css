@@ -1,0 +1,139 @@
+/* ingredient header */
+.ingredientHeader {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: var(--green1);
+    border-radius: 10px;
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--white2);
+    display: flex;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 40px;
+}
+
+.ingredientHeaderName {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.ingredientHeaderSpecify {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 450px;
+}
+
+.addToListHeadline {
+    margin-left: 150px;
+}
+
+
+/* ingredients container */
+
+.ingredientContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: -20px;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 24px;
+}
+
+.ingredient {
+    width: 100%;
+    height: 182px;
+    padding: 0px 32px;
+    gap: 40px;
+    margin: 15px;
+    list-style: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--grey2);
+}
+
+.ingredientContentName {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.ingredientContentMeasure {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.ingredientImg {
+    width: 93px;
+    height: 97px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: var(--green4);
+    border-radius: 10px;
+}
+
+.measure {
+    width: 135px;
+    height: 40px;
+    background-color: var(--green1);
+    border-radius: 5px;
+    color: var(--white2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  font: inherit;
+  color: var(--green1);
+  width: 35px;
+  height: 35px;
+  border: 0.15em solid var(--green1);
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  margin-right: 50px;
+  margin-left: 150px;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 20px 20px var(--green1);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}

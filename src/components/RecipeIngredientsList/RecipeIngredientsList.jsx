@@ -22,7 +22,7 @@ const RecipeIngredientsList = () => {
         </div>
         <div className={css.ingredientHeaderSpecify}>
             <p>Number</p>
-            <p>Add to list</p>
+            <p className={css.addToListHeadline}>Add to list</p>
         </div>
       </div>
       { !ingredients ? (<p>Sorry, something went wrong, </p>) :
