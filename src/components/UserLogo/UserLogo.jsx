@@ -1,4 +1,3 @@
-// npm packages
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -14,10 +13,9 @@ import NameIcon from "../IconsSVG/NameIcon";
 import css from "./UserLogo.module.css";
 
 const UserLogo = () => {
-
   const dispatch = useDispatch();
   const { user } = useAuth();
-  console.log('user: ', user);
+  console.log("user: ", user);
 
   const openModalUser = () => {
     dispatch(setModalUser(true));
@@ -29,13 +27,14 @@ const UserLogo = () => {
         onClick={openModalUser}
         className={css.userImage}
         style={{
-          backgroundImage: user.avatar ? `url(${user.avatar})` : "none",
-        }}>
-        {!user.avatar && (
+          backgroundImage: user && user.avatar ? `url(${user.avatar})` : "none",
+        }}
+      >
+        {!user?.avatar && (
           <NameIcon width={"20px"} height={"20px"} className={css.svgIcon} />
         )}
       </NavLink>
-      <div className={css.userName}>{user.name}</div>
+      <div className={css.userName}>{user ? user.name : "Zaloguj się"}</div>
     </div>
   );
 };
