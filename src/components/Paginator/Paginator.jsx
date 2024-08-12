@@ -4,7 +4,6 @@ import RightArrow from "../IconsSVG/RightArrow";
 import LeftArrow from "../IconsSVG/LeftArrow";
 
 const Paginator = ({ currentPage, totalPages, onPageChange }) => {
-  console.log("Rendering Pagination with:", { currentPage, totalPages });
   const pages = [...Array(totalPages).keys()].map((_, index) => index + 1);
 
   return (

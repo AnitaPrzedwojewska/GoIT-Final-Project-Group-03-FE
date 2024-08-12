@@ -1,11 +1,18 @@
-// import css from "./IngredientsShoppingList.module.css";
+import css from "./IngredientsShoppingList.module.css";
 import PropTypes from "prop-types";
 
 const IngredientsShoppingList = ({ children }) => {
   return (
     <>
-      <div>IngredientsShoppingList</div>
-      <div>{children}</div>
+        <div className={css.ingredientHeader}>
+        <div className={css.ingredientHeaderName}>
+            <p>Products</p>
+        </div>
+        <div className={css.ingredientHeaderSpecify}>
+            <p>Number</p>
+            <p className={css.addToListHeadline}>Remove</p>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,14 +1,14 @@
-import css from "./MyRecipesList.module.css";
+import css from "./FavoritesList.module.css";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import deleteMyRecipe from "../../api/recipes/deleteMyRecipe";
-import getMyRecipes from "../../api/recipes/getMyRecipes";
+import removeFavorite from "../../api/recipes/removeFavourite";
+import getFavoriteRecipes from "../../api/recipes/getFavoriteRecipes";
 import Notiflix from "notiflix";
-import MyRecipesItem from "../MyRecipesItem/MyRecipesItem";
+import FavoriteItem from "../FavoriteItem/FavoriteItem";
 import Paginator from "../Paginator/Paginator";
 
-const MyRecipesList = () => {
+const FavoritesList = () => {
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -19,19 +19,11 @@ const MyRecipesList = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await getMyRecipes(currentPage, recipesPerPage);
+        const response = await getFavoriteRecipes(currentPage, recipesPerPage);
 
-        if (response && response.data) {
-          const { results, total } = response.data;
-          setRecipes(results || []);
-          const calculatedTotalPages = total
-            ? Math.ceil(total / recipesPerPage)
-            : 1;
-          setTotalPages(calculatedTotalPages);
-        } else {
-          setRecipes([]);
-          setTotalPages(1);
-        }
+        setRecipes(response.favorites);
+        setCurrentPage(response.currentPage);
+        setTotalPages(response.totalPages);
       } catch (error) {
         console.error("Error fetching recipes:", error);
         setRecipes([]);
@@ -46,12 +38,16 @@ const MyRecipesList = () => {
   };
 
   const handleRemoveRecipe = async (id) => {
-    const response = await deleteMyRecipe(id);
+    const response = await removeFavorite(id);
     if (!response.error) {
-      setRecipes(recipes.filter((recipe) => recipe._id !== id));
-      Notiflix.Notify.success("Recipe deleted successfully!");
+      setRecipes((prevRecipes) =>
+        prevRecipes.filter((recipe) => recipe._id !== id)
+      );
+      Notiflix.Notify.success("Recipe removed from favorites!");
     } else {
-      Notiflix.Notify.failure("Error deleting recipe. Try again!");
+      Notiflix.Notify.failure(
+        "Error remmoving recipe from favorites. Try again!"
+      );
     }
   };
 
@@ -61,10 +57,10 @@ const MyRecipesList = () => {
 
   return (
     <>
-      <div className={css.container}>
+      <div className={css.containerList}>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
-            <MyRecipesItem
+            <FavoriteItem
               key={recipe._id}
               recipe={recipe}
               onSeeRecipe={handleSeeRecipe}
@@ -86,8 +82,8 @@ const MyRecipesList = () => {
   );
 };
 
-MyRecipesList.propTypes = {
+FavoritesList.propTypes = {
   children: PropTypes.node,
 };
 
-export default MyRecipesList;
+export default FavoritesList;

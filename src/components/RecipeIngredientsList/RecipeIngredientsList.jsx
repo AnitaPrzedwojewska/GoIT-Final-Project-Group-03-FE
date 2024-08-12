@@ -12,20 +12,19 @@ import css from "./RecipeIngredientsList.module.css";
 const RecipeIngredientsList = () => {
 
   const ingredients = useSelector(getRecipeIngredients);
+
   console.log("IngredientsList - data:");
   console.log(ingredients);
+
   return (
     <>
       <div className={css.ingredientHeader}>
         <div className={css.ingredientHeaderName}>
-          <div className={css.ingredientImg}>
             <p>Ingredients</p>
-          </div>
-
         </div>
         <div className={css.ingredientHeaderSpecify}>
-          <p>Number</p>
-          <p>Add to list</p>
+            <p>Number</p>
+            <p className={css.addToListHeadline}>Add to list</p>
         </div>
       </div>
       { !ingredients ? (<p>Sorry, something went wrong, </p>) :
@@ -34,10 +33,10 @@ const RecipeIngredientsList = () => {
           <li className={css.ingredient} key={ingr._id}>
             <div className={css.ingredientContentName}>
               <div className={css.ingredientImg}>
-                {ingr.thb}
+                <img src={ingr.id.thb} alt={ingr.id.ttl}  />
               </div>
               <div className={css.name}>
-                {ingr.name}
+                {ingr.id.ttl}
               </div>
             </div>
             <div className={css.ingredientContentMeasure}>
@@ -46,7 +45,7 @@ const RecipeIngredientsList = () => {
               </div>
               <div>
                 <input type="checkbox" className={css.checkbox}></input>
-              </div> 
+              </div>
             </div>
           </li>
         )))}

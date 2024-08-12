@@ -1,7 +1,7 @@
 export const initialState = {
   name: '',
   email: '',
-  avatar: '',
-  subscribe: false,
+  // avatar: '',
+  // subscribe: false,
   // favorites: [],
 };

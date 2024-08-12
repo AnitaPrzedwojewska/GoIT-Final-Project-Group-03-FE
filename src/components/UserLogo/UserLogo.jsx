@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // functions
-import useUser from "../../hooks/useUser";
+// import useUser from "../../hooks/useUser";
+import useAuth from "../../hooks/useAuth";
 import { setModalUser } from "../../redux/app/app.slices";
 
 // components
@@ -15,7 +16,8 @@ import css from "./UserLogo.module.css";
 const UserLogo = () => {
 
   const dispatch = useDispatch();
-  const user = useUser();
+  const { user } = useAuth();
+  console.log('user: ', user);
 
   const openModalUser = () => {
     dispatch(setModalUser(true));

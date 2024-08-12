@@ -30,6 +30,8 @@ const endpoints = {
   RECIPES_MAIN_PAGE: "/recipes/main-page",
   RECIPES_BY_CATEGORY: "/recipes/category", // /:category
   RECIPE_BY_ID: "/recipes", // /:id
+  RECIPES_POPULAR: "popular-recipe",
+  RECIPES_FAVORITE: "/favorite",
 };
 
 export default endpoints;

@@ -1,0 +1,43 @@
+.recipeHeroContainer {
+    /* height: 493px; */
+    background-size:contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: -380px;
+}
+
+.nameContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.recipeName {
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--green1);
+    width: 80%;
+}
+
+.desc {
+    width: 50%;
+    text-align: center;
+}
+
+.addRecipeButton {
+    width: 270px;
+    height: 59px;
+    background-color: transparent;
+    border: 2px solid var(--green1);
+    font-size: 16px;
+    color: var(--black2);
+}
+
+.addRecipeButton:hover {
+    background-color: var(--green1);
+    color: var(--white2);
+}

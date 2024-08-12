@@ -4,7 +4,7 @@ import css from "./AddRecipesPage.module.css";
 import AddRecipeForm from "../../components/AddRecipeForm/AddRecipeForm";
 import FollowUs from "../../components/FollowUs/FollowUs";
 import MainTitle from "../../components/MainTitle/MainTitle";
-import PopularRecipe from "../../components/PopularRecipe/PopularRecipe";
+import PopularRecipes from "../../components/PopularRecipes/PopularRecipes";
 
 const AddRecipesPage = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +28,7 @@ const AddRecipesPage = () => {
         <div className={css.side}>
           <h3 className={css.header}>Follow Us</h3>
           <FollowUs className={css.followus}></FollowUs>
-          <PopularRecipe></PopularRecipe>
+          <PopularRecipes></PopularRecipes>
         </div>
       </div>
     </>

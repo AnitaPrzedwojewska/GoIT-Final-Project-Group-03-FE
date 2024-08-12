@@ -13,6 +13,7 @@ import getRecipeById from "../../api/recipes/getRecipeById";
 import RecipePageHero from "../../components/RecipePageHero/RecipePageHero";
 import RecipeIngredientsList from "../../components/RecipeIngredientsList/RecipeIngredientsList";
 import RecipePreparation from "../../components/RecipePreparation/RecipePreparation";
+import RecipeBg from "../../components/RecipeBg/RecipeBg";
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -23,6 +24,7 @@ const RecipePage = () => {
     const fetchRecipe = async () => {
       try {
         const response = await getRecipeById(recipeId);
+        console.log('fetchRecipe - response: ', response);
         dispatch(setRecipe(response));
       } catch (error) {
         console.error("Error fetching recipe:", error);
@@ -31,10 +33,11 @@ const RecipePage = () => {
     console.log('Uruchomiony useEffect.')
     fetchRecipe();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
+  },[]);
 
   return (
     <>
+      <RecipeBg></RecipeBg>
       <RecipePageHero />
       <RecipeIngredientsList></RecipeIngredientsList>
       <RecipePreparation></RecipePreparation>

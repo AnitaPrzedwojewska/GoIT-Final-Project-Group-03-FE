@@ -1,6 +1,6 @@
 export const initialState = {
   category: 'Breakfast',
   categories: [],
-  recipe: [],
+  recipe: {},
   // recipes: [],
 }

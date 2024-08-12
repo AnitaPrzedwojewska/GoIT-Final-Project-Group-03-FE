@@ -2,8 +2,8 @@ import axios from "axios";
 
 import endpoints from "../../constants/apiEndpoints.js";
 
-const getMyRecipes = async (page, limit) => {
-  const url = `${endpoints.MY_RECIPES_GET}`;
+const getFavoriteRecipes = async (page, limit) => {
+  const url = `${endpoints.RECIPES_FAVORITE}`;
 
   try {
     const response = await axios.get(url, {
@@ -19,4 +19,4 @@ const getMyRecipes = async (page, limit) => {
   }
 };
 
-export default getMyRecipes;
+export default getFavoriteRecipes;

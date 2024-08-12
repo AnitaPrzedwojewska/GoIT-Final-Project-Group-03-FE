@@ -7,7 +7,6 @@
 }
 
 .mainSection {
-  background-color: var(--white2);
   margin-bottom: 100px;
 }
 
@@ -16,6 +15,7 @@
     width: 375px;
     margin: 0 auto;
     padding: 16px;
+    z-index: -1;
   }
 }
 
@@ -27,7 +27,6 @@
 }
 @media screen and (min-width: 1440px) {
   .page {
-    max-width: 1440px;
     margin: 0 auto;
     position: relative;
   }

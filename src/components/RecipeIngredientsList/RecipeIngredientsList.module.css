@@ -1,12 +1,9 @@
 /* ingredient header */
 .ingredientHeader {
     display: flex;
-    flex-direction: column;
     width: 100%;
     height: 60px;
     background-color: var(--green1);
-    gap: 10px;
-    margin: 15px;
     border-radius: 10px;
     list-style: none;
     font-size: 18px;
@@ -14,28 +11,36 @@
     color: var(--white2);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin-top: 150px;
+    margin-bottom: 40px;
 }
 
 .ingredientHeaderName {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: left;
+    margin-left: 50px;
 }
 
 .ingredientHeaderSpecify {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: right;
+    margin-left: 450px;
 }
 
-/* iingredients container */
+.addToListHeadline {
+    margin-left: 150px;
+}
+
+
+/* ingredients container */
 
 .ingredientContainer {
     display: flex;
     flex-direction: column;
+    margin-left: -20px;
+    margin-right: 10px;
 }
 
 .name {
@@ -57,6 +62,7 @@
     justify-content: space-between;
 }
 
+
 .ingredientContentName {
     width: 100%;
     display: flex;
@@ -72,15 +78,17 @@
 }
 
 .ingredientImg {
-    width: 180px;
-    height: 180px;
+    width: 93px;
+    height: 97px;
     margin-left: 50px;
     margin-right: 50px;
+    background-color: var(--green4);
+    border-radius: 10px;
 }
 
 .measure {
-    width: 85px;
-    height: 35px;
+    width: 135px;
+    height: 40px;
     background-color: var(--green1);
     border-radius: 5px;
     color: var(--white2);

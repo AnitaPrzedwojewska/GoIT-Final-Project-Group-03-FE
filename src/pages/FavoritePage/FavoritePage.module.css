@@ -1,0 +1,22 @@
+.containerPage {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .containerPage {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 1440px) {
+  .containerPage {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+}
