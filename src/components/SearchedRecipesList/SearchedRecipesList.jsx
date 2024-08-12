@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import Notiflix from "notiflix";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import getRecipesByKeyword from "../../api/recipes/getRecipesByKeyword";
 import RecipeTile from "../RecipeTile/RecipeTile";
@@ -21,7 +21,7 @@ const SearchedRecipesList = () => {
         console.log(response.data.results);
         const numberOfResults = response.data.results.length;
         Notiflix.Notify.success(`We found ${numberOfResults} recipes.`);
-        setRecipes(response.data.results); // Use results directly
+        setRecipes(response.data.results);
       } catch (error) {
         setError("Something went wrong. Please try again.");
         console.error("Error:", error);
@@ -33,11 +33,17 @@ const SearchedRecipesList = () => {
     if (searchTerm && searchTerm.trim() !== "") {
       fetchRecipes();
     } else {
-      Notiflix.Notify.warning("Please enter a search term.");
       setRecipes([]);
       setLoading(false);
     }
   }, [searchTerm]);
+
+  // Przenieś powiadomienie poza useEffect
+  useEffect(() => {
+    if (!loading && !error && searchTerm && searchTerm.trim() === "") {
+      Notiflix.Notify.warning("Please enter a search term.");
+    }
+  }, [loading, error, searchTerm]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -50,7 +56,23 @@ const SearchedRecipesList = () => {
   return (
     <div className={css.box}>
       {recipes.length === 0 ? (
-        <p>Sorry, no results found.</p>
+        <div className={css.noResults}>
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="../../../public/images-bkg/mobile-search-failed-overturned-basket.png"
+            />
+            <source
+              media="(max-width: 1440x)"
+              srcSet="../../../public/images-bkg/tablet-search-failed-overturned-basket.png"
+            />
+            <img
+              src="../../../public/images-bkg/desktop-search-failed-overturned-basket.png"
+              alt="Brak wyników"
+            />
+          </picture>
+          <p>Try looking for something else..</p>
+        </div>
       ) : (
         <ul className={css.list}>
           {recipes.map((rec) => (
