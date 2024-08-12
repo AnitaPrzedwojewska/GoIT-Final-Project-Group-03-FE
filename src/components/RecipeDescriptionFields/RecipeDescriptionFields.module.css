@@ -66,6 +66,7 @@
   padding-top: 0;
   line-height: 1;
   outline: none;
+  color: #000;
 }
 
 .title::placeholder {
@@ -77,6 +78,7 @@
 
 .title:focus {
   outline: none;
+  color: #000;
 }
 
 .boxSelect {
@@ -86,6 +88,7 @@
   text-align: top;
   margin-bottom: 24px;
   padding-top: 0;
+    color: #000;
 }
 
 .label {
