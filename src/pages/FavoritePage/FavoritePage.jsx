@@ -5,7 +5,7 @@ import FavoritesList from "../../components/FavoritesList/FavoritesList";
 const MyFavoritesPage = () => {
   return (
     <>
-      <MainTitle>Favorites</MainTitle>
+      <MainTitle>Favourites</MainTitle>
       <div className={css.containerPage}>
         <FavoritesList />
       </div>
