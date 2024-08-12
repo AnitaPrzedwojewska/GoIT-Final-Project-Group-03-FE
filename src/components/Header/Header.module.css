@@ -28,6 +28,7 @@
   position: absolute;
   top: 25px;
   right: 25px;
+  margin: 0;
   cursor: pointer;
   opacity: 0;
   z-index: 2;
