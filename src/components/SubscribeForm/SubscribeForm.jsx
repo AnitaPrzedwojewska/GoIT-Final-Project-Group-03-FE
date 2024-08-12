@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import Notiflix from "notiflix";
 
 // functions
-import useUser from '../../hooks/useUser';
+// import useUser from '../../hooks/useUser';
+import useAuth from '../../hooks/useAuth'
 import subscribeNewsletter from '../../api/others/subscribeNewsletter';
 import { get } from '../../redux/user/user.operations';
 
@@ -18,23 +19,23 @@ const SubscribeForm = () => {
 
   const dispatch = useDispatch();
 
-  const {email, subscribe} = useUser();
+  const {user} = useAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
-    if (subscribe) {
+    if (user.subscribe) {
       Notiflix.Notify.warning("You have already subscribed.");
     } else {
       try {
-        const response = await subscribeNewsletter(email);
+        const response = await subscribeNewsletter(user.email);
         if (response.status !== 200) {
           Notiflix.Notify.failure("Something is wrong. Failed subscription.");
         } else {
-          dispatch(get());
+          // dispatch(get());
           Notiflix.Notify.success("Subscription completed successfully.");
         }
-        dispatch(get());
+        // dispatch(get());
       } catch (error) {
         console.log(error)
         Notiflix.Notify.failure("Something is wrong. Failed subscription.");
@@ -44,7 +45,7 @@ const SubscribeForm = () => {
   }
 
   const handleClick = (event) => {
-    event.target.value = email;
+    event.target.value = user.email;
   };
 
   return (

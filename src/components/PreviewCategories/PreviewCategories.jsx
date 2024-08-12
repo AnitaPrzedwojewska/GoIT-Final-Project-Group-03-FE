@@ -16,7 +16,7 @@ import css from "./PreviewCategories.module.css";
 const PreviewCategories = () => {
   const categories = ["Breakfast", "Miscellaneous", "Chicken", "Dessert"];
   const [recipes, setRecipes] = useState({});
-  const [itemsToShow, setItemsToShow] = useState(4); // domyślnie 4
+  const [itemsToShow, setItemsToShow] = useState(4);
 
   useEffect(() => {
     const updateItemsToShow = () => {

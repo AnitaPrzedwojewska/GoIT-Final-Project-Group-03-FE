@@ -84,6 +84,11 @@
     border-radius: 10px;
 }
 
+.ingredientImg img {
+    width: 93px;
+    height: 97px;
+}
+
 .measure {
     width: 135px;
     height: 40px;

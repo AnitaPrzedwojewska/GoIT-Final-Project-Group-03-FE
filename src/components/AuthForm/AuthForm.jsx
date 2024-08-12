@@ -34,25 +34,31 @@ const AuthForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
+
     if (registration) {
       dispatch(
         register({
           name: form.elements.name.value,
           email: form.elements.email.value,
           password: form.elements.password.value,
-        }),
-      );
-      navigate(`/${routes.LOGIN}`);
+        })
+      ).then(() => {
+        // Przekierowanie po udanej rejestracji
+        navigate(`/${routes.LOGIN}`);
+      });
     } else {
+      // Logowanie użytkownika...
       dispatch(
         login({
           email: form.elements.email.value,
           password: form.elements.password.value,
-        }),
-      );
-
-      navigate(`/${routes.MAIN}`);
+        })
+      ).then(() => {
+        // Przekierowanie po udanym logowaniu
+        navigate(`/${routes.MAIN}`);
+      });
     }
+
     form.reset();
   };
 

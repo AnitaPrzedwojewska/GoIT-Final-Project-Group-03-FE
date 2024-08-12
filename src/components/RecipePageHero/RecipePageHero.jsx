@@ -31,7 +31,7 @@ const RecipePageHero = () => {
     <>
       <div className={css.recipeHeroContainer}>
         <h1 className={css.recipeName}>{title}</h1>
-        <p>{description}</p>
+        <p className={css.desc}>{description}</p>
         <ButonFancy className={css.addRecipeButton} onClick={handleAddFavorite}>
           Add to favourite recipes
         </ButonFancy>
