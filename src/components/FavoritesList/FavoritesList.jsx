@@ -58,7 +58,7 @@ const FavoritesList = () => {
   return (
     <>
       <div className={css.containerList}>
-        {recipes.length > 0 ? (
+        {recipes === undefined ? (<div></div>) : recipes.length > 0 ? (
           recipes.map((recipe) => (
             <FavoriteItem
               key={recipe._id}
