@@ -7,6 +7,7 @@ const getRecipeById = async (recipeId) => {
 
   try {
     const response = await axios.get(url, recipeId);
+    console.log('getRecipeById - response: ', response.data);
     return response.data;
   } catch (error) {
     console.log(error);
