@@ -1,10 +1,10 @@
 import IngredientsShoppingList from "../../components/IngredientsShoppingList/IngredientsShoppingList";
-import MainPageTitle from "../../components/MainPageTitle/MainPageTitle";
+import MainTitle from "../../components/MainTitle/MainTitle"
 
 const ShoppingListPage = () => {
   return (
     <>
-      <MainPageTitle></MainPageTitle>
+      <MainTitle>Shopping List</MainTitle>
       <IngredientsShoppingList></IngredientsShoppingList>
     </>
   );

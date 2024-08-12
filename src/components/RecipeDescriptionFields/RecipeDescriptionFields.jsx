@@ -112,7 +112,7 @@ const RecipeDescriptionFields = ({ formData, setFormData }) => {
               <option value="">Select</option>
               {timeOptions.map((option, index) => (
                 <option key={index} value={option}>
-                  {option}
+                  {option} min
                 </option>
               ))}
             </select>

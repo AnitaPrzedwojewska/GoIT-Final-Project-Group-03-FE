@@ -13,6 +13,7 @@ import getRecipeById from "../../api/recipes/getRecipeById";
 import RecipePageHero from "../../components/RecipePageHero/RecipePageHero";
 import RecipeIngredientsList from "../../components/RecipeIngredientsList/RecipeIngredientsList";
 import RecipePreparation from "../../components/RecipePreparation/RecipePreparation";
+import RecipeBg from "../../components/RecipeBg/RecipeBg";
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -35,6 +36,7 @@ const RecipePage = () => {
 
   return (
     <>
+      <RecipeBg></RecipeBg>
       <RecipePageHero />
       <RecipeIngredientsList></RecipeIngredientsList>
       <RecipePreparation></RecipePreparation>

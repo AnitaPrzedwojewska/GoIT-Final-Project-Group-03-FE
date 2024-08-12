@@ -24,7 +24,7 @@ const RecipePreparation = () => {
               </ol>
             </div>
         </div>
-        <div>
+        <div className={css.recipeImgContainer}>
           <img src={image} className={css.recipeImg}/>
         </div>
       </div>
