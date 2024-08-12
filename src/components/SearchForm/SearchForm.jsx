@@ -13,7 +13,7 @@ const SearchForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim() === "") {
-      Notiflix.Notify.warning("Please fill the input field before searching.");
+      Notiflix.Notify.warning("Please enter a search term before searching.");
       return;
     }
     navigate(`/${routes.SEARCH}?keyword=${encodeURIComponent(inputValue)}`);

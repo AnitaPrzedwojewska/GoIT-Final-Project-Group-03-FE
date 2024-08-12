@@ -6,9 +6,6 @@ const SearchTypeSelector = ({ value, onChange }) => {
     <div className={css.container}>
       <span>Search by:</span>
       <select className={css.select} value={value} onChange={onChange}>
-        <option className={css.option} value="all">
-          All
-        </option>
         <option className={css.option} value="title">
           Title
         </option>
